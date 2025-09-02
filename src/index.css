@@ -1,0 +1,138 @@
+:root {
+  --font-base: 'Roboto', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-color: #0056b3;
+  --secondary-color: #800020;
+  --text-color-light: #213547;
+  --text-color-dark: #e0e0e0;
+  --bg-light: #ffffff;
+  --bg-dark: #adc2d6;
+  --link-color: #646cff;
+  --link-hover: #535bf2;
+}
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Amiri', serif; /* ou toute police compatible arabe */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--bg-dark);
+  color: var(--text-color-dark);
+  background-image: url('/pattern/endless.svg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-color-light);
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--link-color);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Containers et layout */
+main,
+.container,
+.home-page {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* Misc */
+.card {
+  padding: 2em;
+}
+.read-the-docs {
+  color: #888;
+}
+
+/* google translate */
+/* Masquer le logo Google et les styles par défaut */
+.goog-logo-link {
+  display: none !important;
+}
+.goog-te-gadget span {
+  display: none !important;
+}
+.goog-te-gadget {
+  font-family: "Roboto", sans-serif !important;
+  font-size: 14px !important;
+  color: #333 !important;
+}
+
+/* Style du conteneur */
+#google_translate_element {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* Style du select */
+#google_translate_element select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+#google_translate_element select:hover {
+  border-color: #007bff;
+}

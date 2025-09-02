@@ -1,0 +1,209 @@
+.lab-container {
+  padding-top: 20px;
+  background-color: #fdfdfd;
+  color: #333;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.lab-header h1 {
+  color: #800000;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.lab-header p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+/* Grille compacte */
+.lab-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Bloc Dr. */
+.doctor-presentation {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-large {
+  grid-row: span 2;
+}
+
+.doctor-presentation:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.doctor-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #800000;
+  margin-bottom: 1rem;
+}
+
+.doctor-presentation h2 {
+  margin: 0.5rem 0 0.4rem;
+  font-size: 1.6rem;
+  color: #800000;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.doctor-presentation p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+  margin: 0;
+}
+
+/* Bloc Contact compact */
+.contact-info {
+  background-color: #f9f9f9;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  margin-bottom: 0.2rem;
+}
+
+.contact-info h2 {
+  color: #800000;
+  margin: 0 0 0.6rem;
+  font-size: 1.2rem;
+}
+
+.contact-info p {
+  margin: 0.2rem 0;
+  color: #444;
+  font-size: 0.92rem;
+}
+
+/* Slider compact */
+.lab-slider {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  height: 330px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Google Maps */
+.lab-map {
+  padding: 1.5rem 2rem;
+}
+
+.lab-map h2 {
+  margin-bottom: 1rem;
+  color: #800000;
+  font-size: 1.3rem;
+}
+
+/* Galerie (optionnelle) */
+.lab-gallery {
+  padding: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .lab-grid {
+    grid-template-columns: 1fr; /* une seule colonne */
+    grid-template-rows: auto;
+  }
+
+  .doctor-presentation {
+    grid-row: auto; /* empêche de forcer le span */
+    margin-bottom: 1rem;
+  }
+
+  .lab-slider {
+    height: 240px; /* moins haut sur tablette */
+    max-width: 100%;
+  }
+
+  .doctor-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .lab-map {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lab-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .doctor-presentation h2 {
+    font-size: 1.3rem;
+  }
+
+  .doctor-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .lab-slider {
+    height: 200px; /* slider réduit */
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .gallery-grid img {
+    height: 120px;
+  }
+
+  .contact-info {
+    font-size: 0.85rem;
+    padding: 0.8rem;
+  }
+
+  .lab-map h2 {
+    font-size: 1.1rem;
+  }
+}

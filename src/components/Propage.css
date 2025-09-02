@@ -1,0 +1,206 @@
+:root {
+  --font-base: 'Segoe UI', Arial, sans-serif;
+  --color-bg: #fafbfc;
+  --color-sidebar: #ffffff;
+  --color-primary: #6E0B14;
+  --color-light: #f3f7fa;
+  --color-text: #222;
+  --color-text-alt: #555;
+  --color-note: #0e26b1;
+  --radius: 0.75rem;
+  --shadow-sm: 0 2px 8px rgba(0, 83, 166, 0.06);
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.10);
+  --transition: 0.3s ease;
+}
+
+/* Structure principale */
+.vrp-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  font-family: var(--font-base);
+  color: var(--color-text);
+  animation: fadeIn 0.8s both;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Sidebar gauche */
+.vrp-sidebar {
+  flex: 0 0 220px;
+  background-color: var(--color-sidebar);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin-right: 2rem;
+}
+
+.vrp-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vrp-sidebar li + li {
+  margin-top: 0.5rem;
+}
+
+.vrp-sidebar button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  font-weight: 500;
+  color: var(--color-text-alt);
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+}
+
+.vrp-sidebar li.active button,
+.vrp-sidebar button:hover,
+.vrp-sidebar button:focus {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+}
+
+/* Contenu principal */
+.vrp-main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.vrp-main h1 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1.2rem;
+}
+
+.vrp-main p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--color-text-alt);
+}
+
+/* Grille de blocs par onglet */
+.vrp-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.vrp-method {
+  background-color: var(--color-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+  animation: popIn 0.6s ease-out;
+}
+
+.vrp-method:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.vrp-method h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.vrp-method p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.vrp-method a {
+  color: var(--color-note);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.vrp-method a:hover {
+  text-decoration: underline;
+}
+
+/* Documents PDF */
+.vrp-method ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.vrp-method li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Placeholder */
+.vrp-placeholder {
+  font-style: italic;
+  color: var(--color-text-alt);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.95) }
+  to   { opacity: 1; transform: scale(1) }
+}
+
+/* Responsive */
+/* Responsive */
+@media (max-width: 768px) {
+  .vrp-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .vrp-sidebar {
+    display: block;
+    flex: none;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    background: var(--color-sidebar);
+  }
+
+  .vrp-sidebar ul {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+  }
+
+  .vrp-sidebar li {
+    flex: 1;
+    min-width: max-content;
+  }
+
+  .vrp-sidebar button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .vrp-main {
+    padding: 0.5rem;
+  }
+}

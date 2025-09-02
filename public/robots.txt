@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloque certaines sections privées ou admin 
+Disallow: /admin/
+Disallow: /private/
+
+# Ajoute le sitemap 
+Sitemap: https://leslaboratoireszeroual.ma/sitemap.xml

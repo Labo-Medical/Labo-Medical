@@ -1,0 +1,124 @@
+.faq-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #2d2d2d;
+}
+
+.faq-title {
+  font-size: 2.4rem;
+  color: #6E0B14;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.faq-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.faq-column {
+  flex: 1 1 0;
+  background: #f7fafc;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,136,182,0.1);
+  padding: 24px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.faq-column-title {
+  font-size: 1.5rem;
+  color: #6E0B14;
+  margin-bottom: 20px;
+  border-left: 4px solid #6E0B14;
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+.faq-item {
+  border-bottom: 1px solid #d9e5ea;
+  padding: 12px 0;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #30373e;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+  outline: none;
+}
+
+.faq-question:hover,
+.faq-question:focus {
+  color: #005a7c;
+}
+
+.faq-arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.faq-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  padding-left: 12px;
+  margin-top: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.faq-answer.show {
+  max-height: 1000px; /* assez grand pour le contenu */
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.faq-answer p,
+.faq-answer ul {
+  margin: 0 0 12px 0;
+}
+
+.faq-answer ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.faq-answer a {
+  color: #0088b6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .faq-columns {
+    flex-direction: column;
+  }
+  .faq-column {
+    max-height: none;       /* supprime la limite de hauteur */
+    margin-bottom: 40px;
+    width: 100%;            /* prend toute la largeur */
+    flex: 1 1 auto;        /* permet à la colonne de s'adapter */ 
+  }
+}
