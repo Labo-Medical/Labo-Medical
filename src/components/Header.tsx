@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { fetchPayloadHeader, type HeaderPayload } from '../services/payloadApi';
+import { useI18n } from '../i18n';
+import LanguageSwitcher from './LanguageSwitcher';
 import './Header.css';
 
 const fallback = {
@@ -15,6 +17,7 @@ const fallback = {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [headerConfig, setHeaderConfig] = useState<HeaderPayload | null>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     fetchPayloadHeader()
@@ -56,7 +59,7 @@ export default function Header() {
           <ul>
             <li className="has-submenu">
               <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
-                NOS LABORATOIRES PARTENAIRES
+                {t('nav.labs')}
               </NavLink>
               <ul className="submenu">
                 <li><NavLink to="/about">Présentation</NavLink></li>
@@ -68,7 +71,7 @@ export default function Header() {
             </li>
             <li className="has-submenu">
               <NavLink to="/pro" className={({ isActive }) => (isActive ? 'active' : '')}>
-                ESPACE PROS
+                {t('nav.pro')}
               </NavLink>
               <ul className="submenu">
                 <li><NavLink to="/catalogue">Catalogues</NavLink></li>
@@ -80,7 +83,7 @@ export default function Header() {
             </li>
             <li className="has-submenu">
               <NavLink to="/patient" className={({ isActive }) => (isActive ? 'active' : '')}>
-                ESPACE PATIENT
+                {t('nav.patient')}
               </NavLink>
               <ul className="submenu">
                 <li><NavLink to="/rdv">Prendre RDV (Prélèvement)</NavLink></li>
@@ -92,17 +95,18 @@ export default function Header() {
             </li>
             <li>
               <NavLink to="/feedbacksection" className={({ isActive }) => (isActive ? 'active' : '')}>
-                RÉCLAMATIONS & SUGGESTIONS
+                {t('nav.feedback')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>
-                CONTACT
+                {t('nav.contact')}
               </NavLink>
             </li>
           </ul>
 
           <div className="nav-extras">
+            <LanguageSwitcher />
             <div className="social-icons">
               {socialLinks.map(({ href, icon, alt }, index) => (
                 <a
