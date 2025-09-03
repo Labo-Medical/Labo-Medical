@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { fetchPayloadFooter, type FooterPayload } from '../services/payloadApi';
+import { useI18n } from '../i18n';
 
 export default function Footer() {
+  const { t } = useI18n();
   const fallback = {
     logo: '/logo.png',
     engagementText: 'Nos Laboratoires partenaires s’engagent pour la qualité, la proximité et la confidentialité de vos analyses médicales.',
@@ -40,17 +42,17 @@ export default function Footer() {
     : fallback.labLocations;
 
   const quickLinks = [
-    { label: 'Accueil', href: '/' },
-    { label: 'Nos services', href: '/specialite' },
-    { label: 'Prendre rendez-vous', href: '/rdv' },
-    { label: 'Accès résultats', href: '/resultat' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Contact', href: '/contact' },
+    { labelKey: 'footer.link.home', href: '/' },
+    { labelKey: 'footer.link.services', href: '/specialite' },
+    { labelKey: 'footer.link.rdv', href: '/rdv' },
+    { labelKey: 'footer.link.results', href: '/resultat' },
+    { labelKey: 'footer.link.faq', href: '/faq' },
+    { labelKey: 'footer.link.contact', href: '/contact' },
   ];
 
   const legalLinks = [
-    { label: 'Mentions légales', href: '/mentions-legales' },
-    { label: 'Politique de confidentialité', href: '/politique-confidentialite' },
+    { labelKey: 'footer.legal', href: '/mentions-legales' },
+    { labelKey: 'footer.privacy', href: '/politique-confidentialite' },
   ];
 
   return (
@@ -75,12 +77,12 @@ export default function Footer() {
         </div>
 
         <div style={styles.footerCol}>
-          <h4 style={styles.footerTitle}>Accès rapide</h4>
+          <h4 style={styles.footerTitle}>{t('footer.quickLinks')}</h4>
           <ul style={styles.footerList}>
             {quickLinks.map((link, idx) => (
               <li key={idx}>
                 <a href={link.href} style={styles.footerLink}>
-                  {link.label}
+                  {t(link.labelKey)}
                 </a>
               </li>
             ))}
@@ -88,7 +90,7 @@ export default function Footer() {
         </div>
 
         <div style={styles.footerCol}>
-          <h4 style={styles.footerTitle}>Nos laboratoires partenaires</h4>
+          <h4 style={styles.footerTitle}>{t('footer.labs')}</h4>
           <ul style={styles.footerList}>
             {labLocations.map((lab, idx) => (
               <li key={idx}>
@@ -105,12 +107,12 @@ export default function Footer() {
           {legalLinks.map((link, idx) => (
             <li key={idx}>
               <a href={link.href} style={styles.footerBottomLink}>
-                {link.label}
+                {t(link.labelKey)}
               </a>
             </li>
           ))}
         </ul>
-        <p style={{ color: '#555' }}>&copy; 2025 Laboratoires Zeroual. Tous droits réservés.</p>
+        <p style={{ color: '#555' }}>&copy; 2025 Laboratoires Zeroual. {t('footer.rights')}</p>
       </div>
     </footer>
   );
@@ -129,7 +131,7 @@ const styles = {
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '0 20px',
-    flexWrap: 'wrap' as 'wrap',
+    flexWrap: 'wrap' as const,
     gap: '50px',
   },
   footerLogoBlock: {
