@@ -247,3 +247,7 @@
 .nav-extras .social-icons img:hover {
   transform: scale(1.1);
 }
+
+.language-switcher {
+  margin-left: 8px;
+}

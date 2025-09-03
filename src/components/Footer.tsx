@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { fetchPayloadFooter, type FooterPayload } from '../services/payloadApi';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+  
   const fallback = {
     logo: '/logo.png',
     engagementText: 'Nos Laboratoires partenaires s’engagent pour la qualité, la proximité et la confidentialité de vos analyses médicales.',
@@ -40,17 +43,17 @@ export default function Footer() {
     : fallback.labLocations;
 
   const quickLinks = [
-    { label: 'Accueil', href: '/' },
-    { label: 'Nos services', href: '/specialite' },
-    { label: 'Prendre rendez-vous', href: '/rdv' },
-    { label: 'Accès résultats', href: '/resultat' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Contact', href: '/contact' },
+    { label: t('home'), href: '/' },
+    { label: t('our_services'), href: '/specialite' },
+    { label: t('take_appointment'), href: '/rdv' },
+    { label: t('access_results'), href: '/resultat' },
+    { label: t('faq'), href: '/faq' },
+    { label: t('contact'), href: '/contact' },
   ];
 
   const legalLinks = [
-    { label: 'Mentions légales', href: '/mentions-legales' },
-    { label: 'Politique de confidentialité', href: '/politique-confidentialite' },
+    { label: t('legal_mentions'), href: '/mentions-legales' },
+    { label: t('privacy_policy_full'), href: '/politique-confidentialite' },
   ];
 
   return (
@@ -110,7 +113,7 @@ export default function Footer() {
             </li>
           ))}
         </ul>
-        <p style={{ color: '#555' }}>&copy; 2025 Laboratoires Zeroual. Tous droits réservés.</p>
+        <p style={{ color: '#555' }}>{t('copyright')}</p>
       </div>
     </footer>
   );

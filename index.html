@@ -23,30 +23,40 @@
 
     <!-- Canonical URL de base -->
     <link rel="canonical" href="https://leslaboratoireszeroual.ma" />
+
+    <style>
+      /* Make the switcher clearly visible above the fixed header */
+      .language-switcher {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 3000; /* above header */
+        background: rgba(255,255,255,0.98);
+        padding: 6px 8px;
+        border-radius: 6px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        display: inline-block;
+      }
+
+      .language-switcher select {
+        border: 0;
+        background: transparent;
+        font-family: inherit;
+        font-size: 0.95rem;
+        color: #222;
+        cursor: pointer;
+        padding: 2px 6px;
+      }
+
+      html[dir="rtl"] body {
+        direction: rtl;
+        text-align: right;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
-
-    <!-- Ici tu ajoutes l'élément Google Translate -->
-    <div id="google_translate_element" style="position:fixed; bottom:10px; right:10px; z-index:999;"></div>
-
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: 'fr', // Langue par défaut de ton site
-            includedLanguages: 'en,es,ar', // Langues que tu veux proposer
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-          },
-          'google_translate_element'
-        );
-      }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/TON_KIT.js" crossorigin="anonymous"></script>
   </body>

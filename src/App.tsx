@@ -2,6 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 
+// 🌐 i18n
+import { LanguageProvider } from './i18n/LanguageContext';
+import LanguageSwitcher from './components/LanguageSwitcher';
+
 
 // 🗂️ Pages
 import Home from './pages/Home';
@@ -48,44 +52,47 @@ export default function App() {
 
   return (
     <HelmetProvider>
-      <Router>
-        <div className="App">
-          <Header />
-          <ContactTab />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about/*" element={<About />} />
-              <Route path="/patient/*" element={<Patient />} />
-              <Route path="/pro/*" element={<Pro />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/politic" element={<Politic />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blogarticle" element={<BlogArticle />} />
-              <Route path="/prepavisite/*" element={<PrepaVisite />} />
-              <Route path="/resultat" element={<Resultat />} />
-              <Route path="/faq" element={<Faq />} />
-              <Route path="/specialite" element={<Specialite />} />
-              <Route path="/feedbackSection" element={<FeedbackSection />} />
-              <Route path="/labokawacim" element={<LaboKawacim />} />
-              <Route path="/labosouani" element={<LaboSouani />} />
-              <Route path="/labocharf" element={<LaboCharf />} />
-              <Route path="/collaborateurs" element={<Collaborateurs />} />
-              <Route path="/latestnews" element={<LatestNews />} />
-              <Route path="/propage" element={<Propage />} />
-              <Route path="/catalogue" element={<Catalogue />} />
-              <Route path="/centraleachat" element={<CentraleAchat />} />
-              <Route path="/prelevement" element={<Prelevement />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/rdv" element={<Rdv />} />
-              <Route path="/pageresultats" element={<Pageresultats />} />
-              <Route path="/recommandationpreanalytique" element={<RecommandationsPreanalytique />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
+      <LanguageProvider>
+        <LanguageSwitcher />
+        <Router>
+          <div className="App">
+            <Header />
+            <ContactTab />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about/*" element={<About />} />
+                <Route path="/patient/*" element={<Patient />} />
+                <Route path="/pro/*" element={<Pro />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/politic" element={<Politic />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blogarticle" element={<BlogArticle />} />
+                <Route path="/prepavisite/*" element={<PrepaVisite />} />
+                <Route path="/resultat" element={<Resultat />} />
+                <Route path="/faq" element={<Faq />} />
+                <Route path="/specialite" element={<Specialite />} />
+                <Route path="/feedbackSection" element={<FeedbackSection />} />
+                <Route path="/labokawacim" element={<LaboKawacim />} />
+                <Route path="/labosouani" element={<LaboSouani />} />
+                <Route path="/labocharf" element={<LaboCharf />} />
+                <Route path="/collaborateurs" element={<Collaborateurs />} />
+                <Route path="/latestnews" element={<LatestNews />} />
+                <Route path="/propage" element={<Propage />} />
+                <Route path="/catalogue" element={<Catalogue />} />
+                <Route path="/centraleachat" element={<CentraleAchat />} />
+                <Route path="/prelevement" element={<Prelevement />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/rdv" element={<Rdv />} />
+                <Route path="/pageresultats" element={<Pageresultats />} />
+                <Route path="/recommandationpreanalytique" element={<RecommandationsPreanalytique />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+      </LanguageProvider>
     </HelmetProvider>
   );
 }

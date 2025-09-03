@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fetchPayloadAnnonces } from '../services/payloadApi';
+import { useLanguage } from '../i18n/LanguageContext';
 
 type Annonce = {
   id: string;
@@ -54,6 +55,7 @@ export default function Annonce() {
   const [selectedAnnonce, setSelectedAnnonce] = useState<Annonce | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isSmallMobile, setIsSmallMobile] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // détecter mobile et petit écran
@@ -89,7 +91,7 @@ export default function Annonce() {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <h2 style={styles.title}>📢 Annonces</h2>
+        <h2 style={styles.title}>📢 {t('announcements')}</h2>
         <div>
           <button onClick={prev} style={styles.nav}>‹</button>
           <button onClick={next} style={styles.nav}>›</button>

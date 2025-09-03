@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { fetchPayloadHeader, type HeaderPayload } from '../services/payloadApi';
+import { useLanguage } from '../i18n/LanguageContext';
 import './Header.css';
 
 const fallback = {
@@ -15,6 +16,7 @@ const fallback = {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [headerConfig, setHeaderConfig] = useState<HeaderPayload | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     fetchPayloadHeader()
@@ -37,14 +39,14 @@ export default function Header() {
     <header className="site-header">
       <div className="container">
         <div className="logo">
-          <Link to="/" aria-label="Retour à l'accueil">
-            <img src={logoSrc} alt="Logo des Laboratoires Zeroual" />
+          <Link to="/" aria-label={t('home')}>
+            <img src={logoSrc} alt={t('title')} />
           </Link>
         </div>
 
         <button
           className="menu-toggle"
-          aria-label="Ouvrir ou fermer le menu"
+          aria-label="Menu"
           aria-haspopup="true"
           aria-expanded={open}
           onClick={toggleMenu}
@@ -56,19 +58,19 @@ export default function Header() {
           <ul>
             <li className="has-submenu">
               <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
-                NOS LABORATOIRES PARTENAIRES
+                {t('partner_labs')}
               </NavLink>
               <ul className="submenu">
-                <li><NavLink to="/about">Présentation</NavLink></li>
-                <li><NavLink to="/labokawacim">Laboratoire Zeroual Kawassim</NavLink></li>
-                <li><NavLink to="/labosouani">Laboratoire Zeroual Souani</NavLink></li>
-                <li><NavLink to="/labocharf">Laboratoire Zeroual Charf</NavLink></li>
-                <li><NavLink to="/specialite">Spécialités Biologiques</NavLink></li>
+                <li><NavLink to="/about">{t('presentation')}</NavLink></li>
+                <li><NavLink to="/labokawacim">{t('lab_kawacim')}</NavLink></li>
+                <li><NavLink to="/labosouani">{t('lab_souani')}</NavLink></li>
+                <li><NavLink to="/labocharf">{t('lab_charf')}</NavLink></li>
+                <li><NavLink to="/specialite">{t('services')}</NavLink></li>
               </ul>
             </li>
             <li className="has-submenu">
               <NavLink to="/pro" className={({ isActive }) => (isActive ? 'active' : '')}>
-                ESPACE PROS
+                {t('professional_space')}
               </NavLink>
               <ul className="submenu">
                 <li><NavLink to="/catalogue">Catalogues</NavLink></li>
@@ -80,24 +82,24 @@ export default function Header() {
             </li>
             <li className="has-submenu">
               <NavLink to="/patient" className={({ isActive }) => (isActive ? 'active' : '')}>
-                ESPACE PATIENT
+                {t('patient_space')}
               </NavLink>
               <ul className="submenu">
-                <li><NavLink to="/rdv">Prendre RDV (Prélèvement)</NavLink></li>
-                <li><NavLink to="/prepavisite">Préparer analyses</NavLink></li>
-                <li><NavLink to="/resultat">Résultats</NavLink></li>
-                <li><NavLink to="/faq">FAQ</NavLink></li>
-                <li><NavLink to="/blog">Actualités biologiques</NavLink></li>
+                <li><NavLink to="/rdv">{t('take_appointment_sampling')}</NavLink></li>
+                <li><NavLink to="/prepavisite">{t('prepare_analysis')}</NavLink></li>
+                <li><NavLink to="/resultat">{t('results')}</NavLink></li>
+                <li><NavLink to="/faq">{t('faq')}</NavLink></li>
+                <li><NavLink to="/blog">{t('biological_news')}</NavLink></li>
               </ul>
             </li>
             <li>
               <NavLink to="/feedbacksection" className={({ isActive }) => (isActive ? 'active' : '')}>
-                RÉCLAMATIONS & SUGGESTIONS
+                {t('complaints_suggestions')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>
-                CONTACT
+                {t('contact')}
               </NavLink>
             </li>
           </ul>
