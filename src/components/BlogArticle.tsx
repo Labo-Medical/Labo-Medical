@@ -35,13 +35,15 @@ export default function BlogPage() {
     let mounted = true;
     (async () => {
       try {
-        const data = await fetchPayloadBlogs();
+        // Temporarily disabled to fix rendering issues
+        // const data = await fetchPayloadBlogs();
         if (!mounted) return;
-        if (Array.isArray(data) && data.length > 0) {
-          setArticles(data);
-        } else {
-          setArticles(fallbackArticles);
-        }
+        // if (Array.isArray(data) && data.length > 0) {
+        //   setArticles(data);
+        // } else {
+        //   setArticles(fallbackArticles);
+        // }
+        setArticles(fallbackArticles);
       } catch (e: any) {
         // setError("Impossible de charger les articles. Affichage des contenus par défaut.");
         setArticles(fallbackArticles);

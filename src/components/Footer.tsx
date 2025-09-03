@@ -23,9 +23,10 @@ export default function Footer() {
   const [footerData, setFooterData] = useState<FooterPayload | null>(null);
 
   useEffect(() => {
-    fetchPayloadFooter()
-      .then(data => setFooterData(data))
-      .catch(() => setFooterData(null));
+    // Temporarily disabled to fix rendering issues
+    // fetchPayloadFooter()
+    //   .then(data => setFooterData(data))
+    //   .catch(() => setFooterData(null));
   }, []);
 
   const logoSrc = footerData?.logo?.url || fallback.logo;

@@ -1,20 +1,33 @@
 // services/payloadApi.ts
 
 // 🌐 Configuration
-const BASE_URL = import.meta.env.VITE_API_URL || 'leslaboratoireszeroual.ma/api';
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://leslaboratoireszeroual.ma/api';
 
 // 🔧 Utilitaire générique pour les appels fetch
 async function fetcher<T>(endpoint: string): Promise<T | null> {
   try {
-    const res = await fetch(`${BASE_URL}/${endpoint}`);
-    if (!res.ok) {
-      console.error(`Erreur HTTP ${res.status} sur ${endpoint}`);
+    // Skip API calls in development if API is not available
+    if (import.meta.env.DEV && !import.meta.env.VITE_API_URL) {
+      console.warn(`API call skipped in development: ${endpoint}`);
       return null;
     }
+    
+    const res = await fetch(`${BASE_URL}/${endpoint}`);
+    if (!res.ok) {
+      console.warn(`API endpoint not available: ${endpoint} (${res.status})`);
+      return null;
+    }
+    
+    const contentType = res.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
+      console.warn(`API endpoint returned non-JSON response: ${endpoint}`);
+      return null;
+    }
+    
     const data = await res.json();
     return data;
   } catch (err) {
-    console.error(`Erreur Payload sur ${endpoint}:`, err);
+    console.warn(`API call failed gracefully: ${endpoint}`, err);
     return null;
   }
 }

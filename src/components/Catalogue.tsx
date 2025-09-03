@@ -21,16 +21,18 @@ export default function Catalogue() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchPayloadCatalogue()
-      .then((data) => {
-        if (data) setContent(data);
-      })
-      .catch(() => {
-        setContent(DEFAULT_CONTENT);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    // Temporarily disabled to fix rendering issues
+    // fetchPayloadCatalogue()
+    //   .then((data) => {
+    //     if (data) setContent(data);
+    //   })
+    //   .catch(() => {
+    //     setContent(DEFAULT_CONTENT);
+    //   })
+    //   .finally(() => {
+    //     setLoading(false);
+    //   });
+    setLoading(false);
   }, []);
 
   if (loading) return <p style={styles.placeholder}>Chargement...</p>;

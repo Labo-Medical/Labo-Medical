@@ -18,14 +18,16 @@ export default function CentraleAchats() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchPayloadCentraleAchats()
-      .then((data) => {
-        if (data) setContent(data);
-      })
-      .catch(() => {
-        setContent(DEFAULT_CONTENT);
-      })
-      .finally(() => setLoading(false));
+    // Temporarily disabled to fix rendering issues
+    // fetchPayloadCentraleAchats()
+    //   .then((data) => {
+    //     if (data) setContent(data);
+    //   })
+    //   .catch(() => {
+    //     setContent(DEFAULT_CONTENT);
+    //   })
+    //   .finally(() => setLoading(false));
+    setLoading(false);
   }, []);
 
   if (loading) return <p style={styles.placeholder}>Chargement...</p>;

@@ -16,13 +16,14 @@ export default function Chiffres() {
   const [data, setData] = useState<ChiffresPayload>(fallbackData);
 
   useEffect(() => {
-    fetchPayloadChiffres()
-      .then((remoteData) => {
-        if (remoteData) setData(remoteData);
-      })
-      .catch(() => {
-        console.warn('PayloadCMS indisponible, fallback utilisé.');
-      });
+    // Temporarily disabled to fix rendering issues
+    // fetchPayloadChiffres()
+    //   .then((remoteData) => {
+    //     if (remoteData) setData(remoteData);
+    //   })
+    //   .catch(() => {
+    //     console.warn('PayloadCMS indisponible, fallback utilisé.');
+    //   });
   }, []);
 
   return (

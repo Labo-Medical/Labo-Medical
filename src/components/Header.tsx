@@ -19,9 +19,10 @@ export default function Header() {
   const { t } = useLanguage();
 
   useEffect(() => {
-    fetchPayloadHeader()
-      .then(data => setHeaderConfig(data))
-      .catch(() => setHeaderConfig(null));
+    // Temporarily disabled to fix rendering issues
+    // fetchPayloadHeader()
+    //   .then(data => setHeaderConfig(data))
+    //   .catch(() => setHeaderConfig(null));
   }, []);
 
   const toggleMenu = () => setOpen(prev => !prev);

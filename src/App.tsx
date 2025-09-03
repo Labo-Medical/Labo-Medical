@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 // 🌐 i18n
 import { LanguageProvider } from './i18n/LanguageContext';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import EmergencyTest from './components/EmergencyTest';
 
 
 // 🗂️ Pages
@@ -53,6 +54,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <LanguageProvider>
+        <EmergencyTest />
         <LanguageSwitcher />
         <Router>
           <div className="App">

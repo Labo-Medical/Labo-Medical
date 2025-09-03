@@ -69,20 +69,21 @@ export default function Annonce() {
   }, []);
 
   useEffect(() => {
-    fetchPayloadAnnonces()
-      .then((data) => {
-        if (data && data.length > 0) {
-          setAnnonces(
-            data.map((a: any) => ({
-              ...a,
-              image: typeof a.image === 'string' ? { url: a.image } : a.image,
-            }))
-          );
-        }
-      })
-      .catch(() => {
-        setAnnonces(DEFAULT_ANNONCES);
-      });
+    // Temporarily disabled to fix rendering issues
+    // fetchPayloadAnnonces()
+    //   .then((data) => {
+    //     if (data && data.length > 0) {
+    //       setAnnonces(
+    //         data.map((a: any) => ({
+    //           ...a,
+    //           image: typeof a.image === 'string' ? { url: a.image } : a.image,
+    //         }))
+    //       );
+    //     }
+    //   })
+    //   .catch(() => {
+    //     setAnnonces(DEFAULT_ANNONCES);
+    //   });
   }, []);
 
   const next = () => setIndex((i) => (i + 1) % annonces.length);
