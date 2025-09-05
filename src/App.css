@@ -42,3 +42,80 @@
 .read-the-docs {
   color: #888;
 }
+
+/* =============================================================================
+   RTL (Right-to-Left) SUPPORT FOR ARABIC LANGUAGE
+   ============================================================================= */
+
+/* When document direction is RTL (Arabic), apply appropriate styles */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* RTL adjustments for navigation elements */
+[dir="rtl"] .header-nav {
+  direction: rtl;
+}
+
+[dir="rtl"] .navigation ul {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .language-switcher {
+  flex-direction: row-reverse;
+}
+
+/* RTL adjustments for content layout */
+[dir="rtl"] .content-container {
+  text-align: right;
+}
+
+[dir="rtl"] .flex-container {
+  flex-direction: row-reverse;
+}
+
+/* RTL adjustments for buttons and form elements */
+[dir="rtl"] .btn-group {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+/* RTL adjustments for margins and padding */
+[dir="rtl"] .margin-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .margin-right {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .float-left {
+  float: right;
+}
+
+[dir="rtl"] .float-right {
+  float: left;
+}
+
+/* RTL adjustments for specific components */
+[dir="rtl"] .header {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer {
+  direction: rtl;
+}
+
+[dir="rtl"] .card {
+  text-align: right;
+}
+
+/* Smooth transition when switching between LTR and RTL */
+* {
+  transition: margin 0.3s ease, padding 0.3s ease, text-align 0.3s ease;
+}

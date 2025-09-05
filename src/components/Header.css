@@ -230,6 +230,7 @@
 .nav-extras {
   display: flex;
   align-items: center;
+  gap: 12px;
   margin-left: 12px;
 }
 
@@ -246,4 +247,42 @@
 
 .nav-extras .social-icons img:hover {
   transform: scale(1.1);
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.language-switcher button {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  min-width: 32px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-switcher button:hover {
+  border-color: #7b1621;
+  transform: translateY(-1px);
+}
+
+.language-switcher button.active {
+  border-color: #7b1621;
+  background-color: #7b1621;
+  transform: scale(1.05);
+}
+
+.language-switcher button.active:hover {
+  transform: scale(1.05) translateY(-1px);
 }

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadDocuments, type DocumentPayload } from '../services/payloadApi';
 
 const DEFAULT_CONTENT: DocumentPayload = {
   id: "document",
-  title: "Ressources documentaires",
-  description:
-    "Retrouvez ici tous les documents indispensables à vos activités professionnelles.\n\nIls sont mis à jour régulièrement.",
+  title: "documents.title",
+  description: "documents.description",
   documents: [
     {
-      title: "Guide des bonnes pratiques (PDF)",
+      title: "documents.good_practices",
       url: "/docs/guides.pdf",
     },
   ],
@@ -17,6 +17,7 @@ const DEFAULT_CONTENT: DocumentPayload = {
 
 export default function Documents() {
   const [content, setContent] = useState<DocumentPayload>(DEFAULT_CONTENT);
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,8 +43,8 @@ export default function Documents() {
       transition={{ duration: 0.6 }}
       style={styles.section}
     >
-      <h1 style={styles.title}>{content.title}</h1>
-      {content.description.split('\n\n').map((para, idx) => (
+      <h1 style={styles.title}>{t(content.title)}</h1>
+      {t(content.description).split('\n\n').map((para, idx) => (
         <p key={idx} style={styles.paragraph}>{para}</p>
       ))}
 
@@ -58,7 +59,7 @@ export default function Documents() {
                 rel="noopener noreferrer"
                 style={styles.link}
               >
-                {doc.title}
+                {t(doc.title)}
               </a>
             </li>
           ))}

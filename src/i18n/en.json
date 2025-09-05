@@ -1,0 +1,87 @@
+{
+  "header": {
+    "nav_labs": "OUR PARTNER LABORATORIES",
+    "nav_presentation": "Presentation",
+    "nav_kawassim": "Zeroual Kawassim Laboratory",
+    "nav_souani": "Zeroual Souani Laboratory",
+    "nav_charf": "Zeroual Charf Laboratory",
+    "nav_specialties": "Biological Specialties",
+    "nav_pros": "PROFESSIONAL AREA",
+    "nav_catalogues": "Catalogues",
+    "nav_recommendations": "Pre-analytical recommendations",
+    "nav_central_purchase": "Central purchasing",
+    "nav_resources": "Documentary resources",
+    "nav_sampling": "Sampling",
+    "nav_patient": "PATIENT AREA",
+    "nav_appointment": "Book appointment (Sampling)",
+    "nav_prepare": "Prepare analyses",
+    "nav_results": "Results",
+    "nav_faq": "FAQ",
+    "nav_news": "Biological news",
+    "nav_complaints": "COMPLAINTS & SUGGESTIONS",
+    "nav_contact": "CONTACT"
+  },
+  "values": {
+    "title": "Zeroual Laboratories provide you with quality and proximity service.",
+    "quality_title": "Quality & Biomedical Research",
+    "quality_text": "Advanced technologies and continuous improvement.",
+    "services_title": "Services & Proximity",
+    "services_text": "Personalized welcome and efficient territorial network.",
+    "competence_title": "Competence & Networking",
+    "competence_text": "Strong team spirit and rigorous expertise.",
+    "impartiality_title": "Impartiality & Confidentiality",
+    "impartiality_text": "Ethics, trust and solid human relationships."
+  },
+  "specialties": {
+    "immunoassay_title": "Immunoassay analyzer",
+    "immunoassay_desc": "Immunological, serological, hormonal and allergological analysis.",
+    "hematology_title": "Hematology analyzer",
+    "hematology_desc": "Complete Blood Count (CBC) and blood abnormality detection.",
+    "biochemistry_title": "Biochemical analyzer",
+    "biochemistry_desc": "Clinical chemistry for in vitro analyses."
+  },
+  "documents": {
+    "title": "Documentary resources",
+    "description": "Find here all the essential documents for your professional activities.\n\nThey are updated regularly.",
+    "good_practices": "Good practices guide (PDF)"
+  },
+  "sampling": {
+    "title": "Sampling",
+    "description": "Simplify your sampling with our accessible solutions everywhere.\n\nContact us for more information."
+  },
+  "recommendations": {
+    "title": "Pre-analytical recommendations",
+    "description": "Prepare your tests optimally with our detailed pre-analytical recommendations.\n\nThese tips ensure reliable results."
+  },
+  "central_purchase": {
+    "title": "Central purchasing",
+    "description": "ZEROUAL LABORATORIES is a purchasing center specialized in medical industries present in Africa.\n\nBeing located as close as possible to our customers, our promise is to address all the questions posed by a project in terms of supply and Supply Chain in order to provide, in all circumstances, a response adapted to the needs of medical laboratories, clinics, hospitals etc."
+  },
+  "pro_menu": {
+    "documents": "Documents",
+    "recommendations": "Pre-analytical recommendations",
+    "central_purchase": "Central purchasing",
+    "catalogues": "Catalogues",
+    "sampling": "Sampling"
+  },
+  "results_menu": {
+    "results": "Your results",
+    "appointment": "Make appointment",
+    "prepare": "Prepare my visit",
+    "faq": "FAQ"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu",
+    "language": "Language",
+    "contact_us": "Contact us"
+  }
+}

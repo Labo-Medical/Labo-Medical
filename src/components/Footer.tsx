@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadFooter, type FooterPayload } from '../services/payloadApi';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Footer() {
   const fallback = {
@@ -71,6 +73,9 @@ export default function Footer() {
                 />
               </a>
             ))}
+          </div>
+          <div style={{marginTop: '15px', display: 'flex', justifyContent: 'center'}}>
+            <LanguageSwitcher />
           </div>
         </div>
 

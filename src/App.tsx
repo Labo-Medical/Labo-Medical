@@ -1,6 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+
+// Initialize i18n configuration for multi-language support
+import './i18n';
 
 
 // 🗂️ Pages
@@ -17,6 +21,7 @@ import FeedbackSection from './pages/FeedbackSection';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ContactTab from './components/ContactTab';
+import FloatingLanguageSwitcher from './components/FloatingLanguageSwitcher';
 import PrepaVisite from './components/PrepaVisite';
 import Faq from './components/Faq';
 import Blog from './components/Blog';
@@ -42,9 +47,27 @@ import './App.css';
 
 
 export default function App() {
-  useEffect(() => {
+  const { i18n } = useTranslation();
 
-  }, []);
+  useEffect(() => {
+    // Handle RTL (Right-to-Left) direction for Arabic language
+    const handleLanguageChange = () => {
+      const isArabic = i18n.language === 'ar';
+      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      document.documentElement.lang = i18n.language;
+    };
+
+    // Set initial direction
+    handleLanguageChange();
+
+    // Listen for language changes
+    i18n.on('languageChanged', handleLanguageChange);
+
+    // Cleanup listener on component unmount
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange);
+    };
+  }, [i18n]);
 
   return (
     <HelmetProvider>
@@ -52,6 +75,7 @@ export default function App() {
         <div className="App">
           <Header />
           <ContactTab />
+          <FloatingLanguageSwitcher />
           <main>
             <Routes>
               <Route path="/" element={<Home />} />

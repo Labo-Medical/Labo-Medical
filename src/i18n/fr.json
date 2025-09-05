@@ -1,0 +1,87 @@
+{
+  "header": {
+    "nav_labs": "NOS LABORATOIRES PARTENAIRES",
+    "nav_presentation": "Présentation",
+    "nav_kawassim": "Laboratoire Zeroual Kawassim",
+    "nav_souani": "Laboratoire Zeroual Souani",
+    "nav_charf": "Laboratoire Zeroual Charf",
+    "nav_specialties": "Spécialités Biologiques",
+    "nav_pros": "ESPACE PROS",
+    "nav_catalogues": "Catalogues",
+    "nav_recommendations": "Récommandations préanalytiques",
+    "nav_central_purchase": "Centrale d'achats",
+    "nav_resources": "Ressources documentaires",
+    "nav_sampling": "Prélevements",
+    "nav_patient": "ESPACE PATIENT",
+    "nav_appointment": "Prendre RDV (Prélèvement)",
+    "nav_prepare": "Préparer analyses",
+    "nav_results": "Résultats",
+    "nav_faq": "FAQ",
+    "nav_news": "Actualités biologiques",
+    "nav_complaints": "RÉCLAMATIONS & SUGGESTIONS",
+    "nav_contact": "CONTACT"
+  },
+  "values": {
+    "title": "Les Laboratoires Zeroual vous apportent un service de qualité et de proximité.",
+    "quality_title": "Qualité & Recherche Biomédicale",
+    "quality_text": "Technologies avancées et amélioration continue.",
+    "services_title": "Services & Proximité",
+    "services_text": "Accueil personnalisé et maillage territorial efficace.",
+    "competence_title": "Compétence & Réseautage",
+    "competence_text": "Un esprit d'équipe fort et une expertise rigoureuse.",
+    "impartiality_title": "Impartialité & Confidentialité",
+    "impartiality_text": "Éthique, confiance et relations humaines solides."
+  },
+  "specialties": {
+    "immunoassay_title": "Automate d'immunoessais",
+    "immunoassay_desc": "Analyse immunologique, sérologique, hormonologique et allergologique.",
+    "hematology_title": "Analyseur d'hématologie",
+    "hematology_desc": "Numération Formule Sanguine (NFS) et détection d'anomalies sanguines.",
+    "biochemistry_title": "Analyseur biochimique",
+    "biochemistry_desc": "Chimie clinique pour analyses in vitro."
+  },
+  "documents": {
+    "title": "Ressources documentaires",
+    "description": "Retrouvez ici tous les documents indispensables à vos activités professionnelles.\n\nIls sont mis à jour régulièrement.",
+    "good_practices": "Guide des bonnes pratiques (PDF)"
+  },
+  "sampling": {
+    "title": "Prélèvements",
+    "description": "Simplifiez vos prélèvements grâce à nos solutions accessibles partout.\n\nContactez-nous pour plus d'informations."
+  },
+  "recommendations": {
+    "title": "Récommandations préanalytiques",
+    "description": "Préparez vos examens de manière optimale grâce à nos recommandations pré-analytiques détaillées.\n\nCes conseils vous assurent des résultats fiables."
+  },
+  "central_purchase": {
+    "title": "Centrale d'achats",
+    "description": "LES LABORATOIRES ZEROUAL est une centrale d'achats spécialisée dans les industries médicales qui sont présentes en Afrique.\n\nEtant implantés au plus près de nos clients, notre promesse est d'aborder toutes les questions posées par un projet en termes d'approvisionnement et de Supply Chain afin d'apporter, en toutes circonstances, une réponse adaptée aux besoins des laboratoires médicaux, des cliniques, des hôpitaux etc."
+  },
+  "pro_menu": {
+    "documents": "Documents",
+    "recommendations": "Récommandations préanalytique",
+    "central_purchase": "Centrale d'achats",
+    "catalogues": "Catalogues",
+    "sampling": "Prélèvements"
+  },
+  "results_menu": {
+    "results": "Vos résultats",
+    "appointment": "Prendre rendez-vous",
+    "prepare": "Préparer ma visite",
+    "faq": "FAQ"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "back": "Retour",
+    "next": "Suivant",
+    "submit": "Envoyer",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "menu": "Menu",
+    "language": "Langue",
+    "contact_us": "Contactez-nous"
+  }
+}

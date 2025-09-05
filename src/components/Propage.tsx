@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Catalogue from '../components/Catalogue';
 import RecommandationsPreanalytique from '../components/RecommandationsPreanalytique';
 import CentraleAchat from '../components/CentraleAchat';
@@ -8,15 +9,16 @@ import './ProPage.css'; // Assuming you have a CSS file for styles
 import { Helmet } from 'react-helmet-async';
 
 const menuItems = [
-  { key: 'documents', label: 'Documents' },
-  { key: 'recommandations-preanalytique', label: 'Récommandations préanalytique' },
-  { key: 'centrale-achats', label: 'Centrale d\'achats' },
-  { key: 'catalogues', label: 'Catalogues' },
-  { key: 'prelevements', label: 'Prélèvements' },
+  { key: 'documents', label: 'pro_menu.documents' },
+  { key: 'recommandations-preanalytique', label: 'pro_menu.recommendations' },
+  { key: 'centrale-achats', label: 'pro_menu.central_purchase' },
+  { key: 'catalogues', label: 'pro_menu.catalogues' },
+  { key: 'prelevements', label: 'pro_menu.sampling' },
 ];
 
 export default function ProPage() {
   const [activeTab, setActiveTab] = useState(menuItems[0].key);
+  const { t } = useTranslation();
 
   const renderContent = () => {
     switch (activeTab) {
@@ -56,7 +58,7 @@ export default function ProPage() {
           <ul>
             {menuItems.map(({ key, label }) => (
               <li key={key} className={key === activeTab ? 'active' : ''}>
-                <button onClick={() => setActiveTab(key)}>{label}</button>
+                <button onClick={() => setActiveTab(key)}>{t(label)}</button>
               </li>
             ))}
           </ul>

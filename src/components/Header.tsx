@@ -1,8 +1,25 @@
+/**
+ * HEADER COMPONENT - Main Navigation Bar
+ * 
+ * This is the main navigation header that appears at the top of every page.
+ * It includes the company logo, navigation menu, social media links, and language switcher.
+ * 
+ * Features:
+ * - Multi-level dropdown navigation menus
+ * - Responsive mobile hamburger menu
+ * - Integration with language switching system
+ * - Social media links (Facebook, Instagram, LinkedIn)
+ * - API fallback for when backend is unavailable
+ */
+
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadHeader, type HeaderPayload } from '../services/payloadApi';
+import LanguageSwitcher from './LanguageSwitcher';
 import './Header.css';
 
+// Fallback data used when the API is unavailable or slow to respond
 const fallback = {
   logo: '/logo.png',
   socialLinks: [
@@ -13,17 +30,26 @@ const fallback = {
 };
 
 export default function Header() {
+  // State for mobile menu toggle (hamburger menu)
   const [open, setOpen] = useState(false);
+  
+  // State for header configuration from API
   const [headerConfig, setHeaderConfig] = useState<HeaderPayload | null>(null);
+  
+  // Translation hook for multi-language support
+  const { t, i18n } = useTranslation();
 
+  // Fetch header data from API when component mounts
   useEffect(() => {
     fetchPayloadHeader()
       .then(data => setHeaderConfig(data))
-      .catch(() => setHeaderConfig(null));
+      .catch(() => setHeaderConfig(null)); // Use fallback data if API fails
   }, []);
 
+  // Toggle mobile menu open/closed state
   const toggleMenu = () => setOpen(prev => !prev);
 
+  // Use API data if available, otherwise use fallback
   const logoSrc = headerConfig?.logo?.url || fallback.logo;
   const socialLinks = headerConfig?.socialLinks?.length
     ? headerConfig.socialLinks.map(s => ({
@@ -56,53 +82,54 @@ export default function Header() {
           <ul>
             <li className="has-submenu">
               <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
-                NOS LABORATOIRES PARTENAIRES
+                {t('header.nav_labs')} | DEBUG: {i18n.language}
               </NavLink>
               <ul className="submenu">
-                <li><NavLink to="/about">Présentation</NavLink></li>
-                <li><NavLink to="/labokawacim">Laboratoire Zeroual Kawassim</NavLink></li>
-                <li><NavLink to="/labosouani">Laboratoire Zeroual Souani</NavLink></li>
-                <li><NavLink to="/labocharf">Laboratoire Zeroual Charf</NavLink></li>
-                <li><NavLink to="/specialite">Spécialités Biologiques</NavLink></li>
+                <li><NavLink to="/about">{t('header.nav_presentation')}</NavLink></li>
+                <li><NavLink to="/labokawacim">{t('header.nav_kawassim')}</NavLink></li>
+                <li><NavLink to="/labosouani">{t('header.nav_souani')}</NavLink></li>
+                <li><NavLink to="/labocharf">{t('header.nav_charf')}</NavLink></li>
+                <li><NavLink to="/specialite">{t('header.nav_specialties')}</NavLink></li>
               </ul>
             </li>
             <li className="has-submenu">
               <NavLink to="/pro" className={({ isActive }) => (isActive ? 'active' : '')}>
-                ESPACE PROS
+                {t('header.nav_pros')}
               </NavLink>
               <ul className="submenu">
-                <li><NavLink to="/catalogue">Catalogues</NavLink></li>
-                <li><NavLink to="/recommandationpreanalytique">Récommandations préanalytiques</NavLink></li>
-                <li><NavLink to="/centraleachat">Centrale d'achats</NavLink></li>
-                <li><NavLink to="/propage">Ressources documentaires</NavLink></li>
-                <li><NavLink to="/prelevement">Prélevements</NavLink></li>
+                <li><NavLink to="/catalogue">{t('header.nav_catalogues')}</NavLink></li>
+                <li><NavLink to="/recommandationpreanalytique">{t('header.nav_recommendations')}</NavLink></li>
+                <li><NavLink to="/centraleachat">{t('header.nav_central_purchase')}</NavLink></li>
+                <li><NavLink to="/propage">{t('header.nav_resources')}</NavLink></li>
+                <li><NavLink to="/prelevement">{t('header.nav_sampling')}</NavLink></li>
               </ul>
             </li>
             <li className="has-submenu">
               <NavLink to="/patient" className={({ isActive }) => (isActive ? 'active' : '')}>
-                ESPACE PATIENT
+                {t('header.nav_patient')}
               </NavLink>
               <ul className="submenu">
-                <li><NavLink to="/rdv">Prendre RDV (Prélèvement)</NavLink></li>
-                <li><NavLink to="/prepavisite">Préparer analyses</NavLink></li>
-                <li><NavLink to="/resultat">Résultats</NavLink></li>
-                <li><NavLink to="/faq">FAQ</NavLink></li>
-                <li><NavLink to="/blog">Actualités biologiques</NavLink></li>
+                <li><NavLink to="/rdv">{t('header.nav_appointment')}</NavLink></li>
+                <li><NavLink to="/prepavisite">{t('header.nav_prepare')}</NavLink></li>
+                <li><NavLink to="/resultat">{t('header.nav_results')}</NavLink></li>
+                <li><NavLink to="/faq">{t('header.nav_faq')}</NavLink></li>
+                <li><NavLink to="/blog">{t('header.nav_news')}</NavLink></li>
               </ul>
             </li>
             <li>
               <NavLink to="/feedbacksection" className={({ isActive }) => (isActive ? 'active' : '')}>
-                RÉCLAMATIONS & SUGGESTIONS
+                {t('header.nav_complaints')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>
-                CONTACT
+                {t('header.nav_contact')}
               </NavLink>
             </li>
           </ul>
 
           <div className="nav-extras">
+            <LanguageSwitcher />
             <div className="social-icons">
               {socialLinks.map(({ href, icon, alt }, index) => (
                 <a
