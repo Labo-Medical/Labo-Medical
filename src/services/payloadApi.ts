@@ -1,7 +1,8 @@
 // services/payloadApi.ts
 
 // 🌐 Configuration
-const BASE_URL = import.meta.env.VITE_API_URL || 'leslaboratoireszeroual.ma/api';
+// Prefer VITE_API_BASE_URL from .env. Fallback uses https with explicit /api.
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL as string | undefined) || 'https://leslaboratoireszeroual.ma/api';
 
 // 🔧 Utilitaire générique pour les appels fetch
 async function fetcher<T>(endpoint: string): Promise<T | null> {
@@ -247,7 +248,7 @@ export type LabConfig = {
 };
 
 export async function fetchLabs(): Promise<LabConfig[]> {
-  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/labs`);
+  const res = await fetch(`${BASE_URL}/labs`);
   if (!res.ok) {
     throw new Error("Impossible de charger les labos depuis PayloadCMS");
   }

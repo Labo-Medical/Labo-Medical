@@ -38,40 +38,7 @@ const specialites: ServiceData[] = [
   { title: 'Biologie moléculaire', description: 'Analyses moléculaires.', iconSrc: '/icons/molecule.png' },
 ];
 
-// === Composant spécialité ===
-// === Composant spécialité ===
-function SpecialiteIcon({ title, iconSrc }: Pick<ServiceData, 'title' | 'iconSrc'>) {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        cursor: 'pointer',
-        transition: 'transform 0.3s ease',
-      }}
-      onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; }}
-      onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-    >
-      <div
-        style={{
-          backgroundColor: '#f0f0f0',
-          borderRadius: '50%',
-          width: '60px',
-          height: '60px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginBottom: '0.4rem',
-          boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-        }}
-      >
-        <img src={iconSrc} alt={title} style={{ width: '36px', height: '36px' }} />
-      </div>
-      <span style={{ textAlign: 'center', fontSize: '0.85rem', fontWeight: 500 }}>{title}</span>
-    </div>
-  );
-}
+// (Composant SpecialiteIcon supprimé car non utilisé)
 
 // === Section spécialités avec GRID responsive ===
 function SpecialitesSection() {

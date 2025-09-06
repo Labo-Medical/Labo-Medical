@@ -16,7 +16,8 @@
 
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
   },
   "include": ["src", "declarations.d.ts"],
   "exclude": ["node_modules"]

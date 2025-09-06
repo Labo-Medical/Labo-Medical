@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { fetchPayloadFooter, type FooterPayload } from '../services/payloadApi';
 import LanguageSwitcher from './LanguageSwitcher';
 

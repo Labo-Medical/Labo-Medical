@@ -37,7 +37,7 @@ export default function Header() {
   const [headerConfig, setHeaderConfig] = useState<HeaderPayload | null>(null);
   
   // Translation hook for multi-language support
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // Fetch header data from API when component mounts
   useEffect(() => {
@@ -82,7 +82,7 @@ export default function Header() {
           <ul>
             <li className="has-submenu">
               <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
-                {t('header.nav_labs')} | DEBUG: {i18n.language}
+                {t('header.nav_labs')}
               </NavLink>
               <ul className="submenu">
                 <li><NavLink to="/about">{t('header.nav_presentation')}</NavLink></li>

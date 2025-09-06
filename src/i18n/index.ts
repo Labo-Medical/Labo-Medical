@@ -217,17 +217,37 @@ const resources = {
   }
 };
 
+// Determine initial language: saved -> browser -> default 'fr'
+const supported = ['fr', 'es', 'en', 'ar'] as const;
+type Supported = typeof supported[number];
+
+function detectInitialLang(): Supported {
+  try {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('app:lang');
+      if (saved && (supported as readonly string[]).includes(saved)) return saved as Supported;
+      const nav = navigator.language || (navigator as any).userLanguage || '';
+      const base = (nav || '').split('-')[0];
+      if ((supported as readonly string[]).includes(base)) return base as Supported;
+    }
+  } catch {}
+  return 'fr';
+}
+
 // Initialize i18n with configuration
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'es', // Spanish is the default language
-    fallbackLng: 'es', // Spanish is used when translation is missing
+    lng: detectInitialLang(), // Default to French; use saved/browser if available
+    fallbackLng: 'fr',
+    supportedLngs: supported as unknown as string[],
+    nonExplicitSupportedLngs: true,
+    load: 'languageOnly',
     interpolation: {
-      escapeValue: false, // React already handles XSS protection
+      escapeValue: false,
     },
-    debug: true, // Enable debug mode for development (set to false in production)
+    debug: false,
   });
 
 export default i18n;

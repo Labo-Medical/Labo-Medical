@@ -6,9 +6,10 @@ const FloatingLanguageSwitcher: React.FC = () => {
 
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
+    try { localStorage.setItem('app:lang', language); } catch {}
   };
 
-  const currentLanguage = i18n.language;
+  const currentLanguage = (i18n.language || '').split('-')[0];
 
   const languages = [
     { code: 'es', name: 'Español', flag: '🇪🇸' },
@@ -49,7 +50,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    background: 'rgba(255, 255, 255, 0.95)',
+    background: 'rgba(0, 0, 0, 0.95)',
     borderRadius: '12px',
     padding: '8px',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',

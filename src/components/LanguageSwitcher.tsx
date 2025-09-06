@@ -15,9 +15,10 @@ const LanguageSwitcher: React.FC = () => {
   // Function to change the application language
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
+    try { localStorage.setItem('app:lang', language); } catch {}
   };
 
-  const currentLanguage = i18n.language;
+  const currentLanguage = (i18n.language || '').split('-')[0];
 
   // Supported languages with their display names and flag emojis
   const languages = [
