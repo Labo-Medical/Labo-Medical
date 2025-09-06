@@ -1,0 +1,159 @@
+{
+  "header": {
+    "nav_labs": "NUESTROS LABORATORIOS ASOCIADOS",
+    "nav_presentation": "Presentación",
+    "nav_kawassim": "Laboratorio Zeroual Kawassim",
+    "nav_souani": "Laboratorio Zeroual Souani",
+    "nav_charf": "Laboratorio Zeroual Charf",
+    "nav_specialties": "Especialidades Biológicas",
+    "nav_pros": "ÁREA PROFESIONAL",
+    "nav_catalogues": "Catálogos",
+    "nav_recommendations": "Recomendaciones preanalíticas",
+    "nav_central_purchase": "Central de compras",
+    "nav_resources": "Recursos documentales",
+    "nav_sampling": "Muestreo",
+    "nav_patient": "ÁREA DEL PACIENTE",
+    "nav_appointment": "Cita previa (Muestreo)",
+    "nav_prepare": "Preparar análisis",
+    "nav_results": "Resultados",
+    "nav_faq": "FAQ",
+    "nav_news": "Noticias biológicas",
+    "nav_complaints": "QUEJAS Y SUGERENCIAS",
+    "nav_contact": "CONTACTO"
+  },
+  "values": {
+    "title": "Los Laboratorios Zeroual le brindan un servicio de calidad y proximidad.",
+    "quality_title": "Calidad e Investigación Biomédica",
+    "quality_text": "Tecnologías avanzadas y mejora continua.",
+    "services_title": "Servicios y Proximidad",
+    "services_text": "Acogida personalizada y red territorial eficiente.",
+    "competence_title": "Competencia y Redes",
+    "competence_text": "Fuerte espíritu de equipo y experiencia rigurosa.",
+    "impartiality_title": "Imparcialidad y Confidencialidad",
+    "impartiality_text": "Ética, confianza y relaciones humanas sólidas."
+  },
+  "documents": {
+    "title": "Recursos documentales",
+    "description": "Encuentre aquí todos los documentos esenciales para sus actividades profesionales.\n\nSe actualizan regularmente.",
+    "good_practices": "Guía de buenas prácticas (PDF)"
+  },
+  "pro_menu": {
+    "documents": "Documentos",
+    "recommendations": "Recomendaciones preanalíticas",
+    "central_purchase": "Central de compras",
+    "catalogues": "Catálogos",
+    "sampling": "Muestreo"
+  },
+  "footer": {
+    "engagement": "Nuestros laboratorios asociados se comprometen con la calidad, la proximidad y la confidencialidad de sus análisis médicos.",
+    "quick_access": "Acceso rápido",
+    "partner_labs": "Nuestros laboratorios asociados",
+    "legal": "Aviso legal",
+    "privacy": "Política de confidencialidad",
+    "services": "Nuestros servicios",
+    "all_rights": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "name": "Nombre",
+    "name_placeholder": "Su nombre",
+    "email": "Correo electrónico",
+    "email_placeholder": "Su correo electrónico",
+    "lab": "Laboratorio",
+    "choose_lab": "Elija un laboratorio",
+    "message": "Mensaje",
+    "message_placeholder": "Su mensaje",
+    "send": "Enviar",
+    "sent": "Mensaje enviado"
+  },
+  "home": {
+    "hero": {
+      "title": "Bienvenido a<br />LOS LABORATORIOS ZEROUAL",
+      "description": "Su red de laboratorios médicos.",
+      "cta": "Descubrir nuestros servicios",
+      "video_fallback": "Su navegador no admite el vídeo HTML5."
+    },
+    "annonces": { "title": "Anuncios", "view": "Ver anuncio" },
+    "slider": {
+      "policies": { "title": "NUESTRAS POLÍTICAS", "text": "Consulte nuestras políticas: Privacidad, Calidad y RR.HH." },
+      "visit": { "title": "PREPARE SU VISITA", "text": "Consejos útiles para sus exámenes médicos." },
+      "results": { "title": "ACCEDA A SUS RESULTADOS", "text": "Consulte sus resultados en línea, de forma segura." },
+      "faq": { "title": "FAQ", "text": "Respuestas a las preguntas frecuentes." }
+    },
+    "gallery": { "title": "GALERÍA", "more": "Ver más" },
+    "blog": { "title": "Noticias de biología médica", "read": "Leer el artículo" },
+    "specialties": {
+      "title": "Nuestros ámbitos de especialización",
+      "items": {
+        "s1": { "title": "Tomas de muestra", "desc": "Simplifique sus tomas de muestra." },
+        "s2": { "title": "Bioquímica", "desc": "Análisis de sustancias químicas." },
+        "s3": { "title": "Hematología", "desc": "Estudio de células sanguíneas." },
+        "s4": { "title": "Microbiología", "desc": "Identificación de agentes patógenos." },
+        "s5": { "title": "Inmunología", "desc": "Pruebas del sistema inmunitario." },
+        "s6": { "title": "Hormonología", "desc": "Exploración del sistema endocrino." },
+        "s7": { "title": "Alergología", "desc": "Diagnóstico de alergias." },
+        "s8": { "title": "Hemostasia", "desc": "Análisis de la coagulación." },
+        "s9": { "title": "Glicohemoglobina", "desc": "Seguimiento de la HbA1c." },
+        "s10": { "title": "Serología", "desc": "Detección de anticuerpos." },
+        "s11": { "title": "Virología", "desc": "Diagnóstico viral." },
+        "s12": { "title": "Vitaminología", "desc": "Evaluación de carencias." },
+        "s13": { "title": "Parasitología", "desc": "Búsqueda de parásitos." },
+        "s14": { "title": "Micología", "desc": "Identificación de hongos." },
+        "s15": { "title": "Genética y Genómica", "desc": "Análisis genéticos." },
+        "s16": { "title": "Biología molecular", "desc": "Análisis moleculares." }
+      }
+    },
+    "automates": {
+      "title": "Nuestros dispositivos médicos de diagnóstico",
+      "items": {
+        "auto1": { "title": "Automat. de inmunoensayo", "desc": "Análisis inmunológico, serológico, hormonológico y alergológico." },
+        "auto2": { "title": "Analizador de hematología", "desc": "Hemograma y detección de anomalías sanguíneas." },
+        "auto3": { "title": "Analizador bioquímico", "desc": "Química clínica para análisis in vitro." },
+        "auto4": { "title": "Analizador hematológico", "desc": "Imp. y citometría para analizar células sanguíneas." },
+        "auto5": { "title": "Analizador inmunológico (ECL)", "desc": "Electroquimioluminiscencia para detectar analitos." },
+        "auto6": { "title": "Espectrofotómetro", "desc": "Medición de absorbancia para concentraciones." },
+        "auto7": { "title": "Analizador de química clínica", "desc": "Bioquímica, inmunología, hematología, etc." },
+        "auto8": { "title": "Analizador de hemostasia", "desc": "Estudio de la coagulación sanguínea." },
+        "auto9": { "title": "Analizador de HbA1c", "desc": "Medición de HbA1c por HPLC para el seguimiento de la diabetes." },
+        "auto10": { "title": "Analizador hematológico automatizado", "desc": "Análisis completos del hemograma." },
+        "auto11": { "title": "Analizador clínico compacto", "desc": "Pruebas bioquímicas compactas y automatizadas." },
+        "auto12": { "title": "Sistema de electroforesis automatizado", "desc": "Sistema automatizado de electroforesis." },
+        "auto13": { "title": "Analizador de inmunoanálisis automático", "desc": "Analizador de inmunoanálisis automático." }
+      }
+    },
+    "common": { "more": "Ver más" }
+  },
+  "results": {
+    "menu": {
+      "results": "Sus resultados",
+      "appointment": "Pedir cita",
+      "prepare": "Preparar mi visita",
+      "faq": "FAQ"
+    },
+    "title": "Sus resultados de análisis",
+    "description": "Los Laboratorios Zeroual se comprometen con la fiabilidad y precisión de los resultados, respetando las buenas prácticas profesionales y garantizando un servicio rápido y fiable.",
+    "methods": {
+      "online": { "title": "En línea", "desc": "Solicite acceso a las secretarias durante su registro. Sus resultados estarán disponibles en un servidor seguro en Internet desde la ficha de su laboratorio.", "link": "servidor de resultados" },
+      "phone": { "title": "Por teléfono", "desc": "Comunicar su número de móvil durante su registro." },
+      "lab": { "title": "En el laboratorio", "desc": "Indique que prefiere recoger sus resultados en el laboratorio. Le entregaremos un justificante que garantice su confidencialidad." },
+      "doctor": { "title": "Su médico", "desc": "Sus resultados se transmitirán a su médico por el medio de su elección: correo, fax o conexión segura." }
+    },
+    "login_required": "Inicie sesión para acceder a sus resultados."
+  },
+  "common": {
+    "home": "Inicio",
+    "loading": "Cargando...",
+    "error": "Se ha producido un error",
+    "retry": "Reintentar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "menu": "Menú",
+    "language": "Idioma",
+    "contact_us": "Contáctenos"
+  }
+}
+

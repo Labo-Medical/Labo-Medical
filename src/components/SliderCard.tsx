@@ -1,34 +1,36 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
-const cards = [
-  {
-    icon: '/icons/politic.svg',
-    title: 'NOS POLITIQUES',
-    text: 'Consultez nos politiques : Confidentialité, Qualité et RH.',
-    link: '/politic',
-  },
-  {
-    icon: '/icons/lists.svg',
-    title: 'PRÉPAREZ VOTRE VISITE',
-    text: 'Conseils utiles pour vos examens médicaux.',
-    link: '/prepavisite',
-  },
-  {
-    icon: '/icons/computer.svg',
-    title: 'ACCÉDEZ À VOS RÉSULTATS',
-    text: 'Consultez vos résultats en ligne, en toute sécurité.',
-    link: '/resultat',
-  },
-  {
-    icon: '/icons/chat.svg',
-    title: 'FAQ',
-    text: 'Réponses aux questions fréquentes.',
-    link: '/faq',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function SliderCards() {
+  const { t } = useTranslation();
+  const cards = [
+    {
+      icon: '/icons/politic.svg',
+      title: t('home.slider.policies.title'),
+      text: t('home.slider.policies.text'),
+      link: '/politic',
+    },
+    {
+      icon: '/icons/lists.svg',
+      title: t('home.slider.visit.title'),
+      text: t('home.slider.visit.text'),
+      link: '/prepavisite',
+    },
+    {
+      icon: '/icons/computer.svg',
+      title: t('home.slider.results.title'),
+      text: t('home.slider.results.text'),
+      link: '/resultat',
+    },
+    {
+      icon: '/icons/chat.svg',
+      title: t('home.slider.faq.title'),
+      text: t('home.slider.faq.text'),
+      link: '/faq',
+    },
+  ];
+  
   return (
     <section style={{ padding: '2rem 1rem', background: 'transparent' }}>
       <motion.div

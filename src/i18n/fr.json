@@ -64,6 +64,102 @@
     "catalogues": "Catalogues",
     "sampling": "Prélèvements"
   },
+  "footer": {
+    "engagement": "Nos Laboratoires partenaires s’engagent pour la qualité, la proximité et la confidentialité de vos analyses médicales.",
+    "quick_access": "Accès rapide",
+    "partner_labs": "Nos laboratoires partenaires",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "services": "Nos services",
+    "all_rights": "Tous droits réservés."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "name": "Nom",
+    "name_placeholder": "Votre nom",
+    "email": "Email",
+    "email_placeholder": "Votre email",
+    "lab": "Laboratoire",
+    "choose_lab": "Choisissez un laboratoire",
+    "message": "Message",
+    "message_placeholder": "Votre message",
+    "send": "Envoyer",
+    "sent": "Message envoyé !"
+  },
+  "home": {
+    "hero": {
+      "title": "Bienvenue chez<br />LES LABORATOIRES ZEROUAL",
+      "description": "Votre réseau de laboratoires médicaux.",
+      "cta": "Découvrir nos services",
+      "video_fallback": "Votre navigateur ne supporte pas la vidéo HTML5."
+    },
+    "annonces": { "title": "Annonces", "view": "Voir l’annonce" },
+    "slider": {
+      "policies": { "title": "NOS POLITIQUES", "text": "Consultez nos politiques : Confidentialité, Qualité et RH." },
+      "visit": { "title": "PRÉPAREZ VOTRE VISITE", "text": "Conseils utiles pour vos examens médicaux." },
+      "results": { "title": "ACCÉDEZ À VOS RÉSULTATS", "text": "Consultez vos résultats en ligne, en toute sécurité." },
+      "faq": { "title": "FAQ", "text": "Réponses aux questions fréquentes." }
+    },
+    "gallery": { "title": "GALERIE", "more": "Voir plus" },
+    "blog": { "title": "Les actualités de la biologie médicale", "read": "Lire l'article" },
+    "specialties": {
+      "title": "Nos domaines d’expertise",
+      "items": {
+        "s1": { "title": "Prélèvements", "desc": "Simplifiez vos prélèvements." },
+        "s2": { "title": "Biochimie", "desc": "Analyse des substances chimiques." },
+        "s3": { "title": "Hématologie", "desc": "Étude des cellules sanguines." },
+        "s4": { "title": "Microbiologie", "desc": "Identification des agents pathogènes." },
+        "s5": { "title": "Immunologie", "desc": "Tests sur la réponse immunitaire." },
+        "s6": { "title": "Hormonologie", "desc": "Exploration du système endocrinien." },
+        "s7": { "title": "Allergologie", "desc": "Diagnostic des allergies." },
+        "s8": { "title": "Hémostase", "desc": "Analyses de coagulation." },
+        "s9": { "title": "Glycohémoglobine", "desc": "Suivi du diabète HbA1c." },
+        "s10": { "title": "Sérologie", "desc": "Détection d’anticorps." },
+        "s11": { "title": "Virologie", "desc": "Diagnostic viral." },
+        "s12": { "title": "Vitaminologie", "desc": "Évaluation des carences." },
+        "s13": { "title": "Parasitologie", "desc": "Recherche de parasites." },
+        "s14": { "title": "Mycologie", "desc": "Identification des champignons." },
+        "s15": { "title": "Génétique & Génomique", "desc": "Analyses génétiques." },
+        "s16": { "title": "Biologie moléculaire", "desc": "Analyses moléculaires." }
+      }
+    },
+    "automates": {
+      "title": "Nos dispositifs médicaux de diagnostic",
+      "items": {
+        "auto1": { "title": "Automate d'immunoessais", "desc": "Analyse immunologique, sérologique, hormonologique et allergologique." },
+        "auto2": { "title": "Analyseur d'hématologie", "desc": "NFS et détection d’anomalies sanguines." },
+        "auto3": { "title": "Analyseur biochimique", "desc": "Chimie clinique pour analyses in vitro." },
+        "auto4": { "title": "Analyseur hématologique", "desc": "Impédance et cytométrie." },
+        "auto5": { "title": "Analyseur immunologique (ECL)", "desc": "Électrochimiluminescence pour détection d’analytes." },
+        "auto6": { "title": "Spectrophotomètre", "desc": "Mesure de l’absorbance." },
+        "auto7": { "title": "Analyseur de chimie clinique", "desc": "Biochimie, immunologie, hématologie, etc." },
+        "auto8": { "title": "Analyseur d'hémostase", "desc": "Étude de la coagulation." },
+        "auto9": { "title": "Analyseur de glycohémoglobine", "desc": "Mesure HbA1c (HPLC)." },
+        "auto10": { "title": "Analyseur hématologique automatisé", "desc": "Analyses complètes de la NFS." },
+        "auto11": { "title": "Analyseur clinique compact", "desc": "Tests biochimiques compacts et automatisés." },
+        "auto12": { "title": "Système d'électrophorèse automatisé", "desc": "Système d'électrophorèse automatisé." },
+        "auto13": { "title": "Analyseur d'immunoanalyse automatique", "desc": "Analyseur d'immunoanalyse automatique." }
+      }
+    },
+    "common": { "more": "Voir plus" }
+  },
+  "results": {
+    "menu": {
+      "results": "Vos résultats",
+      "appointment": "Prendre rendez-vous",
+      "prepare": "Préparer ma visite",
+      "faq": "FAQ"
+    },
+    "title": "Vos résultats d’analyses",
+    "description": "Les laboratoires Zeroual s’engagent à garantir la fiabilité et la justesse des résultats, dans le respect des bonnes pratiques professionnelles, et à assurer un service rapide et fiable.",
+    "methods": {
+      "online": { "title": "En ligne", "desc": "Demandez l’accès aux secrétaires lors de votre enregistrement. Vos résultats seront disponibles sur un serveur internet sécurisé, accessible depuis la fiche de votre laboratoire.", "link": "serveur de résultats" },
+      "phone": { "title": "Par téléphone", "desc": "Communiquez votre numéro de portable aux secrétaires lors de votre enregistrement." },
+      "lab": { "title": "Au laboratoire", "desc": "Indiquez que vous préférez récupérer vos résultats au laboratoire. Un coupon vous sera remis pour garantir votre confidentialité." },
+      "doctor": { "title": "Votre médecin", "desc": "Vos résultats seront transmis à votre médecin par le moyen de son choix : courrier, fax, connexion sécurisée…" }
+    },
+    "login_required": "Veuillez vous connecter pour accéder à vos résultats."
+  },
   "results_menu": {
     "results": "Vos résultats",
     "appointment": "Prendre rendez-vous",
@@ -71,6 +167,7 @@
     "faq": "FAQ"
   },
   "common": {
+    "home": "Accueil",
     "loading": "Chargement...",
     "error": "Une erreur s'est produite",
     "retry": "Réessayer",

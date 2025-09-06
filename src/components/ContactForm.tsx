@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export interface ContactFormProps {
   form: {
@@ -22,26 +23,27 @@ const ContactForm: React.FC<ContactFormProps> = ({
   handleSubmit,
   handleFilter
 }) => {
+  const { t } = useTranslation();
   return (
     <form onSubmit={handleSubmit} style={styles.form}>
-      <h2 style={styles.title}>Contactez-nous</h2>
+      <h2 style={styles.title}>{t('contact.title')}</h2>
 
       <div style={styles.row}>
         <label htmlFor="name" style={styles.label}>
-          Nom
+          {t('contact.name')}
           <input
             id="name"
             name="name"
             value={form.name}
             onChange={handleChange}
             required
-            placeholder="Votre nom"
+            placeholder={t('contact.name_placeholder')}
             style={styles.input}
           />
         </label>
 
         <label htmlFor="email" style={styles.label}>
-          Email
+          {t('contact.email')}
           <input
             type="email"
             id="email"
@@ -49,14 +51,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
             value={form.email}
             onChange={handleChange}
             required
-            placeholder="Votre email"
+            placeholder={t('contact.email_placeholder')}
             style={styles.input}
           />
         </label>
       </div>
 
       <label htmlFor="laboratoire" style={styles.label}>
-        Laboratoire
+        {t('contact.lab')}
         <select
           id="laboratoire"
           name="laboratoire"
@@ -65,7 +67,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           required
           style={styles.select}
         >
-          <option value="">-- Choisissez un laboratoire --</option>
+          <option value="">-- {t('contact.choose_lab')} --</option>
           <option value="Kawacim">Kawacim</option>
           <option value="Souani">Souani</option>
           <option value="Charf">Charf</option>
@@ -73,7 +75,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
       </label>
 
       <label htmlFor="message" style={styles.label}>
-        Message
+        {t('contact.message')}
         <textarea
           id="message"
           name="message"
@@ -81,16 +83,16 @@ const ContactForm: React.FC<ContactFormProps> = ({
           onChange={handleChange}
           rows={5}
           required
-          placeholder="Votre message"
+          placeholder={t('contact.message_placeholder')}
           style={styles.textarea}
         />
       </label>
 
       <button type="submit" style={styles.button}>
-        Envoyer
+        {t('contact.send')}
       </button>
 
-      {sent && <p style={styles.success}>✅ Message envoyé !</p>}
+      {sent && <p style={styles.success}>✅ {t('contact.sent')}</p>}
     </form>
   );
 };

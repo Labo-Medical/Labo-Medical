@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadFooter, type FooterPayload } from '../services/payloadApi';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Footer() {
+  const { t } = useTranslation();
   const fallback = {
     logo: '/logo.png',
     engagementText: 'Nos Laboratoires partenaires s’engagent pour la qualité, la proximité et la confidentialité de vos analyses médicales.',
@@ -27,7 +29,7 @@ export default function Footer() {
   }, []);
 
   const logoSrc = footerData?.logo?.url || fallback.logo;
-  const engagementText = footerData?.engagementText || fallback.engagementText;
+  const engagementText = footerData?.engagementText || t('footer.engagement');
   const socialLinks = footerData?.socialLinks?.length
     ? footerData.socialLinks.map(s => ({
         href: s.url,
@@ -41,17 +43,17 @@ export default function Footer() {
     : fallback.labLocations;
 
   const quickLinks = [
-    { label: 'Accueil', href: '/' },
-    { label: 'Nos services', href: '/specialite' },
-    { label: 'Prendre rendez-vous', href: '/rdv' },
-    { label: 'Accès résultats', href: '/resultat' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Contact', href: '/contact' },
+    { label: t('common.home'), href: '/' },
+    { label: t('footer.services'), href: '/specialite' },
+    { label: t('header.nav_appointment'), href: '/rdv' },
+    { label: t('header.nav_results'), href: '/resultat' },
+    { label: t('header.nav_faq'), href: '/faq' },
+    { label: t('header.nav_contact'), href: '/contact' },
   ];
 
   const legalLinks = [
-    { label: 'Mentions légales', href: '/mentions-legales' },
-    { label: 'Politique de confidentialité', href: '/politique-confidentialite' },
+    { label: t('footer.legal'), href: '/mentions-legales' },
+    { label: t('footer.privacy'), href: '/politique-confidentialite' },
   ];
 
   return (
@@ -79,7 +81,7 @@ export default function Footer() {
         </div>
 
         <div style={styles.footerCol}>
-          <h4 style={styles.footerTitle}>Accès rapide</h4>
+          <h4 style={styles.footerTitle}>{t('footer.quick_access')}</h4>
           <ul style={styles.footerList}>
             {quickLinks.map((link, idx) => (
               <li key={idx}>
@@ -92,7 +94,7 @@ export default function Footer() {
         </div>
 
         <div style={styles.footerCol}>
-          <h4 style={styles.footerTitle}>Nos laboratoires partenaires</h4>
+          <h4 style={styles.footerTitle}>{t('footer.partner_labs')}</h4>
           <ul style={styles.footerList}>
             {labLocations.map((lab, idx) => (
               <li key={idx}>
@@ -114,7 +116,7 @@ export default function Footer() {
             </li>
           ))}
         </ul>
-        <p style={{ color: '#555' }}>&copy; 2025 Laboratoires Zeroual. Tous droits réservés.</p>
+        <p style={{ color: '#555' }}>&copy; {new Date().getFullYear()} Laboratoires Zeroual. {t('footer.all_rights')}</p>
       </div>
     </footer>
   );

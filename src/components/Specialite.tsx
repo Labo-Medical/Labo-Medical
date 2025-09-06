@@ -1,51 +1,58 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadAutomates, type ServiceData } from '../services/payloadApi2';
 
-// === Données fallback automates ===
-const fallbackAutomates: ServiceData[] = [
-  { title: "Automate d'immunoessais", description: "Analyse immunologique, sérologique, hormonologique et allergologique.", iconSrc: '/automates/a2.png' },
-  { title: "Analyseur d'hématologie", description: "Numération Formule Sanguine (NFS) et détection d’anomalies sanguines.", iconSrc: '/automates/a3.png' },
-  { title: 'Analyseur biochimique', description: "Chimie clinique pour analyses in vitro.", iconSrc: '/automates/a4.png' },
-  { title: 'Analyseur Hématologique', description: "Utilise l’impédance et la cytométrie pour analyser les cellules sanguines.", iconSrc: '/automates/a5.png' },
-  { title: 'Analyseur immunologique ', description: "Électrochimiluminescence pour détection d'analytes dans divers fluides.", iconSrc: '/automates/a6.png' },
-  { title: 'Spectrophotomètre', description: "Mesure de l’absorbance pour analyser la concentration d’une substance.", iconSrc: '/automates/a7.png' },
-  { title: 'Analyseur de chimie clinique', description: "Biochimie, immunologie, hématologie, hormonologie, serologie, vitaminologie.", iconSrc: '/automates/a8.png' },
-  { title: "Analyseur d'hémostase", description: "Étude de la coagulation sanguine.", iconSrc: '/automates/a9.png' },
-  { title: 'Analyseur de glycohémoglobine', description: "Mesure HbA1c via HPLC pour suivi du diabète.", iconSrc: '/automates/a10.png' },
-  { title: 'Analyseur hématologique automatisé', description: "Analyses complètes de la formule sanguine.", iconSrc: '/automates/4.png' },
-  { title: 'Analyseur de chimie clinique compact et automatisé', description: "Tests biochimiques.", iconSrc: '/automates/7.png' },
-  { title: "Système d'électrophorèse automatisé", description: "Système d'électrophorèse automatisé.", iconSrc: '/automates/9.png' },
-  { title: " Analyseur d'immunoanalyse automatique", description: "Analyseur d'immunoanalyse automatique.", iconSrc: '/automates/12.png' },
-];
+// Build i18n-backed fallback data for automates
+function buildFallbackAutomates(t: (key: string) => string): ServiceData[] {
+  return [
+    { title: t('home.automates.items.auto1.title'), description: t('home.automates.items.auto1.desc'), iconSrc: '/automates/a2.png' },
+    { title: t('home.automates.items.auto2.title'), description: t('home.automates.items.auto2.desc'), iconSrc: '/automates/a3.png' },
+    { title: t('home.automates.items.auto3.title'), description: t('home.automates.items.auto3.desc'), iconSrc: '/automates/a4.png' },
+    { title: t('home.automates.items.auto4.title'), description: t('home.automates.items.auto4.desc'), iconSrc: '/automates/a5.png' },
+    { title: t('home.automates.items.auto5.title'), description: t('home.automates.items.auto5.desc'), iconSrc: '/automates/a6.png' },
+    { title: t('home.automates.items.auto6.title'), description: t('home.automates.items.auto6.desc'), iconSrc: '/automates/a7.png' },
+    { title: t('home.automates.items.auto7.title'), description: t('home.automates.items.auto7.desc'), iconSrc: '/automates/a8.png' },
+    { title: t('home.automates.items.auto8.title'), description: t('home.automates.items.auto8.desc'), iconSrc: '/automates/a9.png' },
+    { title: t('home.automates.items.auto9.title'), description: t('home.automates.items.auto9.desc'), iconSrc: '/automates/a10.png' },
+    { title: t('home.automates.items.auto10.title'), description: t('home.automates.items.auto10.desc'), iconSrc: '/automates/4.png' },
+    { title: t('home.automates.items.auto11.title'), description: t('home.automates.items.auto11.desc'), iconSrc: '/automates/7.png' },
+    { title: t('home.automates.items.auto12.title'), description: t('home.automates.items.auto12.desc'), iconSrc: '/automates/9.png' },
+    { title: t('home.automates.items.auto13.title'), description: t('home.automates.items.auto13.desc'), iconSrc: '/automates/12.png' },
+  ];
+}
 
 // === Spécialités médicales ===
-const specialites: ServiceData[] = [
-  { title: 'Prélèvements', description: 'Simplifiez vos prélèvements.', iconSrc: '/icons/prelevement.png' },
-  { title: 'Biochimie', description: 'Analyse des substances chimiques.', iconSrc: '/icons/biochemy.svg' },
-  { title: 'Hématologie', description: 'Étude des cellules sanguines.', iconSrc: '/icons/hematology.svg' },
-  { title: 'Microbiologie', description: 'Identification des agents pathogènes.', iconSrc: '/icons/microbiology.svg' },
-  { title: 'Immunologie', description: 'Tests sur la réponse immunitaire.', iconSrc: '/icons/immunology.svg' },
-  { title: 'Hormonologie', description: 'Exploration du système endocrinien.', iconSrc: '/icons/hormonology.svg' },
-  { title: 'Allergologie', description: 'Diagnostic des allergies.', iconSrc: '/icons/allergy.png' },
-  { title: 'Hémostase', description: 'Analyses de coagulation.', iconSrc: '/icons/hemostase.svg' },
-  { title: 'Glycohémoglobine', description: 'Suivi du diabète HbA1c.', iconSrc: '/icons/glyco.png' },
-  { title: 'Sérologie', description: 'Détection d’anticorps.', iconSrc: '/icons/serology.svg' },
-  { title: 'Virologie', description: 'Diagnostic viral.', iconSrc: '/icons/bacteria.svg' },
-  { title: 'Vitaminologie', description: 'Évaluation des carences.', iconSrc: '/icons/vitamine.svg' },
-  { title: 'Parasitologie', description: 'Recherche de parasites.', iconSrc: '/icons/parasite.svg' },
-  { title: 'Mycologie', description: 'Identification des champignons.', iconSrc: '/icons/molecule.svg' },
-  { title: 'Génétique & Génomique', description: 'Analyses genétiques.', iconSrc: '/icons/gene.png' },
-  { title: 'Biologie moléculaire', description: 'Analyses moléculaires.', iconSrc: '/icons/molecule.png' },
-];
+function buildSpecialites(t: (key: string) => string): ServiceData[] {
+  return [
+    { title: t('home.specialties.items.s1.title'), description: t('home.specialties.items.s1.desc'), iconSrc: '/icons/prelevement.png' },
+    { title: t('home.specialties.items.s2.title'), description: t('home.specialties.items.s2.desc'), iconSrc: '/icons/biochemy.svg' },
+    { title: t('home.specialties.items.s3.title'), description: t('home.specialties.items.s3.desc'), iconSrc: '/icons/hematology.svg' },
+    { title: t('home.specialties.items.s4.title'), description: t('home.specialties.items.s4.desc'), iconSrc: '/icons/microbiology.svg' },
+    { title: t('home.specialties.items.s5.title'), description: t('home.specialties.items.s5.desc'), iconSrc: '/icons/immunology.svg' },
+    { title: t('home.specialties.items.s6.title'), description: t('home.specialties.items.s6.desc'), iconSrc: '/icons/hormonology.svg' },
+    { title: t('home.specialties.items.s7.title'), description: t('home.specialties.items.s7.desc'), iconSrc: '/icons/allergy.png' },
+    { title: t('home.specialties.items.s8.title'), description: t('home.specialties.items.s8.desc'), iconSrc: '/icons/hemostase.svg' },
+    { title: t('home.specialties.items.s9.title'), description: t('home.specialties.items.s9.desc'), iconSrc: '/icons/glyco.png' },
+    { title: t('home.specialties.items.s10.title'), description: t('home.specialties.items.s10.desc'), iconSrc: '/icons/serology.svg' },
+    { title: t('home.specialties.items.s11.title'), description: t('home.specialties.items.s11.desc'), iconSrc: '/icons/bacteria.svg' },
+    { title: t('home.specialties.items.s12.title'), description: t('home.specialties.items.s12.desc'), iconSrc: '/icons/vitamine.svg' },
+    { title: t('home.specialties.items.s13.title'), description: t('home.specialties.items.s13.desc'), iconSrc: '/icons/parasite.svg' },
+    { title: t('home.specialties.items.s14.title'), description: t('home.specialties.items.s14.desc'), iconSrc: '/icons/molecule.svg' },
+    { title: t('home.specialties.items.s15.title'), description: t('home.specialties.items.s15.desc'), iconSrc: '/icons/gene.png' },
+    { title: t('home.specialties.items.s16.title'), description: t('home.specialties.items.s16.desc'), iconSrc: '/icons/molecule.png' },
+  ];
+}
 
 // (Composant SpecialiteIcon supprimé car non utilisé)
 
 // === Section spécialités avec GRID responsive ===
 function SpecialitesSection() {
+  const { t } = useTranslation();
+  const items = useMemo(() => buildSpecialites(t), [t]);
   return (
     <section style={{ marginTop: '2rem', backgroundColor: '#f4f6fa', padding: '2rem 1rem', borderRadius: '12px' }}>
       <h2 style={{ fontSize: '1.6rem', textAlign: 'center', marginBottom: '1.5rem', color: '#800020' }}>
-        Nos domaines d’expertise
+        {t('home.specialties.title')}
       </h2>
       <div
         style={{
@@ -55,7 +62,7 @@ function SpecialitesSection() {
           justifyContent: 'center',
         }}
       >
-        {specialites.map((s, i) => (
+        {items.map((s, i) => (
           <div
             key={i}
             style={{
@@ -117,20 +124,21 @@ function AutomateCard({ title, description, iconSrc }: ServiceData) {
 
 // === Composant principal ===
 export default function Services() {
+  const { t } = useTranslation();
   const [visibleCount, setVisibleCount] = useState(4);
-  const [automates, setAutomates] = useState<ServiceData[]>(fallbackAutomates);
+  const [automates, setAutomates] = useState<ServiceData[]>(() => buildFallbackAutomates(t));
 
   useEffect(() => {
     fetchPayloadAutomates()
       .then((data) => { if (data.length > 0) setAutomates(data); })
-      .catch(() => setAutomates(fallbackAutomates));
-  }, []);
+      .catch(() => setAutomates(buildFallbackAutomates(t)));
+  }, [t]);
 
   return (
     <section style={{ padding: '2rem', backgroundColor: '#f8f9fb', borderRadius: '12px' }}>
      
       <h2 style={{ color: '#800020', marginBottom: '2rem', fontWeight: 700, textAlign: 'center' }}>
-        Nos dispositifs médicaux de diagnostic
+        {t('home.automates.title')}
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '24px' }}>
         {automates.slice(0, visibleCount).map((item, index) => (
@@ -143,7 +151,7 @@ export default function Services() {
             onClick={() => setVisibleCount((prev) => Math.min(prev + 4, automates.length))}
             style={{ backgroundColor: '#800020', color: '#fff', border: 'none', padding: '12px 28px', fontSize: '1rem', borderRadius: 8, cursor: 'pointer', fontWeight: 600 }}
           >
-            Voir plus
+            {t('home.common.more')}
           </button>
         </div>
       )}

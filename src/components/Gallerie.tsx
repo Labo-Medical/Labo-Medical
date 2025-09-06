@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import PhotoAlbum from "react-photo-album";
 import "react-photo-album/masonry.css";
 import Lightbox from "yet-another-react-lightbox";
@@ -199,6 +200,7 @@ const fallbackPhotos: GalleryImagePayload[] = [
 ];
 
 export default function Galerie() {
+  const { t } = useTranslation();
   const [photos, setPhotos] = useState<GalleryImagePayload[]>(fallbackPhotos);
   const [visibleCount, setVisibleCount] = useState(4);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -219,7 +221,7 @@ export default function Galerie() {
   return (
     <section className="gallerie-section">
       <div style={{ maxWidth: 1200, margin: "auto", padding: 16 }}>
-        <h2 style={{ color: "#831616" }}>GALLERIE</h2>
+        <h2 style={{ color: "#831616" }}>{t('home.gallery.title')}</h2>
 
         <PhotoAlbum
           layout="masonry"
@@ -243,7 +245,7 @@ export default function Galerie() {
                 color: "#fff",
               }}
             >
-              Voir plus
+              {t('home.gallery.more')}
             </button>
           </div>
         )}

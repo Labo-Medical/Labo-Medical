@@ -1,5 +1,6 @@
 import './Blog.css';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadBlogs } from '../services/payloadApi';
 
 type ArticlePay = {
@@ -42,6 +43,7 @@ const fallbackArticles: ArticlePay[] = [
 ];
 
 export default function Blog() {
+  const { t } = useTranslation();
   const [articles, setArticles] = useState<ArticlePay[] | null>(null);
 
   useEffect(() => {
@@ -57,7 +59,7 @@ export default function Blog() {
 
   return (
     <section className="blog-section">
-      <h2>Les actualités de la biologie médicale</h2>
+      <h2>{t('home.blog.title')}</h2>
       <div className="blog-main-layout">
         <div className="blog-main-article">
           <a href={`/${displayArticles[0].slug}`}>
@@ -69,7 +71,7 @@ export default function Blog() {
           <div className="blog-main-content">
             <h3>{displayArticles[0].title}</h3>
             <p>{displayArticles[0].excerpt}</p>
-            <a href={`/${displayArticles[0].slug}`} className="blog-link">Lire l'article</a>
+            <a href={`/${displayArticles[0].slug}`} className="blog-link">{t('home.blog.read')}</a>
           </div>
         </div>
 
@@ -82,7 +84,7 @@ export default function Blog() {
               <div className="blog-side-content">
                 <h4>{article.title}</h4>
                 <p>{article.excerpt}</p>
-                <a href={`/${article.slug}`} className="blog-link">Lire l'article</a>
+                <a href={`/${article.slug}`} className="blog-link">{t('home.blog.read')}</a>
               </div>
             </div>
           ))}

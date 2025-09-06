@@ -75,7 +75,8 @@ export default function App() {
         <div className="App">
           <Header />
           <ContactTab />
-          <FloatingLanguageSwitcher />
+          {/* The language switcher is currently disabled */}
+          {/* <FloatingLanguageSwitcher /> */}
           <main>
             <Routes>
               <Route path="/" element={<Home />} />

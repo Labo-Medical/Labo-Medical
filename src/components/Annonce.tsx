@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fetchPayloadAnnonces } from '../services/payloadApi';
 
@@ -49,6 +50,7 @@ const DEFAULT_ANNONCES: Annonce[] = [
 ];
 
 export default function Annonce() {
+  const { t } = useTranslation();
   const [annonces, setAnnonces] = useState<Annonce[]>(DEFAULT_ANNONCES);
   const [index, setIndex] = useState(0);
   const [selectedAnnonce, setSelectedAnnonce] = useState<Annonce | null>(null);
@@ -89,7 +91,7 @@ export default function Annonce() {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <h2 style={styles.title}>📢 Annonces</h2>
+        <h2 style={styles.title}>📢 {t('home.annonces.title')}</h2>
         <div>
           <button onClick={prev} style={styles.nav}>‹</button>
           <button onClick={next} style={styles.nav}>›</button>
@@ -160,7 +162,7 @@ export default function Annonce() {
                     }}
                     onClick={() => setSelectedAnnonce(a)}
                   >
-                    Voir l’annonce
+                    {t('home.annonces.view')}
                   </button>
                 </div>
               </motion.div>

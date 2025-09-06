@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadValeurs } from '../services/payloadApi';
 
 type ValeurItem = {
@@ -31,6 +32,7 @@ const fallbackValeurs: ValeurItem[] = [
 ];
 
 export default function Valeur() {
+  const { t } = useTranslation();
   const [valeurs, setValeurs] = useState<ValeurItem[]>(fallbackValeurs);
 
   useEffect(() => {
@@ -60,7 +62,7 @@ export default function Valeur() {
             fontWeight: 700,
           }}
         >
-          Les Laboratoires Zeroual vous apportent un service de qualité et de proximité.
+          {t('values.title')}
         </h2>
 
         <div

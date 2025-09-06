@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadHero, type HeroPayload } from '../services/payloadApi';
 
 export default function Hero() {
   const [hero, setHero] = useState<HeroPayload | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetchPayloadHero().then((data) => {
@@ -11,12 +13,10 @@ export default function Hero() {
   }, []);
 
   const videoUrl = hero?.hero_video || '/fond/video1.mp4';
-  const titleHtml =
-    hero?.hero_title || 'Bienvenue chez<br />LES LABORATOIRES ZEROUAL';
-  const description =
-    hero?.hero_description || 'Votre réseau de laboratoires médicaux.';
+  const titleHtml = hero?.hero_title || t('home.hero.title');
+  const description = hero?.hero_description || t('home.hero.description');
   const buttonUrl = hero?.hero_button_url || '/specialite';
-  const buttonLabel = hero?.hero_button_label || 'Découvrir nos services';
+  const buttonLabel = hero?.hero_button_label || t('home.hero.cta');
 
   return (
     <>
@@ -118,7 +118,7 @@ export default function Hero() {
       <section className="hero">
         <video autoPlay muted loop playsInline>
           <source src={videoUrl} type="video/mp4" />
-          Votre navigateur ne supporte pas la vidéo HTML5.
+          {t('home.hero.video_fallback')}
         </video>
 
         <div className="hero-content">

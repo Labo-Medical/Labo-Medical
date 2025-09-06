@@ -64,6 +64,102 @@
     "catalogues": "Catalogues",
     "sampling": "Sampling"
   },
+  "footer": {
+    "engagement": "Our partner laboratories are committed to quality, proximity, and confidentiality of your medical analyses.",
+    "quick_access": "Quick access",
+    "partner_labs": "Our partner laboratories",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "services": "Our services",
+    "all_rights": "All rights reserved."
+  },
+  "contact": {
+    "title": "Contact us",
+    "name": "Name",
+    "name_placeholder": "Your name",
+    "email": "Email",
+    "email_placeholder": "Your email",
+    "lab": "Laboratory",
+    "choose_lab": "Choose a laboratory",
+    "message": "Message",
+    "message_placeholder": "Your message",
+    "send": "Send",
+    "sent": "Message sent!"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to<br />ZEROUAL LABORATORIES",
+      "description": "Your network of medical laboratories.",
+      "cta": "Discover our services",
+      "video_fallback": "Your browser does not support HTML5 video."
+    },
+    "annonces": { "title": "Announcements", "view": "View announcement" },
+    "slider": {
+      "policies": { "title": "OUR POLICIES", "text": "See our policies: Privacy, Quality and HR." },
+      "visit": { "title": "PREPARE YOUR VISIT", "text": "Helpful tips for your medical exams." },
+      "results": { "title": "ACCESS YOUR RESULTS", "text": "Securely view your results online." },
+      "faq": { "title": "FAQ", "text": "Answers to frequently asked questions." }
+    },
+    "gallery": { "title": "GALLERY", "more": "Show more" },
+    "blog": { "title": "News in medical biology", "read": "Read the article" },
+    "specialties": {
+      "title": "Our areas of expertise",
+      "items": {
+        "s1": { "title": "Sampling", "desc": "Simplify your sampling." },
+        "s2": { "title": "Biochemistry", "desc": "Analysis of chemical substances." },
+        "s3": { "title": "Hematology", "desc": "Study of blood cells." },
+        "s4": { "title": "Microbiology", "desc": "Identification of pathogens." },
+        "s5": { "title": "Immunology", "desc": "Immune response testing." },
+        "s6": { "title": "Hormonology", "desc": "Endocrine system exploration." },
+        "s7": { "title": "Allergology", "desc": "Allergy diagnostics." },
+        "s8": { "title": "Hemostasis", "desc": "Coagulation analyses." },
+        "s9": { "title": "Glycohemoglobin", "desc": "HbA1c monitoring." },
+        "s10": { "title": "Serology", "desc": "Antibody detection." },
+        "s11": { "title": "Virology", "desc": "Viral diagnostics." },
+        "s12": { "title": "Vitaminology", "desc": "Deficiency assessment." },
+        "s13": { "title": "Parasitology", "desc": "Parasite detection." },
+        "s14": { "title": "Mycology", "desc": "Fungi identification." },
+        "s15": { "title": "Genetics & Genomics", "desc": "Genetic analyses." },
+        "s16": { "title": "Molecular biology", "desc": "Molecular analyses." }
+      }
+    },
+    "automates": {
+      "title": "Our medical diagnostic devices",
+      "items": {
+        "auto1": { "title": "Immunoassay analyzer", "desc": "Immunology, serology, hormonology and allergology." },
+        "auto2": { "title": "Hematology analyzer", "desc": "CBC and detection of blood anomalies." },
+        "auto3": { "title": "Biochemical analyzer", "desc": "Clinical chemistry for in vitro analysis." },
+        "auto4": { "title": "Hematological analyzer", "desc": "Impedance and cytometry." },
+        "auto5": { "title": "Immunological analyzer (ECL)", "desc": "Electrochemiluminescence for analyte detection." },
+        "auto6": { "title": "Spectrophotometer", "desc": "Absorbance measurement for concentrations." },
+        "auto7": { "title": "Clinical chemistry analyzer", "desc": "Biochemistry, immunology, hematology, etc." },
+        "auto8": { "title": "Hemostasis analyzer", "desc": "Study of blood coagulation." },
+        "auto9": { "title": "Glycohemoglobin analyzer", "desc": "HbA1c measurement by HPLC." },
+        "auto10": { "title": "Automated hematology analyzer", "desc": "Complete blood count analyses." },
+        "auto11": { "title": "Compact clinical analyzer", "desc": "Compact automated biochemistry tests." },
+        "auto12": { "title": "Automated electrophoresis system", "desc": "Automated electrophoresis system." },
+        "auto13": { "title": "Automatic immunoassay analyzer", "desc": "Automatic immunoassay analyzer." }
+      }
+    },
+    "common": { "more": "Show more" }
+  },
+  "results": {
+    "menu": {
+      "results": "Your results",
+      "appointment": "Book appointment",
+      "prepare": "Prepare my visit",
+      "faq": "FAQ"
+    },
+    "title": "Your test results",
+    "description": "Zeroual Laboratories are committed to the reliability and accuracy of results, following best practices and ensuring fast, dependable service.",
+    "methods": {
+      "online": { "title": "Online", "desc": "Request access at registration. Your results will be available on a secure internet server from your laboratory page.", "link": "results server" },
+      "phone": { "title": "By phone", "desc": "Provide your mobile number at registration." },
+      "lab": { "title": "At the laboratory", "desc": "Let us know you prefer to collect your results onsite. We will provide a slip to ensure confidentiality." },
+      "doctor": { "title": "Your doctor", "desc": "Your results will be sent to your doctor by their preferred method: mail, fax or secure connection." }
+    },
+    "login_required": "Please log in to access your results."
+  },
   "results_menu": {
     "results": "Your results",
     "appointment": "Make appointment",
@@ -71,6 +167,7 @@
     "faq": "FAQ"
   },
   "common": {
+    "home": "Home",
     "loading": "Loading...",
     "error": "An error occurred",
     "retry": "Retry",

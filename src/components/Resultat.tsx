@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchResultatsServerLink } from '../services/payloadApi2';
 import { motion } from 'framer-motion';
 import './Resultats.css';
@@ -7,16 +8,17 @@ import PrepaVisite from './PrepaVisite';
 import Faq from './Faq';
 import { isAuthenticated } from '../auth';
 
-const menuItems = [
-  { key: 'resultats', label: 'Vos résultats' },
-  { key: 'rdv',        label: 'Prendre rendez-vous' },
-  { key: 'prep',       label: 'Préparer ma visite' },
-  { key: 'faq',        label: 'FAQ' },
+const menuKeys = [
+  { key: 'resultats', labelKey: 'results.menu.results' },
+  { key: 'rdv',        labelKey: 'results.menu.appointment' },
+  { key: 'prep',       labelKey: 'results.menu.prepare' },
+  { key: 'faq',        labelKey: 'results.menu.faq' },
 ];
 
 const DEFAULT_LINK = "../pageresultats/";
 
 export default function VosResultatsPage() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('resultats');
   const [serveurLink, setServeurLink] = useState<string>(DEFAULT_LINK);
 
@@ -32,22 +34,22 @@ export default function VosResultatsPage() {
 
   const methods = [
     {
-      title: 'En ligne',
-      desc: 'Demandez l’accès aux secrétaires lors de votre enregistrement. Vos résultats seront disponibles sur un serveur internet sécurisé, accessible depuis la fiche de votre laboratoire.',
-      linkText: 'serveur de résultats',
+      title: t('results.methods.online.title'),
+      desc: t('results.methods.online.desc'),
+      linkText: t('results.methods.online.link'),
       linkUrl: serveurLink,
     },
     {
-      title: 'Par téléphone',
-      desc: 'Communiquez votre numéro de portable aux secrétaires lors de votre enregistrement.',
+      title: t('results.methods.phone.title'),
+      desc: t('results.methods.phone.desc'),
     },
     {
-      title: 'Au laboratoire',
-      desc: 'Signalez aux secrétaires que vous préférez venir chercher vos résultats sur place. Nous vous remettrons un coupon garantissant votre confidentialité.',
+      title: t('results.methods.lab.title'),
+      desc: t('results.methods.lab.desc'),
     },
     {
-      title: 'Votre médecin',
-      desc: 'Vos résultats seront transmis à votre médecin selon le mode de transmission de son choix : poste, fax, connexion sécurisée…',
+      title: t('results.methods.doctor.title'),
+      desc: t('results.methods.doctor.desc'),
     },
   ];
 
@@ -55,7 +57,7 @@ export default function VosResultatsPage() {
     <div className="vrp-container">
       <aside className="vrp-sidebar">
         <ul role="tablist">
-          {menuItems.map(item => (
+          {menuKeys.map(item => (
             <li
               key={item.key}
               className={item.key === activeTab ? 'active' : ''}
@@ -67,7 +69,7 @@ export default function VosResultatsPage() {
                 tabIndex={item.key === activeTab ? 0 : -1}
                 onClick={() => setActiveTab(item.key)}
               >
-                {item.label}
+                {t(item.labelKey)}
               </button>
             </li>
           ))}
@@ -82,12 +84,8 @@ export default function VosResultatsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1>Vos résultats d’analyses</h1>
-              <p>
-                Les laboratoires Zeroual s’engagent à poursuivre leurs efforts de fiabilité
-                et justesse des résultats rendus dans le respect des bonnes pratiques
-                professionnelles et à assurer un service rapide et fiable selon les délais annoncés.
-              </p>
+              <h1>{t('results.title')}</h1>
+              <p>{t('results.description')}</p>
             </motion.header>
 
             <motion.section
@@ -120,7 +118,7 @@ export default function VosResultatsPage() {
                       ) : (
                         <button
                           onClick={() => {
-                            alert("Veuillez vous connecter pour accéder à vos résultats.");
+                            alert(t('results.login_required'));
                             window.location.href = "/login";
                           }}
                           className="protected-link"
