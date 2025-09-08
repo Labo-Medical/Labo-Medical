@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./Faq.css";
 
 interface FAQItem {
@@ -7,191 +8,117 @@ interface FAQItem {
 }
 
 // Questions/réponses par défaut - Avant le prélèvement
-const faqBeforeFallback: FAQItem[] = [
+const buildFaqBeforeFallback = (t: any): FAQItem[] => [
   {
-    question: "J’ai plusieurs ordonnances de médecins différents, que dois-je faire ?",
+    question: t('faq.before.question1'),
     answer: (
-      <p>
-        Il n’y a aucun problème, nous ferons un dossier pour chacune des ordonnances. 
-        Chaque médecin aura les résultats des analyses qu’il a demandées. Nous ne les facturerons qu’une seule fois. 
-        C’est totalement transparent pour vous, tout se passe au secrétariat. Nous ne vous prélèverons qu’une seule fois.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer1') }} />
     ),
   },
   {
-    question: "Puis-je être accompagné et allongé ?",
+    question: t('faq.before.question2'),
     answer: (
-      <p>
-        Vous pouvez tout-à-fait être accompagné dans la mesure où l’accompagnant ne dérange pas la bonne réalisation du prélèvement. Si besoin, tous les laboratoires du groupe Zeroual ont des salles de prélèvement avec des fauteuils que l’on peut incliner ou des lits pour vous allonger. Pensez simplement à nous avertir ou à nous le demander.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer2') }} />
     ),
   },
   {
-    question: "Vais-je attendre longtemps ?",
+    question: t('faq.before.question3'),
     answer: (
-      <p>
-        Toutes nos équipes font le maximum pour minimiser l’attente. Cependant, un temps minimum est nécessaire pour assurer le maximum de sécurité, pour vous comme pour nous (vérifications des informations d’identité, prise en charge, acte de prise de sang sans précipitation, étiquetage des tubes…). De plus, le nombre de préleveurs est en accord avec les prévisions d’affluence au laboratoire.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer3') }} />
     ),
   },
   {
-    question: "Puis-je venir à n’importe quelle heure ?",
+    question: t('faq.before.question4'),
     answer: (
-      <p>
-        Nous vous accueillons 7j/7 & 24h/24. Le détail est à vérifier auprès de chaque laboratoire dans la rubrique <a href="/contact">Trouver un laboratoire</a>. Les prises de sang peuvent être réalisées pour la plupart sans contrainte horaire, en respectant les conditions de jeûne éventuelles. Les prélèvements en vue de certaines analyses doivent cependant respecter des contraintes d’horaires : certains paramètres varient au cours de la journée. Renseignez-vous auprès de votre laboratoire ou sur la rubrique <a href="#">Préparez vos analyses</a>.<br /><br />
-        Afin d’assurer une fiabilité optimale des résultats en évitant le stockage de votre prélèvement sur site, certains laboratoires ne réaliseront plus les prises de sang à partir d’une certaine heure. En effet, votre prélèvement ne pourra plus être envoyé à temps au plateau technique. Renseignez-vous sur les heures limites de prélèvements.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer4') }} />
     ),
   },
   {
-    question: "La prise de sang et mes médicaments",
+    question: t('faq.before.question5'),
     answer: (
-      <p>
-        Avant votre prise de sang, vous pouvez prendre les médicaments qui vous ont été préconisés. Toutefois, il existe une exception : le prélèvement sanguin doit être réalisé AVANT la prise habituelle du traitement si votre ordonnance précise qu’il s’agit d’un dosage du médicament lui-même.<br /><br />
-        Il sera important de signaler à votre laboratoire tout traitement en cours, en particulier ceux contenant de la BIOTINE ou vitamine B8 (QIZENDAY®, compléments alimentaires, etc.).<br /><br />
-        Si vous avez un doute, demandez conseil à votre médecin et/ou biologiste.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer5') }} />
     ),
   },
   {
-    question: "Je suis mineur",
+    question: t('faq.before.question6'),
     answer: (
-      <p>
-        Un prélèvement sur un mineur ne peut être effectué sans la présence d’un parent responsable, ou dans le cadre du planning familial, mais toujours accompagné d’un adulte. Les résultats seront transmis au médecin prescripteur ou au responsable légal.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer6') }} />
     ),
   },
   {
-    question: "J’aimerais faire une analyse, mais je n’ai pas d’ordonnance",
+    question: t('faq.before.question7'),
     answer: (
-      <p>
-        Pour une analyse dite « courante » (bêta-HCG, glycémie, cholestérol, HIV…) : il n’y a aucun problème, nous ferons l’analyse que vous nous demandez. Elle vous sera tarifiée selon sa cotation à la Nomenclature de Biologie Médicale.<br /><br />
-        Pour une demande plus particulière, à partir du moment où l’analyse est réalisable au Maroc dans un laboratoire agréé, nous vous proposerons un devis. L’analyse sera tarifiée selon sa cotation à la Nomenclature de Biologie Médicale ou selon sa cotation par le Laboratoire exécutant, majorée des éventuels frais de transmission. Dans tous les cas, rien ne sera réalisé sans votre accord ni validation du tarif annoncé.<br /><br />
-        Pour une analyse réalisée dans un laboratoire étranger ou hors parcours de soins, prenez contact avec votre Biologiste.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer7') }} />
     ),
   },
   {
-    question: "Dois-je prendre rendez-vous au laboratoire ?",
+    question: t('faq.before.question8'),
     answer: (
-      <p>
-        Les laboratoires Zeroual vous accueillent toute la journée sans RDV. Certains laboratoires peuvent proposer des prises de rendez-vous afin de faciliter votre passage.<br /><br />
-        Pour les prises de sang chez les enfants de moins de 5 ans et les prélèvements bactériologiques, quel que soit l’âge, une prise de rendez-vous est parfois nécessaire.<br /><br />
-        Pour voir les horaires ou prendre rendez-vous, sélectionnez votre laboratoire dans la liste de <a href="/rdv">Trouver un laboratoire</a>.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer8') }} />
     ),
   },
   {
-    question: "Quels examens nécessitent d’être à jeun ?",
+    question: t('faq.before.question9'),
     answer: (
-      <div>
-        <p>
-          L’état de jeûne est nécessaire à l’obtention d’un spécimen sanguin conforme à la réalisation de certaines analyses.<br />
-          <strong>Il est défini par une absence de prise de nourriture depuis 8 à 12 heures.</strong>
-        </p>
-        <ul>
-          <li>CALCITONINE (Thyrocalcitonine) : Arrêt du traitement aux IPP antiulcéreux, Inhibiteurs de la Pompe à Protons depuis 15 jours (omeprazole, ésoméprazole, lanzoprazol, pentoprazol, rabéprazol).</li>
-          <li>CROSSLAPS – CTX</li>
-          <li>CRYOGLOBULINE</li>
-          <li>GLYCEMIE A JEUN</li>
-          <li>HELIKIT : Pas de tabac depuis la veille au soir, arrêt du traitement aux IPP antiulcéreux (Inhibiteurs de la Pompe à Protons depuis 15 jours : omeprazole, ésoméprazole, lanzoprazol, pentoprazol, rabéprazol).</li>
-          <li>HOMOCYSTEINE</li>
-          <li>PARATHORMONE – PTH</li>
-          <li>PHOSPHORE</li>
-          <li>TESTOSTERONE</li>
-          <li>TRIGLYCERIDES – BILAN LIPIDIQUE</li>
-        </ul>
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer9') }} />
     ),
   },
   {
-    question: "Je suis une personne à handicap, comment puis-je être accueillie ?",
+    question: t('faq.before.question10'),
     answer: (
-      <p>
-        Tous nos laboratoires proposent une solution pour nos patients à handicap. Le registre public d’accessibilité du laboratoire peut vous être fourni sur demande. N’hésitez pas à contacter le laboratoire pour organiser votre prélèvement dans les meilleures conditions.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.before.answer10') }} />
     ),
   },
 ];
 
 // Questions/réponses par défaut - Après le prélèvement
-const faqAfterFallback: FAQItem[] = [
+const buildFaqAfterFallback = (t: any): FAQItem[] => [
   {
-    question: "Il m’est arrivé d’avoir un bleu après un prélèvement",
+    question: t('faq.after.question1'),
     answer: (
-      <p>
-        Si la veine ne se referme pas assez vite ou si le prélèvement a été difficile, un bleu peut apparaître. Nos préleveurs font tout pour éviter ce genre d’inconvénients. Le bleu vient de l’accumulation de sang entre la paroi de la veine et la peau. Il peut être impressionnant mais n’est jamais grave et disparaît spontanément.<br /><br />
-        Afin de minimiser l’apparition de ces hématomes, il est recommandé d’exercer une pression pendant plusieurs minutes après la prise de sang.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.after.answer1') }} />
     ),
   },
   {
-    question: "Quand et comment vais-je recevoir mes résultats ?",
+    question: t('faq.after.question2'),
     answer: (
-      <p>
-        Classiquement, vous recevrez vos résultats le jour même, par voie électronique, plus rapide et plus écologique, sous forme de mail crypté ou en accédant au serveur de résultat sécurisé de votre laboratoire. Certains examens plus spécialisés peuvent demander un délai supplémentaire.<br /><br />
-        Vous avez également la possibilité de venir chercher vos résultats au laboratoire. Dans ce cas, il faudra le signaler à la secrétaire d’accueil, qui vous remettra un coupon garantissant votre confidentialité. Le laboratoire peut aussi vous adresser les résultats par courrier postal avec un délai rallongé de 2 à 3 jours après validation du dossier. Des frais d’envois postaux de 2€ par résultat pourront vous être demandés.<br /><br />
-        Dans le cas de résultats préoccupants ou s’ils le jugent nécessaire, les biologistes du laboratoire peuvent être amenés à contacter votre médecin ou un médecin de garde ou vous-même directement par téléphone.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.after.answer2') }} />
     ),
   },
   {
-    question: "Quelqu’un au laboratoire peut-il m’interpréter les résultats ?",
+    question: t('faq.after.question3'),
     answer: (
-      <p>
-        Bien sûr, les biologistes des laboratoires Zeroual sont disponibles pour répondre à l’ensemble de vos questions et interpréter en toute confidentialité vos résultats. Demandez-le à l’accueil !
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.after.answer3') }} />
     ),
   },
   {
-    question: "Que se passe-t-il en cas d’anomalie importante sur un résultat ?",
+    question: t('faq.after.question4'),
     answer: (
-      <p>
-        Votre médecin prescripteur est systématiquement prévenu en cas d’anomalie importante sur votre résultat. Au cas où il ne serait pas joignable, le laboratoire vous contactera pour vous prévenir et vous donner les directives à suivre : reprendre un RDV avec votre médecin, contacter SOS médecin, aller directement aux urgences…
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.after.answer4') }} />
     ),
   },
   {
-    question: "Comment faire une demande d’accès à mon dossier médical ?",
+    question: t('faq.after.question5'),
     answer: (
-      <div>
-        <p>
-          Pour accéder à votre dossier médical, vous pouvez remplir les formulaires suivants et les transmettre par email ou par courrier à votre laboratoire :
-        </p>
-        <ul>
-          <li>Formulaire d’accès au dossier médical par le patient</li>
-          <li>Formulaire d’accès au dossier médical d’un patient décédé par les ayants droit</li>
-          <li>Formulaire d’opposition du patient à la communication de son dossier médical après son décès</li>
-        </ul>
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.after.answer5') }} />
     ),
   },
   {
-    question: "Comment signaler une non-conformité ou faire une réclamation ?",
+    question: t('faq.after.question6'),
     answer: (
-      <p>
-        Pour toute réclamation ou signalement d’une non-conformité, nous vous invitons à remplir le formulaire sur notre espace dédié :<br />
-        <a href="#">Déposez une réclamation &gt;…</a>
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.after.answer6') }} />
     ),
   },
   {
-    question: "J’ai reçu mon compte-rendu chiffré, pourquoi ?",
+    question: t('faq.after.question7'),
     answer: (
-      <p>
-        Le laboratoire vous a transmis votre compte-rendu d’examens sous la forme d’un fichier PDF chiffré joint au courrier électronique de notification. Pour vous protéger, ce chiffrement permet que ce document médical ne soit pas directement lisible ou indexé sur Internet.<br /><br />
-        Seul le destinataire du courrier électronique est en mesure d’associer le fichier reçu et la clef (improprement appelée mot-de-passe) nécessaire à son ouverture. La solution technique Adobe ne permet pas la suppression ou la modification de la clef de chiffrement. Le fichier reste donc protégé lors de son stockage sur votre ordinateur. En contrepartie, il n’est pas réutilisable ou diffusible à un tiers, sauf à lui transmettre en même temps votre clef de chiffrement personnelle.<br /><br />
-        Si vous souhaitez conserver dans votre dossier médical des documents non chiffrés, vous devez utiliser le serveur de résultats du laboratoire. Celui-ci vous permet l’accès à la totalité de votre dossier médical et vous donne la possibilité de télécharger des pièces non protégées.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.after.answer7') }} />
     ),
   },
   {
-    question: "Que faire si j’ai égaré la clé de chiffrement de mes comptes-rendus ?",
+    question: t('faq.after.question8'),
     answer: (
-      <p>
-        Le laboratoire vous a transmis votre compte-rendu d’examens sous la forme d’un fichier PDF chiffré joint au courrier électronique de notification.<br /><br />
-        Le PDF n’est pas lisible, sauf à connaître la clef de déchiffrement. Nous vous invitons à joindre le secrétariat du laboratoire qui pourra vous indiquer la marche à suivre pour retrouver la clef utilisée au moment de l’envoi de vos documents.
-      </p>
+      <div dangerouslySetInnerHTML={{ __html: t('faq.after.answer8') }} />
     ),
   },
 ];
@@ -209,11 +136,18 @@ async function fetchFAQFromStrapi(): Promise<
 }
 
 export default function FAQTwoColumns() {
-  const [faqBefore, setFaqBefore] = useState<FAQItem[]>(faqBeforeFallback);
-  const [faqAfter, setFaqAfter] = useState<FAQItem[]>(faqAfterFallback);
+  const { t } = useTranslation();
+  const [faqBefore, setFaqBefore] = useState<FAQItem[]>([]);
+  const [faqAfter, setFaqAfter] = useState<FAQItem[]>([]);
 
   const [openBefore, setOpenBefore] = useState<number | null>(null);
   const [openAfter, setOpenAfter] = useState<number | null>(null);
+
+  // Initialize fallback data
+  useEffect(() => {
+    setFaqBefore(buildFaqBeforeFallback(t));
+    setFaqAfter(buildFaqAfterFallback(t));
+  }, [t]);
 
   useEffect(() => {
     fetchFAQFromStrapi()
@@ -252,10 +186,10 @@ export default function FAQTwoColumns() {
 
   return (
     <div className="faq-container">
-      <h1 className="faq-title">Foire aux questions</h1>
+      <h1 className="faq-title">{t('faq.title')}</h1>
       <div className="faq-columns">
         <section className="faq-column" aria-labelledby="faq-before-title">
-          <h2 id="faq-before-title" className="faq-column-title">Avant le prélèvement</h2>
+          <h2 id="faq-before-title" className="faq-column-title">{t('faq.before_title')}</h2>
           {faqBefore.map((item, idx) => (
             <div key={idx} className="faq-item">
               <button
@@ -281,7 +215,7 @@ export default function FAQTwoColumns() {
         </section>
 
         <section className="faq-column" aria-labelledby="faq-after-title">
-          <h2 id="faq-after-title" className="faq-column-title">Après le prélèvement</h2>
+          <h2 id="faq-after-title" className="faq-column-title">{t('faq.after_title')}</h2>
           {faqAfter.map((item, idx) => (
             <div key={idx} className="faq-item">
               <button

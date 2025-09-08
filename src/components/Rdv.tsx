@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import emailjs from 'emailjs-com';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -14,6 +15,7 @@ interface FormData {
 }
 
 const RdvForm: React.FC = () => {
+  const { t } = useTranslation();
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
@@ -70,53 +72,53 @@ const RdvForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} style={styles.form}>
-      <h2 style={styles.title}>Prise de RDV à domicile</h2>
+      <h2 style={styles.title}>{t('components.rdv.title')}</h2>
 
       <label style={styles.label}>
-        Nom complet
+        {t('components.rdv.name')}
         <input name="name" value={form.name} onChange={handleChange} required style={styles.input} />
       </label>
 
       <label style={styles.label}>
-        Email
+        {t('components.rdv.email')}
         <input type="email" name="email" value={form.email} onChange={handleChange} required style={styles.input} />
       </label>
 
       <label style={styles.label}>
-        Téléphone
+        {t('components.rdv.phone')}
         <input name="phone" value={form.phone} onChange={handleChange} required style={styles.input} />
       </label>
 
       <label style={styles.label}>
-        Adresse
+        {t('components.rdv.address')}
         <input name="address" value={form.address} onChange={handleChange} required style={styles.input} />
       </label>
 
       <label style={styles.label}>
-        Date du prélèvement
+        {t('components.rdv.date')}
         <DatePicker
           selected={form.date}
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
-          placeholderText="Choisissez une date"
+          placeholderText={t('components.rdv.choose_date')}
           required
           className="custom-datepicker-input"
         />
       </label>
 
       <label style={styles.label}>
-        Heure souhaitée
+        {t('components.rdv.time')}
         <input type="time" name="time" value={form.time} onChange={handleChange} required style={styles.input} />
       </label>
 
       <label style={styles.label}>
-        Remarques
+        {t('components.rdv.notes')}
         <textarea name="notes" value={form.notes} onChange={handleChange} rows={4} style={styles.textarea} />
       </label>
 
-      <button type="submit" style={styles.button}>Envoyer la demande</button>
+      <button type="submit" style={styles.button}>{t('components.rdv.submit')}</button>
 
-      {sent && <p style={styles.success}>✅ Demande envoyée avec succès !</p>}
+      {sent && <p style={styles.success}>{t('components.rdv.success')}</p>}
     </form>
   );
 };

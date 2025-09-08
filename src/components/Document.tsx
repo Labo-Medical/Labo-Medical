@@ -3,21 +3,21 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { fetchPayloadDocuments, type DocumentPayload } from '../services/payloadApi';
 
-const DEFAULT_CONTENT: DocumentPayload = {
+const getDefaultContent = (): DocumentPayload => ({
   id: "document",
-  title: "documents.title",
-  description: "documents.description",
+  title: "Ressources documentaires",
+  description: "Retrouvez ici tous les documents indispensables à vos activités professionnelles.\n\nIls sont mis à jour régulièrement.",
   documents: [
     {
-      title: "documents.good_practices",
+      title: "Guide des bonnes pratiques (PDF)",
       url: "/docs/guides.pdf",
     },
   ],
-};
+});
 
 export default function Documents() {
-  const [content, setContent] = useState<DocumentPayload>(DEFAULT_CONTENT);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [content, setContent] = useState<DocumentPayload>(() => getDefaultContent());
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,14 +26,14 @@ export default function Documents() {
         if (data) setContent(data);
       })
       .catch(() => {
-        setContent(DEFAULT_CONTENT);
+        setContent(getDefaultContent());
       })
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [i18n.language, t]);
 
-  if (loading) return <p style={styles.placeholder}>Chargement...</p>;
+  if (loading) return <p style={styles.placeholder}>{t('common.loading')}</p>;
 
   return (
     <motion.section
@@ -43,8 +43,8 @@ export default function Documents() {
       transition={{ duration: 0.6 }}
       style={styles.section}
     >
-      <h1 style={styles.title}>{t(content.title)}</h1>
-      {t(content.description).split('\n\n').map((para, idx) => (
+      <h1 style={styles.title}>{content.title}</h1>
+      {content.description.split('\n\n').map((para, idx) => (
         <p key={idx} style={styles.paragraph}>{para}</p>
       ))}
 
@@ -59,7 +59,7 @@ export default function Documents() {
                 rel="noopener noreferrer"
                 style={styles.link}
               >
-                {t(doc.title)}
+                {doc.title}
               </a>
             </li>
           ))}

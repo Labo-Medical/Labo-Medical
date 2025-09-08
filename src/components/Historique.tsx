@@ -1,21 +1,40 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadHistorique, type HistoriquePayload } from '../services/payloadApi';
 
-const fallbackData: Required<HistoriquePayload> = {
-  title: "Une plus grande couverture de la population au niveau local.",
-  paragraphs: [
-    "Ce réseau de proximité a pour ambition de mettre en place une biologie médicale indépendante,",
-    "de qualité et d’innovation pour la santé et le bien vivre des patients.",
-  ],
-  history: [
-    { year: "2023", title: "Année de création", text: "Réseau LES LABORATOIRES ZEROUAL" },
-    { year: "2023", title: "1er laboratoire du réseau", text: "Premier laboratoire du réseau à Kawassim" },
-    { year: "2024", title: "Deuxième laboratoire du réseau", text: "Deuxième laboratoire du réseau à Souani." },
-    { year: "2025", title: "Troisième laboratoire du réseau", text: "Troisième laboratoire du réseau à Charf." },
-  ],
-};
-
 export default function Historique() {
+  const { t } = useTranslation();
+
+  const fallbackData: Required<HistoriquePayload> = {
+    title: t('components.historique.title'),
+    paragraphs: [
+      t('components.historique.paragraphs[0]'),
+      t('components.historique.paragraphs[1]'),
+    ],
+    history: [
+      { 
+        year: t('components.historique.history[0].year'), 
+        title: t('components.historique.history[0].title'), 
+        text: t('components.historique.history[0].text') 
+      },
+      { 
+        year: t('components.historique.history[1].year'), 
+        title: t('components.historique.history[1].title'), 
+        text: t('components.historique.history[1].text') 
+      },
+      { 
+        year: t('components.historique.history[2].year'), 
+        title: t('components.historique.history[2].title'), 
+        text: t('components.historique.history[2].text') 
+      },
+      { 
+        year: t('components.historique.history[3].year'), 
+        title: t('components.historique.history[3].title'), 
+        text: t('components.historique.history[3].text') 
+      },
+    ],
+  };
+
   const [data, setData] = useState<Required<HistoriquePayload>>(fallbackData);
 
   useEffect(() => {
@@ -31,8 +50,9 @@ export default function Historique() {
       })
       .catch(() => {
         console.warn('PayloadCMS indisponible, fallback utilisé.');
+        setData(fallbackData); // Ensure fallback data is set with translations
       });
-  }, []);
+  }, [t]); // Add t as dependency to re-run when language changes
 
   return (
     <section style={{

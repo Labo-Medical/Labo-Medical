@@ -108,8 +108,9 @@ export type CataloguePayload = {
   documents: { title: string; url: string }[];
 };
 
-export async function fetchPayloadCatalogue(): Promise<CataloguePayload | null> {
-  const data = await fetcher<{ docs: CataloguePayload[] }>('catalogue?limit=1');
+export async function fetchPayloadCatalogue(locale?: string): Promise<CataloguePayload | null> {
+  const query = locale ? `catalogue?limit=1&locale=${locale}` : 'catalogue?limit=1';
+  const data = await fetcher<{ docs: CataloguePayload[] }>(query);
   return data?.docs?.[0] || null;
 }
 

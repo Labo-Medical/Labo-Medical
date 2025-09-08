@@ -1,39 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadCatalogue, type CataloguePayload } from '../services/payloadApi';
 
-const DEFAULT_CONTENT: CataloguePayload = {
-  id: "catalogue",
-  title: "Catalogue",
-  description:
-    "Découvrez nos catalogues complets de produits et services adaptés à vos besoins professionnels.\n\nConsultez-les régulièrement pour rester à jour.",
-  documents: [
-    {
-      title: "Catalogue général 2025 (PDF)",
-      url: "/docs/catalogue.pdf",
-    },
-   
-  ],
-};
-
 export default function Catalogue() {
-  const [content, setContent] = useState<CataloguePayload>(DEFAULT_CONTENT);
+  const { t, i18n } = useTranslation();
+
+  const getDefaultContent = (): CataloguePayload => ({
+    id: "catalogue",
+    title: t('catalogue.title'),
+    description: t('catalogue.description'),
+    documents: [
+      {
+        title: t('catalogue.documents.general'),
+        url: "/docs/catalogue.pdf",
+      },
+     
+    ],
+  });
+
+  const [content, setContent] = useState<CataloguePayload>(getDefaultContent());
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchPayloadCatalogue()
+    fetchPayloadCatalogue(i18n.language)
       .then((data) => {
-        if (data) setContent(data);
+        if (data) {
+          setContent({ ...getDefaultContent(), documents: data.documents || [] });
+        } else {
+          setContent(getDefaultContent());
+        }
       })
       .catch(() => {
-        setContent(DEFAULT_CONTENT);
+        setContent(getDefaultContent());
       })
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [i18n.language]);
 
-  if (loading) return <p style={styles.placeholder}>Chargement...</p>;
+  if (loading) return <p style={styles.placeholder}>{t('common.loading')}</p>;
 
   return (
     <motion.section

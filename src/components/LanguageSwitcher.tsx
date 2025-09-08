@@ -10,7 +10,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const LanguageSwitcher: React.FC = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // Function to change the application language
   const changeLanguage = (language: string) => {
@@ -22,10 +22,10 @@ const LanguageSwitcher: React.FC = () => {
 
   // Supported languages with their display names and flag emojis
   const languages = [
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'ar', name: 'العربية', flag: '🇲🇦' },
+    { code: 'es', name: t('components.language_names.es'), flag: '🇪🇸' },
+    { code: 'fr', name: t('components.language_names.fr'), flag: '🇫🇷' },
+    { code: 'en', name: t('components.language_names.en'), flag: '🇺🇸' },
+    { code: 'ar', name: t('components.language_names.ar'), flag: '🇲🇦' },
   ];
 
   return (

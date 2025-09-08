@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadPrelevement, type PrelevementContent } from '../services/payloadApi2';
 
-const DEFAULT_CONTENT: PrelevementContent = {
+const getDefaultContent = (): PrelevementContent => ({
   id: "prelevement",
   title: "Prélèvements",
-  description:
-    "Simplifiez vos prélèvements grâce à nos solutions accessibles partout.\n\nContactez-nous pour plus d’informations.",
+  description: "Simplifiez vos prélèvements grâce à nos solutions accessibles partout.\n\nContactez-nous pour plus d'informations.",
   documentUrl: "/docs/Prelevement.pdf",
-};
+});
 
 export default function Prelevements() {
-  const [content, setContent] = useState<PrelevementContent>(DEFAULT_CONTENT);
+  const { t, i18n } = useTranslation();
+  const [content, setContent] = useState<PrelevementContent>(getDefaultContent());
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchPayloadPrelevement()
+    fetchPayloadPrelevement(i18n.language)
       .then((data) => {
-        if (data) setContent(data);
+        if (data) {
+          setContent({ ...getDefaultContent(), documentUrl: data.documentUrl || getDefaultContent().documentUrl });
+        } else {
+          setContent(getDefaultContent());
+        }
       })
       .catch(() => {
-        setContent(DEFAULT_CONTENT);
+        setContent(getDefaultContent());
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [i18n.language]);
 
   const openFullscreenPDF = (url: string) => {
     const win = window.open(url, '_blank', 'toolbar=no,scrollbars=yes,resizable=yes,fullscreen=yes');
@@ -32,7 +37,7 @@ export default function Prelevements() {
     }
   };
 
-  if (loading) return <p style={styles.placeholder}>Chargement...</p>;
+  if (loading) return <p style={styles.placeholder}>{t('common.loading')}</p>;
 
   return (
     <motion.section
@@ -53,7 +58,7 @@ export default function Prelevements() {
             onClick={() => content.documentUrl && openFullscreenPDF(content.documentUrl)}
             style={styles.documentLink}
           >
-            📄 Voir le document PDF
+            {t('sampling.view_pdf')}
           </button>
         </div>
       )}
@@ -83,7 +88,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   paragraph: {
     fontSize: '1.05rem',
     marginBottom: '1rem',
-    textAlign: 'justify',
+    textAlign: 'center',
   },
   placeholder: {
     textAlign: 'center',

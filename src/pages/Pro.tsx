@@ -6,6 +6,7 @@ import {
 } from "react-icons/md";
 import { useState, lazy, Suspense, type JSX } from "react";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from 'react-i18next';
 
 // ✅ Lazy loading du composant Propage
 const Propage = lazy(() => import("../components/Propage"));
@@ -103,32 +104,33 @@ const Card = (props: CardProps) => {
 
 
 export default function ProPage() {
+  const { t } = useTranslation();
   const features: FeatureCard[] = [
     {
       type: "feature",
-      title: "Récommandations pré-analytiques",
-      description: "Préparer vos examens de manière optimale.",
+      title: t('pages.pro.features.recommendations.title'),
+      description: t('pages.pro.features.recommendations.description'),
       icon: <MdAssignment size={26} color="#A9A9A9" />,
       link: "/propage",
     },
     {
       type: "feature",
-      title: "Prélèvements",
-      description: "Accès aux soins simplifié partout.",
+      title: t('pages.pro.features.sampling.title'),
+      description: t('pages.pro.features.sampling.description'),
       icon: <MdLocationOn size={26} color="#A9A9A9" />,
       link: "/propage",
     },
     {
       type: "feature",
-      title: "Centrales d'achats",
-      description: "Centrales d'achats pour les professionnels.",
+      title: t('pages.pro.features.central_purchase.title'),
+      description: t('pages.pro.features.central_purchase.description'),
       icon: <MdVisibility size={26} color="#A9A9A9" />,
       link: "/propage",
     },
     {
       type: "feature",
-      title: "Documentation",
-      description: "Des documents indispensables.",
+      title: t('pages.pro.features.documents.title'),
+      description: t('pages.pro.features.documents.description'),
       icon: <MdHelpOutline size={26} color="#A9A9A9" />,
       link: "/propage",
     },
@@ -141,12 +143,12 @@ export default function ProPage() {
   return (
     <>
       <Helmet>
-        <title>Espace Pros - Laboratoires Zeroual</title>
+        <title>{t('pages.pro.title')}</title>
         <meta
           name="description"
           content="Accédez aux outils, ressources et documentations dédiées aux professionnels de santé chez Laboratoires Zeroual."
         />
-        <meta property="og:title" content="Espace Pros - Laboratoires Zeroual" />
+        <meta property="og:title" content={t('pages.pro.title')} />
         <meta
           property="og:description"
           content="Médecins, infirmiers, sages-femmes — Retrouvez toutes les ressources pour faciliter vos démarches professionnelles."
@@ -163,7 +165,7 @@ export default function ProPage() {
       >
         <section style={{ textAlign: "center", marginBottom: "2rem" }}>
           <h1 style={{ fontSize: "2.2rem", color: "#6e0b14", fontWeight: 700 }}>
-            Bienvenue sur Espace Pros
+            {t('pages.patient.welcome')}
           </h1>
           <p
             style={{
@@ -181,8 +183,8 @@ export default function ProPage() {
         <section
           style={{
             display: "flex",
-            flexWrap: "nowrap",
-            overflowX: "auto",
+            flexWrap: "wrap",
+            justifyContent: "center",
             paddingBottom: "1rem",
           }}
         >
@@ -192,7 +194,7 @@ export default function ProPage() {
         </section>
 
         {/* 💡 Chargement différé du bloc Propage */}
-        <Suspense fallback={<div>Chargement des ressources professionnelles...</div>}>
+        <Suspense fallback={<div>{t('pages.pro.loading_resources')}</div>}>
           <Propage />
         </Suspense>
       </main>

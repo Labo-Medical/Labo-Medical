@@ -18,29 +18,29 @@ const menuItems = [
 
 export default function ProPage() {
   const [activeTab, setActiveTab] = useState(menuItems[0].key);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const renderContent = () => {
     switch (activeTab) {
       case 'documents':
-        return <Document />;
+        return <Document key={`documents-${i18n.language}`} />;
       case 'recommandations-preanalytique':
-        return <RecommandationsPreanalytique />;
+        return <RecommandationsPreanalytique key={`recommendations-${i18n.language}`} />;
       case 'centrale-achats':
-        return <CentraleAchat />;
+        return <CentraleAchat key={`centrale-${i18n.language}`} />;
       case 'catalogues':
-        return <Catalogue />;
+        return <Catalogue key={`catalogues-${i18n.language}`} />;
       case 'prelevements':
-        return <Prelevement />;
+        return <Prelevement key={`prelevement-${i18n.language}`} />;
       default:
-        return <div>Contenu non disponible</div>;
+        return <div>{t('components.propage.unavailable')}</div>;
     }
   };
 
   return (
     <>
       <Helmet>
-        <title>Espace Pros - Laboratoires Zeroual</title>
+        <title>{t('pages.pro.title')}</title>
         <meta
           name="description"
           content="Découvrez nos catalogues, recommandations pré-analytiques, centrale d'achats, documents et solutions de prélèvements pour professionnels de santé."

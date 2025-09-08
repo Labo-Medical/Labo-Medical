@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { login } from "../auth"; // ton auth.ts
 
 export default function Login() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -25,13 +27,13 @@ export default function Login() {
 
   return (
     <div style={{ maxWidth: "400px", margin: "50px auto", padding: "20px", border: "1px solid #ddd", borderRadius: "8px" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "20px", color: "#800000" }}>Connexion</h2>
+      <h2 style={{ textAlign: "center", marginBottom: "20px", color: "#800000" }}>{t('pages.login.title')}</h2>
 
       {error && <p style={{ color: "#333", textAlign: "center" }}>{error}</p>}
 
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: "15px" }}>
-          <label htmlFor="email" style={{ color: "#333" }}>Email</label>
+          <label htmlFor="email" style={{ color: "#333" }}>{t('pages.login.email')}</label>
           <input
             id="email"
             type="email"
@@ -43,7 +45,7 @@ export default function Login() {
         </div>
 
         <div style={{ marginBottom: "15px" }}>
-          <label htmlFor="password" style={{ color: "#333" }}>Mot de passe</label>
+          <label htmlFor="password" style={{ color: "#333" }}>{t('pages.login.password')}</label>
           <input
             id="password"
             type="password"

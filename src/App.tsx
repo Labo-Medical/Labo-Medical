@@ -21,7 +21,7 @@ import FeedbackSection from './pages/FeedbackSection';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ContactTab from './components/ContactTab';
-import FloatingLanguageSwitcher from './components/FloatingLanguageSwitcher';
+// import FloatingLanguageSwitcher from './components/FloatingLanguageSwitcher';
 import PrepaVisite from './components/PrepaVisite';
 import Faq from './components/Faq';
 import Blog from './components/Blog';

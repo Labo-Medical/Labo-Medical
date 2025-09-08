@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
 // 💡 Lazy loading du composant grille
 const PoliticGrid = lazy(() => import('../components/PoliticGrid'));
@@ -24,15 +25,17 @@ const styles = {
 };
 
 export default function PoliticPage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
-        <title>Politiques Institutionnelles - Les Laboratoires Zeroual</title>
+        <title>{t('pages.politic.title')}</title>
         <meta
           name="description"
           content="Découvrez les politiques institutionnelles des Laboratoires Zeroual : RH, Qualité et Confidentialité, accessibles et téléchargeables."
         />
-        <meta property="og:title" content="Politiques Institutionnelles - Les Laboratoires Zeroual" />
+        <meta property="og:title" content={t('pages.politic.title')} />
         <meta
           property="og:description"
           content="Nos engagements formalisés à travers des documents officiels pour garantir qualité, éthique et confidentialité."
@@ -41,12 +44,12 @@ export default function PoliticPage() {
       </Helmet>
 
       <main style={styles.page}>
-        <h1 style={styles.title}>Nos Politiques Institutionnelles</h1>
+        <h1 style={styles.title}>{t('pages.politic.heading')}</h1>
         <p style={styles.subtitle}>
           Retrouvez ici nos engagements formalisés à travers des documents accessibles et téléchargeables.
         </p>
 
-        <Suspense fallback={<div>Chargement des documents politiques...</div>}>
+        <Suspense fallback={<div>{t('pages.politic.loading_documents')}</div>}>
           <PoliticGrid />
         </Suspense>
       </main>

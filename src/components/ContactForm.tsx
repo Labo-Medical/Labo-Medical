@@ -68,9 +68,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
           style={styles.select}
         >
           <option value="">-- {t('contact.choose_lab')} --</option>
-          <option value="Kawacim">Kawacim</option>
-          <option value="Souani">Souani</option>
-          <option value="Charf">Charf</option>
+          <option value="Kawacim">{t('components.contact.labs.kawacim')}</option>
+          <option value="Souani">{t('components.contact.labs.souani')}</option>
+          <option value="Charf">{t('components.contact.labs.charf')}</option>
         </select>
       </label>
 

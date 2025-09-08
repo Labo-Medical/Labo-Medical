@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { fetchPayloadBlogs, type ArticlePayload } from "../services/payloadApi";
+import { useTranslation } from 'react-i18next';
 
 /**
  * Listing + lecture inline (même page)
@@ -8,18 +9,43 @@ import { fetchPayloadBlogs, type ArticlePayload } from "../services/payloadApi";
  *   → si votre collection Payload expose `content` ou `body`, il sera rendu ici sans rien changer à l'API.
  */
 
-const fallbackArticles: ArticlePayload[] = [
-  { id: "fallback1", title: "Pourquoi faire un bilan sanguin régulier ?", excerpt: "Pourquoi faire un bilan sanguin régulier", slug: "blogarticle", image: { url: "/blog/blog1.jpg" } },
-  { id: "fallback2", title: "Comprendre vos résultats d’analyses", excerpt: "Comprendre vos résultats d’analyses", slug: "blogarticle", image: { url: "/blog/blog2.jpg" } },
-  { id: "fallback3", title: "Préparer sa visite au laboratoire", excerpt: "Préparer sa visite au laboratoire", slug: "blogarticle", image: { url: "/blog/blog3.jpg" } },
-  { id: "fallback4", title: "Les nouveautés en biologie médicale", excerpt: "Les nouveautés en biologie médicale", slug: "blogarticle", image: { url: "/blog/blog4.jpg" } },
+const buildFallbackArticles = (): ArticlePayload[] => [
+  {
+    id: "fallback1",
+    title: "Pourquoi faire un bilan sanguin régulier ?",
+    excerpt: "Découvrez pourquoi il est essentiel de réaliser des bilans sanguins réguliers pour surveiller votre santé et détecter précocement d'éventuels problèmes.",
+    slug: "blogarticle",
+    image: { url: "/blog/blog1.jpg" }
+  },
+  {
+    id: "fallback2",
+    title: "Comprendre vos résultats d'analyses",
+    excerpt: "Apprenez à déchiffrer vos résultats d'analyses médicales et comprendre leur signification pour une meilleure prise en charge de votre santé.",
+    slug: "blogarticle",
+    image: { url: "/blog/blog2.jpg" }
+  },
+  {
+    id: "fallback3",
+    title: "Préparer sa visite au laboratoire",
+    excerpt: "Conseils pratiques pour bien préparer votre visite au laboratoire médical et faciliter le déroulement de vos examens.",
+    slug: "blogarticle",
+    image: { url: "/blog/blog3.jpg" }
+  },
+  {
+    id: "fallback4",
+    title: "Les nouveautés en biologie médicale",
+    excerpt: "Découvrez les dernières avancées et innovations dans le domaine de la biologie médicale et leur impact sur les soins de santé.",
+    slug: "blogarticle",
+    image: { url: "/blog/blog4.jpg" }
+  },
 ];
 
 // Petit helper TypeScript pour lire un éventuel champ HTML "content" ou "body" sans changer le modèle
 type MaybeWithContent = ArticlePayload & { content?: string; body?: string };
 
 export default function BlogPage() {
-  const [articles, setArticles] = useState<ArticlePayload[]>(fallbackArticles);
+  const { t } = useTranslation();
+  const [articles, setArticles] = useState<ArticlePayload[]>(buildFallbackArticles());
   const [loading, setLoading] = useState(true);
   // const [error, setError] = useState<string | null>(null);
 
@@ -40,11 +66,11 @@ export default function BlogPage() {
         if (Array.isArray(data) && data.length > 0) {
           setArticles(data);
         } else {
-          setArticles(fallbackArticles);
+          setArticles(buildFallbackArticles());
         }
       } catch (e: any) {
         // setError("Impossible de charger les articles. Affichage des contenus par défaut.");
-        setArticles(fallbackArticles);
+        setArticles(buildFallbackArticles());
       } finally {
         setLoading(false);
       }
@@ -118,7 +144,7 @@ export default function BlogPage() {
         {selected ? (
           <article style={sx.articleFull}>
             <button style={sx.backBtn} onClick={() => setSelected(null)} aria-label="Retour au listing">
-              ← Retour au blog (Esc)
+              {t('blog.back_button')}
             </button>
             <h2 style={sx.fullTitle}>{selected.title}</h2>
             {selected.image?.url && (
@@ -141,7 +167,7 @@ export default function BlogPage() {
                     setQuery(e.target.value);
                     setPage(1);
                   }}
-                  placeholder="Rechercher un article…"
+                  placeholder={t('blog.search.placeholder')}
                   aria-label="Rechercher dans le blog"
                   style={sx.searchInput}
                 />
@@ -154,7 +180,7 @@ export default function BlogPage() {
             {/* Grille d'articles */}
             <div style={sx.grid}>
               {visible.length === 0 ? (
-                <div style={sx.empty}>Aucun article ne correspond à votre recherche.</div>
+                <div style={sx.empty}>{t('blog.empty')}</div>
               ) : (
                 visible.map((a: ArticlePayload) => (
                   <div key={a.id} style={sx.card}>
@@ -163,7 +189,7 @@ export default function BlogPage() {
                         <img src={a.image.url} alt={a.title} style={sx.thumb} loading="lazy" />
                       ) : (
                         <div style={{ ...sx.thumb, display: "grid", placeItems: "center", fontSize: 12, color: "#888" }}>
-                          Image indisponible
+                          {t('blog.image_unavailable')}
                         </div>
                       )}
                     </div>
@@ -177,7 +203,7 @@ export default function BlogPage() {
                           aria-expanded={selected && (selected as ArticlePayload).id === a.id ? "true" : "false"}
                           aria-controls={`article-${a.id}`}
                         >
-                          Lire l’article →
+                          {t('blog.read_more')}
                         </button>
                       </div>
                     </div>
@@ -188,9 +214,9 @@ export default function BlogPage() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <nav style={sx.pagination} aria-label="Pagination du blog">
+              <nav style={sx.pagination} aria-label={t('blog.pagination_label')}>
                 <button style={sx.pageBtn} onClick={() => goTo(pageSafe - 1)} disabled={pageSafe === 1}>
-                  ← Précédent
+                  {t('blog.previous')}
                 </button>
                 <ul style={sx.pageList}>
                   {Array.from({ length: totalPages }).map((_, i) => {
@@ -210,7 +236,7 @@ export default function BlogPage() {
                   })}
                 </ul>
                 <button style={sx.pageBtn} onClick={() => goTo(pageSafe + 1)} disabled={pageSafe === totalPages}>
-                  Suivant →
+                  {t('blog.next')}
                 </button>
               </nav>
             )}
@@ -223,11 +249,12 @@ export default function BlogPage() {
 
 /* ----------------------------- UI sub-components ---------------------------- */
 function Hero() {
+  const { t } = useTranslation();
   return (
     <header style={sx.hero}>
       <div style={sx.heroInner}>
-        <h1 style={sx.heroTitle}>Blog & Conseils Santé</h1>
-        <p style={sx.heroSubtitle}>Actualités, explications d’analyses et bonnes pratiques au quotidien.</p>
+        <h1 style={sx.heroTitle}>{t('blog.hero.title')}</h1>
+        <p style={sx.heroSubtitle}>{t('blog.hero.subtitle')}</p>
       </div>
     </header>
   );

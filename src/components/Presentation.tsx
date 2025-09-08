@@ -1,30 +1,44 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadPresentation, type PresentationData } from '../services/payloadApi2';
 
-const fallbackData: PresentationData = {
-  title: "Présentation des Laboratoires Zeroual",
+const getFallbackData = (t: (key: string) => string): PresentationData => ({
+  title: t('presentation.title'),
   paragraphs: [
-    "Le réseau LES LABORATOIRES ZEROUAL est composé de 03 Laboratoires Médicaux sis à Kawassim, Souani et Charf. Le plateau technique principal se situe à Kawassim et 2 plateaux secondaires sont installés à Souani et à Charf, avec :",
-    "- Un accueil personnalisé avec ou sans rendez-vous.",
-    "- Une qualité technique et une compétence garantissant fiabilité et précision des résultats d’examens.",
-    "- Un rendu rapide des résultats dans les délais annoncés, accessibles par internet.",
-    "- Un dossier médical unique dans tous nos laboratoires.",
-    "Le laboratoire Zeroual Kawassim s’est engagé dans une démarche d’accréditation selon la Norme NM ISO 15189.",
+    t('presentation.paragraph1'),
+    t('presentation.paragraph2'),
+    t('presentation.paragraph3'),
+    t('presentation.paragraph4'),
+    t('presentation.paragraph5'),
+    t('presentation.paragraph6'),
   ],
-};
+});
 
 export default function Presentation() {
-  const [data, setData] = useState<PresentationData>(fallbackData);
+  const { t, i18n } = useTranslation();
+  const [data, setData] = useState<PresentationData | null>(null);
 
   useEffect(() => {
-    fetchPayloadPresentation()
-      .then((remoteData) => {
-        if (remoteData) setData(remoteData);
-      })
-      .catch(() => {
+    const loadData = async () => {
+      try {
+        const remoteData = await fetchPayloadPresentation();
+        if (remoteData) {
+          setData(remoteData);
+        } else {
+          setData(getFallbackData(t));
+        }
+      } catch {
         console.warn('PayloadCMS indisponible, fallback utilisé.');
-      });
-  }, []);
+        setData(getFallbackData(t));
+      }
+    };
+
+    loadData();
+  }, [i18n.language, t]);
+
+  if (!data) {
+    return <div>{t('common.loading')}</div>;
+  }
 
   return (
     <section style={{

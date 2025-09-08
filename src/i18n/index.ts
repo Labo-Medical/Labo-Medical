@@ -5,6 +5,7 @@ import en from './en.json';
 import ar from './ar.json';
 import es from './es.json';
 
+
 const resources = {
   fr: { translation: fr },
   en: { translation: en },

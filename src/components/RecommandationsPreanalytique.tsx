@@ -1,30 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadRecommandations, type RecommandationContent } from '../services/payloadApi2';
 
-const DEFAULT_CONTENT: RecommandationContent = {
-  id: "recommandation",
-  title: "Récommandations préanalytiques",
-  description:
-    "Préparez vos examens de manière optimale grâce à nos recommandations pré-analytiques détaillées.\n\nCes conseils vous assurent des résultats fiables.",
-};
-
 export default function RecommandationsPreanalytique() {
-  const [content, setContent] = useState<RecommandationContent>(DEFAULT_CONTENT);
+  const { t, i18n } = useTranslation();
+
+  const getDefaultContent = (): RecommandationContent => ({
+    id: "recommandation",
+    title: t('recommendations.title'),
+    description: t('recommendations.description'),
+  });
+
+  const [content, setContent] = useState<RecommandationContent>(getDefaultContent());
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchPayloadRecommandations()
+    fetchPayloadRecommandations(i18n.language)
       .then((data) => {
-        if (data) setContent(data);
+        if (data) {
+          setContent({ ...getDefaultContent() });
+        } else {
+          setContent(getDefaultContent());
+        }
       })
       .catch(() => {
-        setContent(DEFAULT_CONTENT);
+        setContent(getDefaultContent());
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [i18n.language]);
 
-  if (loading) return <p style={styles.placeholder}>Chargement...</p>;
+  if (loading) return <p style={styles.placeholder}>{t('common.loading')}</p>;
 
   return (
     <motion.section
@@ -64,7 +70,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   paragraph: {
     fontSize: '1.05rem',
     marginBottom: '1rem',
-    textAlign: 'justify',
+    textAlign: 'center',
   },
   placeholder: {
     textAlign: 'center',

@@ -27,8 +27,8 @@ async function fetchCollection<T>(slug: string, limit = 10): Promise<T[]> {
   return data?.docs || [];
 }
 
-async function fetchFirstItem<T>(collection: string): Promise<T | null> {
-  const data = await fetcher<{ docs: T[] }>(`${collection}?limit=1`);
+async function fetchFirstItem<T>(endpoint: string): Promise<T | null> {
+  const data = await fetcher<{ docs: T[] }>(endpoint);
   return data?.docs?.[0] || null;
 }
 
@@ -88,8 +88,9 @@ export type PrelevementContent = {
   documentUrl?: string;
 };
 
-export async function fetchPayloadPrelevement(): Promise<PrelevementContent | null> {
-  return await fetchFirstItem<PrelevementContent>('prelevement');
+export async function fetchPayloadPrelevement(locale?: string): Promise<PrelevementContent | null> {
+  const query = locale ? `prelevement?limit=1&locale=${locale}` : 'prelevement?limit=1';
+  return await fetchFirstItem<PrelevementContent>(query);
 }
 
 // Présentation
@@ -116,8 +117,9 @@ export type RecommandationContent = {
   description: string;
 };
 
-export async function fetchPayloadRecommandations(): Promise<RecommandationContent | null> {
-  return await fetchFirstItem<RecommandationContent>('recommandation');
+export async function fetchPayloadRecommandations(locale?: string): Promise<RecommandationContent | null> {
+  const query = locale ? `recommandation?limit=1&locale=${locale}` : 'recommandation?limit=1';
+  return await fetchFirstItem<RecommandationContent>(query);
 }
 
 // Lien serveur résultats

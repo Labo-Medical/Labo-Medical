@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface FeedbackFormProps {}
 
@@ -11,6 +12,7 @@ const FORM_URLS = {
 };
 
 const FeedbackForm: React.FC<FeedbackFormProps> = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'personnel' | 'patient' | 'utilisateur' | 'satisfaction'>('personnel');
 
   const containerStyle: React.CSSProperties = {
@@ -61,7 +63,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
 
   return (
     <div style={containerStyle}>
-      <h2 style={titleStyle}>Merci de nous soumettre votre avis, suggestion ou réclamation</h2>
+      <h2 style={titleStyle}>{t('pages.feedback.title_text')}</h2>
 
       {/* Onglets */}
       <div style={tabsStyle}>
@@ -69,25 +71,25 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
           style={tabButtonStyle(activeTab === 'personnel')}
           onClick={() => setActiveTab('personnel')}
         >
-          Personnel
+          {t('pages.feedback.tabs.personnel')}
         </button>
         <button
           style={tabButtonStyle(activeTab === 'patient')}
           onClick={() => setActiveTab('patient')}
         >
-          Patients
+          {t('pages.feedback.tabs.patient')}
         </button>
         <button
           style={tabButtonStyle(activeTab === 'utilisateur')}
           onClick={() => setActiveTab('utilisateur')}
         >
-          Utilisateurs
+          {t('pages.feedback.tabs.utilisateur')}
         </button>
         <button
           style={tabButtonStyle(activeTab === 'satisfaction')}
           onClick={() => setActiveTab('satisfaction')}
         >
-          Satisfaction
+          {t('pages.feedback.tabs.satisfaction')}
         </button>
       </div>
 
@@ -98,7 +100,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = () => {
           style={iframeStyle}
           title={`Formulaire ${activeTab}`}
         >
-          Chargement…
+          {t('common.loading')}
         </iframe>
       </div>
     </div>

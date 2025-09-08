@@ -8,31 +8,32 @@ type ValeurItem = {
   icon: string;
 };
 
-const fallbackValeurs: ValeurItem[] = [
-  {
-    title: 'Qualité & Recherche Biomédicale',
-    text: 'Technologies avancées et amélioration continue.',
-    icon: '/icons/quality.svg',
-  },
-  {
-    title: 'Services & Proximité',
-    text: 'Accueil personnalisé et maillage territorial efficace.',
-    icon: '/icons/proximity.svg',
-  },
-  {
-    title: 'Compétence & Réseautage',
-    text: "Un esprit d’équipe fort et une expertise rigoureuse.",
-    icon: '/icons/skills.svg',
-  },
-  {
-    title: 'Impartialité & Confidentialité',
-    text: 'Éthique, confiance et relations humaines solides.',
-    icon: '/icons/respect.svg',
-  },
-];
-
 export default function Valeur() {
   const { t } = useTranslation();
+
+  const fallbackValeurs: ValeurItem[] = [
+    {
+      title: t('components.valeur.fallback.quality_title'),
+      text: t('components.valeur.fallback.quality_text'),
+      icon: '/icons/quality.svg',
+    },
+    {
+      title: t('components.valeur.fallback.services_title'),
+      text: t('components.valeur.fallback.services_text'),
+      icon: '/icons/proximity.svg',
+    },
+    {
+      title: t('components.valeur.fallback.competence_title'),
+      text: t('components.valeur.fallback.competence_text'),
+      icon: '/icons/skills.svg',
+    },
+    {
+      title: t('components.valeur.fallback.impartiality_title'),
+      text: t('components.valeur.fallback.impartiality_text'),
+      icon: '/icons/respect.svg',
+    },
+  ];
+
   const [valeurs, setValeurs] = useState<ValeurItem[]>(fallbackValeurs);
 
   useEffect(() => {
@@ -49,7 +50,7 @@ export default function Valeur() {
         }
       })
       .catch(() => setValeurs(fallbackValeurs));
-  }, []);
+  }, [fallbackValeurs]);
 
   return (
     <main style={{ padding: '2rem 1rem', backgroundColor: '#fff' }}>

@@ -47,7 +47,24 @@
   },
   "sampling": {
     "title": "Prélèvements",
-    "description": "Simplifiez vos prélèvements grâce à nos solutions accessibles partout.\n\nContactez-nous pour plus d'informations."
+    "description": "Simplifiez vos prélèvements grâce à nos solutions accessibles partout.\n\nContactez-nous pour plus d’informations.",
+    "view_pdf": "Voir le document PDF"
+  },
+  "presentation": {
+    "title": "Présentation des Laboratoires Zeroual",
+    "paragraph1": "Le réseau LES LABORATOIRES ZEROUAL est composé de 03 Laboratoires Médicaux sis à Kawassim, Souani et Charf. Le plateau technique principal se situe à Kawassim et 2 plateaux secondaires sont installés à Souani et à Charf, avec :",
+    "paragraph2": "- Un accueil personnalisé avec ou sans rendez-vous.",
+    "paragraph3": "- Une qualité technique et une compétence garantissant fiabilité et précision des résultats d’examens.",
+    "paragraph4": "- Un rendu rapide des résultats dans les délais annoncés, accessibles par internet.",
+    "paragraph5": "- Un dossier médical unique dans tous nos laboratoires.",
+    "paragraph6": "Le laboratoire Zeroual Kawassim s’est engagé dans une démarche d’accréditation selon la Norme NM ISO 15189."
+  },
+  "catalogue": {
+    "title": "Catalogue",
+    "description": "Découvrez nos catalogues complets de produits et services adaptés à vos besoins professionnels.\n\nConsultez-les régulièrement pour rester à jour.",
+    "documents": {
+      "general": "Catalogue général 2025 (PDF)"
+    }
   },
   "recommendations": {
     "title": "Récommandations préanalytiques",
@@ -55,7 +72,7 @@
   },
   "central_purchase": {
     "title": "Centrale d'achats",
-    "description": "LES LABORATOIRES ZEROUAL est une centrale d'achats spécialisée dans les industries médicales qui sont présentes en Afrique.\n\nEtant implantés au plus près de nos clients, notre promesse est d'aborder toutes les questions posées par un projet en termes d'approvisionnement et de Supply Chain afin d'apporter, en toutes circonstances, une réponse adaptée aux besoins des laboratoires médicaux, des cliniques, des hôpitaux etc."
+    "description": "LES LABORATOIRES ZEROUAL est une centrale d’achats spécialisée dans les industries médicales qui sont présentes en Afrique.\n\nEtant implantés au plus près de nos clients, notre promesse est d’aborder toutes les questions posées par un projet en termes d’approvisionnement et de Supply Chain afin d’apporter, en toutes circonstances, une réponse adaptée aux besoins des laboratoires médicaux, des cliniques, des hôpitaux etc.\n\nBien plus qu’un fournisseur d’équipements, de réactifs et de consommables, nous sommes le partenaire privilégié pour booster la qualité de vos achats et optimiser vos coûts d’approvisionnement.\n\nLe principe est simple : l’union fait la force. En mutualisant les achats de nos clients, nous sommes à même d’acheter en plus grande quantité auprès des fabricants et fournisseurs. Ce qui nous donne davantage de poids pour vous négocier les meilleurs prix aux meilleurs délais.\n\nEn nous confiant vos achats non stratégiques vous ferez des économies d’échelle mais surtout vous serez débarrassés des contraintes administratives et logistiques pour gagner du temps et mieux vous concentrer sur vos activités clés."
   },
   "pro_menu": {
     "documents": "Documents",
@@ -143,6 +160,40 @@
     },
     "common": { "more": "Voir plus" }
   },
+  "blog": {
+    "search": {
+      "placeholder": "Rechercher un article…"
+    },
+    "empty": "Aucun article ne correspond à votre recherche.",
+    "read_more": "Lire l'article →",
+    "previous": "← Précédent",
+    "next": "Suivant →",
+    "hero": {
+      "title": "Blog & Conseils Santé",
+      "subtitle": "Actualités, explications d'analyses et bonnes pratiques au quotidien."
+    },
+    "back_button": "← Retour au blog (Esc)",
+    "pagination_label": "Pagination du blog",
+    "image_unavailable": "Image indisponible",
+    "articles": {
+      "article1": {
+        "title": "Pourquoi faire un bilan sanguin régulier ?",
+        "excerpt": "Pourquoi faire un bilan sanguin régulier"
+      },
+      "article2": {
+        "title": "Comprendre vos résultats d'analyses",
+        "excerpt": "Comprendre vos résultats d'analyses"
+      },
+      "article3": {
+        "title": "Préparer sa visite au laboratoire",
+        "excerpt": "Préparer sa visite au laboratoire"
+      },
+      "article4": {
+        "title": "Les nouveautés en biologie médicale",
+        "excerpt": "Les nouveautés en biologie médicale"
+      }
+    }
+  },
   "results": {
     "menu": {
       "results": "Vos résultats",
@@ -166,6 +217,181 @@
     "prepare": "Préparer ma visite",
     "faq": "FAQ"
   },
+  "prepare_visit": {
+    "title": "Je prépare mes analyses",
+    "subtitle": "Retrouvez les informations et conseils pratiques à suivre pour faciliter vos démarches au laboratoire.",
+    "sections": {
+      "preparer": "Préparer votre visite",
+      "ajeun": "À jeun ?",
+      "enfants": "Le prélèvement des enfants",
+      "femmes_enceintes": "Suivi des femmes enceintes",
+      "microbio": "Les analyses microbiologiques",
+      "domicile": "Le prélèvement à domicile"
+    },
+    "content": {
+      "preparer": {
+        "title": "Préparer votre visite",
+        "intro": "À votre accueil au laboratoire, une secrétaire médicale constituera un dossier informatique complet reprenant les informations essentielles permettant une prise en charge fiable et un rendu des résultats conforme aux attentes du prescripteur. Suivez nos conseils pour préparer au mieux votre visite.",
+        "documents_title": "Documents à apporter :",
+        "documents": {
+          "ordonnance": "L'ordonnance médicale comportant les analyses prescrites par votre médecin.",
+          "carte_vitale": "Votre carte Vitale et/ou votre attestation de sécurité sociale.",
+          "mutuelle": "Votre attestation de mutuelle en cours de validité et/ou votre attestation CMU.",
+          "prise_en_charge": "Les documents de prise en charge (affection longue durée, maternité, accident du travail...).",
+          "identite": "Dans le cadre de la mise en place de l'INS, une pièce d'identité vous sera demandée à chaque première visite, ainsi que tous les 5 ans. Il sera également nécessaire de la représenter en cas de changement des traits d'identité ou pour certaines analyses telles que le groupe sanguin, une commission permis de conduire, etc. afin de respecter une identitovigilance stricte."
+        },
+        "highlight": "Merci de vous munir de ces documents.",
+        "honoraires_title": "Quels sont les honoraires ?",
+        "honoraires_text": "Les laboratoires Biogroup sont conventionnés auprès des organismes obligatoires et complémentaires. Ils appliquent les tarifs réglementés par la loi suivante : Arrêté du 03/12/87 (JO du 12/12/87).",
+        "prise_en_charge": "Afin de bénéficier d'une prise en charge complète, n'oubliez pas d'apporter votre carte vitale, votre attestation de mutuelle à jour, ainsi que tout document pouvant justifier de vos droits (attestation CMU, AME...).",
+        "sans_prescription": "En l'absence de prescription, vous devrez régler le montant total des examens sans supplément ou dépassement d'honoraire.",
+        "hors_nomenclature": "Si la plupart des examens est pris en charge par l'Assurance Maladie, certains d'entre eux ne donnent pas lieu à un remboursement. On dit alors qu'ils sont \"Hors Nomenclature\". En cas de prescription par votre médecin d'examens non remboursés par la sécurité sociale, nos secrétaires médicales vous informeront du montant des examens et demanderont votre accord à leur réalisation lors de votre enregistrement. Tous les laboratoires appartiennent à une association de gestion agréée (AGA).",
+        "rdv_title": "Dois-je prendre rendez-vous ?",
+        "rdv_text": "Les prélèvements s'effectuent généralement sans rendez-vous. Cependant certains examens nécessitent une prise en charge particulière. Si vous avez un doute, il est donc préférable de téléphoner à votre laboratoire.",
+        "rdv_text2": "Certains laboratoires proposent des prises de rendez-vous afin de réduire le temps d'attente. Informez-vous auprès de votre laboratoire ou retrouvez ces informations sur nos fiches laboratoires.",
+        "horaire_title": "Quand dois-je venir au laboratoire ?",
+        "horaire_intro": "Certaines analyses sont à faire précisément à certaines heures, à certains jours. Par exemple :",
+        "horaire_list": {
+          "cortisol": "Le cortisol est à réaliser à 8h du matin (sauf mention contraire sur l'ordonnance).",
+          "hormones": "Les dosages hormonaux nécessitent de respecter les jours indiqués par votre médecin : ex : J2 = 2ième jour du cycle.",
+          "t4": "Le dosage de T4 libre doit être réalisé <b>avant la prise de Lévothyrox</b>.",
+          "tsh": "La TSH est à doser de préférence <b>le matin</b>.",
+          "medicament": "Pour un dosage de médicament (antirejet par exemple), la prise de sang doit avoir lieu <b>avant la prise</b>. La posologie et la date et heure de dernière prise vous seront demandées.",
+          "antibiotique": "Un prélèvement bactériologique ou mycologique doit être réalisé <b>avant la prise de l'antibiotique/antimycosique</b> (sauf avis contraire du médecin).",
+          "spermogramme": "Pour un spermogramme : un délai d'abstinence est à respecter."
+        }
+      },
+      "ajeun": {
+        "title": "À jeun ?",
+        "intro": "L'état de jeûne est nécessaire à l'obtention d'un spécimen sanguin conforme à la réalisation de certaines analyses.",
+        "highlight": "Il est défini par une absence de prise de nourriture depuis plus de 8 heures.",
+        "allowed": "Mais vous pouvez :",
+        "allowed_list": {
+          "dents": "Vous laver les dents.",
+          "eau": "Boire de l'eau, du café ou du thé sans sucre ni lait.",
+          "medicaments": "Prendre vos médicaments SAUF si un dosage spécifique de ceux-ci est demandé."
+        },
+        "biotine": "Il sera important de signaler à votre laboratoire tout traitement en cours, en particulier ceux contenant de la BIOTINE ou vitamine B8 (QIZENDAY®, compléments alimentaires, etc.).",
+        "doute": "En cas de doute sur vos examens, venez à jeun de minimum 8 heures ou contactez votre laboratoire.",
+        "liste_title": "Retrouvez ci-dessous une liste non-exhaustive des principaux examens nécessitant d'être à jeun :",
+        "liste": {
+          "calcitonine": "CALCITONINE (Thyrocalcitonine) : Arrêt du traitement aux IPP antiulcéreux, Inhibiteurs de la Pompe à Protons depuis 15 jours (omeprazole, ésoméprazole, lanzoprazol, pentoprazol, rabéprazol).",
+          "crosslaps": "CROSSLAPS – CTX",
+          "cryoglobulin": "CRYOGLOBULINE",
+          "glycemie": "GLYCEMIE A JEUN",
+          "glycosurie": "GLYCOSURIE",
+          "homocysteine": "HOMOCYSTEINE",
+          "parathormone": "PARATHORMONE – PTH",
+          "phosphore": "PHOSPHORE",
+          "testosterone": "TESTOSTERONE",
+          "triglycerides": "TRIGLYCERIDES – BILAN LIPIDIQUE",
+          "helikit": "HELIKIT (recherche de portage de l'Helicobacter pylori – test respiratoire à l'Urée 13C – air expiré) :"
+        },
+        "helikit_note": "Il est nécessaire de venir muni du kit que vous aurez cherché à la pharmacie avec la même ordonnance.",
+        "helikit_note2": "Test respiratoire à réaliser à jeun strict depuis au moins 6 heures (sans boire, ni manger, ni fumer).",
+        "helikit_conditions": "Il est impératif de respecter :",
+        "helikit_conditions_list": {
+          "antibiotique": "un arrêt de tout traitement antibiotique au minimum 4 semaines avant le test.",
+          "ipp": "un arrêt des inhibiteurs de la pompe à protons, des anti-sécrétoires, au minimum 2 semaines avant le test (omeprazole, ésoméprazole, lanzoprazol, pentoprazol, rabéprazol).",
+          "antiacides": "un arrêt des antiacides et pansements gastro-intestinaux 24 heures avant le test."
+        }
+      },
+      "enfants": {
+        "title": "Le prélèvement des enfants",
+        "intro": "Nos préleveurs sont formés aux prélèvements pédiatriques sur les tout petits.",
+        "help_title": "Comment vous pouvez aider votre enfant ?",
+        "help_intro": "Il est très important de pouvoir gérer votre réaction face à une situation stressante pour vous et pour votre enfant. Les enfants sont très sensibles au stress de leur parent. Plus vous serez détendu, plus votre enfant le sera lui aussi.",
+        "preparer_title": "Le préparer :",
+        "preparer_text": "il est préférable d'informer votre enfant à l'avance qu'il va faire une prise de sang et lui expliquer pourquoi il doit la réaliser. Si votre enfant sait à quoi s'attendre, il sera probablement moins inquiet de ce qu'il va se passer. Nous vous recommandons de prévenir votre enfant 1 à 2 jours avant la prise de sang.",
+        "expliquer_title": "Lui expliquer l'acte :",
+        "expliquer_text": "soyez honnête avec votre enfant et expliquez-lui le déroulement d'une prise de sang. Utilisez des mots rassurants qu'il pourra comprendre. Vous pourrez lui expliquer ce qu'il va voir, sentir et entendre tout le long de l'acte.",
+        "rassurer_title": "Le rassurer :",
+        "rassurer_text": "il est important de rassurer votre enfant sur la durée d'une prise de sang, qui dure en général seulement quelques minutes.",
+        "jouets": "Vous pourrez également l'habituer aux aiguilles et autres équipements médicaux, en lui montrant sous forme de jouet.",
+        "expression": "Vous pourrez aussi lui dire qu'il a le droit de ne pas aimer ce qui se passe et de s'exprimer s'il a mal. L'enfant appréhendera moins la prise de sang s'il sait qu'il pourra exprimer ce qu'il ressent. En revanche il sera important de lui dire que son rôle le plus important est de ne pas bouger durant la prise de sang.",
+        "distraire_title": "Le distraire :",
+        "distraire_text": "distraire son enfant durant une prise de sang pourra l'aider à passer l'acte en toute sérénité. Vous pourrez amener un petit jouet, son doudou, un livre… Vous pourrez également le distraire en utilisant son imagination. Demandez-lui de fermer ses yeux et vous raconter son endroit préféré.",
+        "emla_title": "Utilisation de patch EMLA :",
+        "emla_text": "L'utilisation de patch EMLA (les mêmes patchs utilisés lors des vaccins) apportent un réel confort à l'enfant. L'anesthésie locale qu'il procure rend le prélèvement totalement indolore. Ces patchs sont délivrés sur prescription médicale, il faut donc vous rapprocher de votre médecin traitant."
+      },
+      "femmes_enceintes": {
+        "title": "Suivi des femmes enceintes",
+        "intro": "Durant la grossesse, un grand nombre d'examens biologiques sera à réaliser au laboratoire :",
+        "hcg_title": "Le dosage de l'hormone HCG",
+        "hcg_text": "Votre test de grossesse est positif, le premier examen à réaliser est une prise de sang permettant de doser l'hormone HCG (Hormone Chorionique Gonadotrope) afin de confirmer la grossesse.",
+        "hcg_doubling": "Pour évaluer la bonne tenue de l'embryon on peut renouveler le dosage des HCG deux jours après, le taux doit doubler. Il peut y avoir également une interférence ou faux positif en début de grossesse avec certains traitements de stimulation hormonale.",
+        "depistages_title": "Les dépistages de la Rubéole et de la Toxoplasmose",
+        "depistages_text": "Depuis plusieurs années, les dépistages de la Rubéole et de la Toxoplasmose sont devenus obligatoires en France. Ces deux maladies sont des maladies bénignes qui peuvent cependant être dangereuses pour le fœtus si elles sont contractées au cours de la grossesse. En début de grossesse, il faut donc réaliser une prise de sang afin de mesurer le taux d'anticorps anti rubéoleux et d'effectuer une sérologie de la toxoplasmose.",
+        "depistages_followup": "Si vos tests sont négatifs, il faudra refaire tous les mois ces analyses pour contrôler que vous n'avez pas été contaminée.",
+        "groupe_sanguin_title": "Groupe sanguin",
+        "groupe_sanguin_text": "En début de grossesse, il vous sera également demandé de faire une prise de sang pour vérifier votre groupe sanguin et votre rhésus. Cette analyse est importante afin de déterminer une éventuelle incompatibilité sanguine entre votre fœtus et vous, mais aussi dans le cas où une hémorragie importante venait à se déclarer durant l'accouchement.",
+        "anemie_title": "La recherche d'anémie et de carences",
+        "anemie_text": "Un certain nombre d'examens pourra vous être prescrit permettant de dépister une anémie ou des carences. L'anémie étant fréquente chez la femme enceinte au 3ème trimestre, la NFS (Numération formule sanguine) est ainsi prescrite au cours du 6ème mois de grossesse.",
+        "diabete_title": "Le dépistage du diabète gestationnel",
+        "diabete_text": "Un diabète gestationnel peut apparaître durant la grossesse au cours des 2ème et 3ème trimestres. Un premier dosage de la glycémie à jeun sera réalisé dès les premières consultations puis un autre examen sera prévu entre la 24ème et 28ème semaine de grossesse. Cet examen est un dosage de la glycémie à jeun, à 1h et à 2h. Après la première prise de sang à jeun, nos équipes médicales vous apporteront une boisson sucrée qu'il faudra boire. Une prise de sang sera ensuite réalisée à 1h puis à 2h après la prise du glucose. Ceci est appelé l'Hyperglycémie provoquée par voie orale (HGPO)."
+      },
+      "microbio": {
+        "title": "Les analyses microbiologiques",
+        "intro": "Certains examens bactériologiques sont à réaliser par vos soins (recueil de selles, d'urines, expectorations…). Des kits dédiés avec des fiches de préconisations vous seront données en fonction de la prescription. D'autres analyses seront réalisées au laboratoire ou par votre infirmièr(e) à domicile.",
+        "modalites": "Des modalités de prélèvement spécifique sont à respecter. Elles sont décrites dans des fiches explicatives qui peuvent vous être remises au laboratoire.",
+        "disposition": "Tout notre personnel est à votre disposition pour vous expliquer la marche à suivre.",
+        "depot": "Une fois le prélèvement réalisé chez vous, vous pourrez venir déposer vos récipients au laboratoire."
+      },
+      "domicile": {
+        "title": "Le prélèvement à domicile",
+        "intro": "Certains de nos laboratoires proposent d'effectuer certains prélèvements sanguins à domicile sur rendez-vous.",
+        "rdv_text": "En prenant rendez-vous dans votre laboratoire ou par téléphone, renseignez-vous si votre laboratoire propose ce service. Si oui, il faudra alors préciser la liste des examens prescrits afin que l'on puisse vous renseigner sur votre préparation avant le prélèvement.",
+        "programmation": "Un créneau horaire vous sera donné en fonction de la programmation des tournées du préleveur.",
+        "remboursement": "Le déplacement vous sera remboursé s'il est précisé sur l'ordonnance « prélèvement à domicile » ou vous sera facturé en supplément.",
+        "attestation": "Il vous sera demandé de préparer une copie de votre attestation de sécurité sociale et de votre mutuelle, pour que nous puissions prendre en charge le Tiers-Payant."
+      }
+    }
+  },
+  "faq": {
+    "title": "Foire aux questions",
+    "before_title": "Avant le prélèvement",
+    "after_title": "Après le prélèvement",
+    "before": {
+      "question1": "J'ai plusieurs ordonnances de médecins différents, que dois-je faire ?",
+      "answer1": "Il n'y a aucun problème, nous ferons un dossier pour chacune des ordonnances. Chaque médecin aura les résultats des analyses qu'il a demandées. Nous ne les facturerons qu'une seule fois. C'est totalement transparent pour vous, tout se passe au secrétariat. Nous ne vous prélèverons qu'une seule fois.",
+      "question2": "Puis-je être accompagné et allongé ?",
+      "answer2": "Vous pouvez tout-à-fait être accompagné dans la mesure où l'accompagnant ne dérange pas la bonne réalisation du prélèvement. Si besoin, tous les laboratoires du groupe Zeroual ont des salles de prélèvement avec des fauteuils que l'on peut incliner ou des lits pour vous allonger. Pensez simplement à nous avertir ou à nous le demander.",
+      "question3": "Vais-je attendre longtemps ?",
+      "answer3": "Toutes nos équipes font le maximum pour minimiser l'attente. Cependant, un temps minimum est nécessaire pour assurer le maximum de sécurité, pour vous comme pour nous (vérifications des informations d'identité, prise en charge, acte de prise de sang sans précipitation, étiquetage des tubes...). De plus, le nombre de préleveurs est en accord avec les prévisions d'affluence au laboratoire.",
+      "question4": "Puis-je venir à n'importe quelle heure ?",
+      "answer4": "Nous vous accueillons 7j/7 & 24h/24. Le détail est à vérifier auprès de chaque laboratoire dans la rubrique <a href=\"/contact\">Trouver un laboratoire</a>. Les prises de sang peuvent être réalisées pour la plupart sans contrainte horaire, en respectant les conditions de jeûne éventuelles. Les prélèvements en vue de certaines analyses doivent cependant respecter des contraintes d'horaires : certains paramètres varient au cours de la journée. Renseignez-vous auprès de votre laboratoire ou sur la rubrique <a href=\"#\">Préparez vos analyses</a>. Afin d'assurer une fiabilité optimale des résultats en évitant le stockage de votre prélèvement sur site, certains laboratoires ne réaliseront plus les prises de sang à partir d'une certaine heure. En effet, votre prélèvement ne pourra plus être envoyé à temps au plateau technique. Renseignez-vous sur les heures limites de prélèvements.",
+      "question5": "La prise de sang et mes médicaments",
+      "answer5": "Avant votre prise de sang, vous pouvez prendre les médicaments qui vous ont été préconisés. Toutefois, il existe une exception : le prélèvement sanguin doit être réalisé AVANT la prise habituelle du traitement si votre ordonnance précise qu'il s'agit d'un dosage du médicament lui-même. Il sera important de signaler à votre laboratoire tout traitement en cours, en particulier ceux contenant de la BIOTINE ou vitamine B8 (QIZENDAY®, compléments alimentaires, etc.). Si vous avez un doute, demandez conseil à votre médecin et/ou biologiste.",
+      "question6": "Je suis mineur",
+      "answer6": "Un prélèvement sur un mineur ne peut être effectué sans la présence d'un parent responsable, ou dans le cadre du planning familial, mais toujours accompagné d'un adulte. Les résultats seront transmis au médecin prescripteur ou au responsable légal.",
+      "question7": "J'aimerais faire une analyse, mais je n'ai pas d'ordonnance",
+      "answer7": "Pour une analyse dite « courante » (bêta-HCG, glycémie, cholestérol, HIV…) : il n'y a aucun problème, nous ferons l'analyse que vous nous demandez. Elle vous sera tarifiée selon sa cotation à la Nomenclature de Biologie Médicale. Pour une demande plus particulière, à partir du moment où l'analyse est réalisable au Maroc dans un laboratoire agréé, nous vous proposerons un devis. L'analyse sera tarifiée selon sa cotation à la Nomenclature de Biologie Médicale ou selon sa cotation par le Laboratoire exécutant, majorée des éventuels frais de transmission. Dans tous les cas, rien ne sera réalisé sans votre accord ni validation du tarif annoncé. Pour une analyse réalisée dans un laboratoire étranger ou hors parcours de soins, prenez contact avec votre Biologiste.",
+      "question8": "Dois-je prendre rendez-vous au laboratoire ?",
+      "answer8": "Les laboratoires Zeroual vous accueillent toute la journée sans RDV. Certains laboratoires peuvent proposer des prises de rendez-vous afin de faciliter votre passage. Pour les prises de sang chez les enfants de moins de 5 ans et les prélèvements bactériologiques, quel que soit l'âge, une prise de rendez-vous est parfois nécessaire. Pour voir les horaires ou prendre rendez-vous, sélectionnez votre laboratoire dans la liste de <a href=\"/rdv\">Trouver un laboratoire</a>.",
+      "question9": "Quels examens nécessitent d'être à jeun ?",
+      "answer9": "L'état de jeûne est nécessaire à l'obtention d'un spécimen sanguin conforme à la réalisation de certaines analyses. <strong>Il est défini par une absence de prise de nourriture depuis 8 à 12 heures.</strong> <ul><li>CALCITONINE (Thyrocalcitonine) : Arrêt du traitement aux IPP antiulcéreux, Inhibiteurs de la Pompe à Protons depuis 15 jours (omeprazole, ésoméprazole, lanzoprazol, pentoprazol, rabéprazol).</li><li>CROSSLAPS – CTX</li><li>CRYOGLOBULINE</li><li>GLYCEMIE A JEUN</li><li>HELIKIT : Pas de tabac depuis la veille au soir, arrêt du traitement aux IPP antiulcéreux (Inhibiteurs de la Pompe à Protons depuis 15 jours : omeprazole, ésoméprazole, lanzoprazol, pentoprazol, rabéprazol).</li><li>HOMOCYSTEINE</li><li>PARATHORMONE – PTH</li><li>PHOSPHORE</li><li>TESTOSTERONE</li><li>TRIGLYCERIDES – BILAN LIPIDIQUE</li></ul>",
+      "question10": "Je suis une personne à handicap, comment puis-je être accueillie ?",
+      "answer10": "Tous nos laboratoires proposent une solution pour nos patients à handicap. Le registre public d'accessibilité du laboratoire peut vous être fourni sur demande. N'hésitez pas à contacter le laboratoire pour organiser votre prélèvement dans les meilleures conditions."
+    },
+    "after": {
+      "question1": "Il m'est arrivé d'avoir un bleu après un prélèvement",
+      "answer1": "Si la veine ne se referme pas assez vite ou si le prélèvement a été difficile, un bleu peut apparaître. Nos préleveurs font tout pour éviter ce genre d'inconvénients. Le bleu vient de l'accumulation de sang entre la paroi de la veine et la peau. Il peut être impressionnant mais n'est jamais grave et disparaît spontanément. Afin de minimiser l'apparition de ces hématomes, il est recommandé d'exercer une pression pendant plusieurs minutes après la prise de sang.",
+      "question2": "Quand et comment vais-je recevoir mes résultats ?",
+      "answer2": "Classiquement, vous recevrez vos résultats le jour même, par voie électronique, plus rapide et plus écologique, sous forme de mail crypté ou en accédant au serveur de résultat sécurisé de votre laboratoire. Certains examens plus spécialisés peuvent demander un délai supplémentaire. Vous avez également la possibilité de venir chercher vos résultats au laboratoire. Dans ce cas, il faudra le signaler à la secrétaire d'accueil, qui vous remettra un coupon garantissant votre confidentialité. Le laboratoire peut aussi vous adresser les résultats par courrier postal avec un délai rallongé de 2 à 3 jours après validation du dossier. Des frais d'envois postaux de 2€ par résultat pourront vous être demandés. Dans le cas de résultats préoccupants ou s'ils le jugent nécessaire, les biologistes du laboratoire peuvent être amenés à contacter votre médecin ou un médecin de garde ou vous-même directement par téléphone.",
+      "question3": "Quelqu'un au laboratoire peut-il m'interpréter les résultats ?",
+      "answer3": "Bien sûr, les biologistes des laboratoires Zeroual sont disponibles pour répondre à l'ensemble de vos questions et interpréter en toute confidentialité vos résultats. Demandez-le à l'accueil !",
+      "question4": "Que se passe-t-il en cas d'anomalie importante sur un résultat ?",
+      "answer4": "Votre médecin prescripteur est systématiquement prévenu en cas d'anomalie importante sur votre résultat. Au cas où il ne serait pas joignable, le laboratoire vous contactera pour vous prévenir et vous donner les directives à suivre : reprendre un RDV avec votre médecin, contacter SOS médecin, aller directement aux urgences…",
+      "question5": "Comment faire une demande d'accès à mon dossier médical ?",
+      "answer5": "Pour accéder à votre dossier médical, vous pouvez remplir les formulaires suivants et les transmettre par email ou par courrier à votre laboratoire : <ul><li>Formulaire d'accès au dossier médical par le patient</li><li>Formulaire d'accès au dossier médical d'un patient décédé par les ayants droit</li><li>Formulaire d'opposition du patient à la communication de son dossier médical après son décès</li></ul>",
+      "question6": "Comment signaler une non-conformité ou faire une réclamation ?",
+      "answer6": "Pour toute réclamation ou signalement d'une non-conformité, nous vous invitons à remplir le formulaire sur notre espace dédié : <a href=\"#\">Déposez une réclamation &gt;…</a>",
+      "question7": "J'ai reçu mon compte-rendu chiffré, pourquoi ?",
+      "answer7": "Le laboratoire vous a transmis votre compte-rendu d'examens sous la forme d'un fichier PDF chiffré joint au courrier électronique de notification. Pour vous protéger, ce chiffrement permet que ce document médical ne soit pas directement lisible ou indexé sur Internet. Seul le destinataire du courrier électronique est en mesure d'associer le fichier reçu et la clef (improprement appelée mot-de-passe) nécessaire à son ouverture. La solution technique Adobe ne permet pas la suppression ou la modification de la clef de chiffrement. Le fichier reste donc protégé lors de son stockage sur votre ordinateur. En contrepartie, il n'est pas réutilisable ou diffusible à un tiers, sauf à lui transmettre en même temps votre clef de chiffrement personnelle. Si vous souhaitez conserver dans votre dossier médical des documents non chiffrés, vous devez utiliser le serveur de résultats du laboratoire. Celui-ci vous permet l'accès à la totalité de votre dossier médical et vous donne la possibilité de télécharger des pièces non protégées.",
+      "question8": "Que faire si j'ai égaré la clé de chiffrement de mes comptes-rendus ?",
+      "answer8": "Le laboratoire vous a transmis votre compte-rendu d'examens sous la forme d'un fichier PDF chiffré joint au courrier électronique de notification. Le PDF n'est pas lisible, sauf à connaître la clef de déchiffrement. Nous vous invitons à joindre le secrétariat du laboratoire qui pourra vous indiquer la marche à suivre pour retrouver la clef utilisée au moment de l'envoi de vos documents."
+    }
+  },
   "common": {
     "home": "Accueil",
     "loading": "Chargement...",
@@ -180,5 +406,154 @@
     "menu": "Menu",
     "language": "Langue",
     "contact_us": "Contactez-nous"
+  },
+  "pages": {
+    "home": {
+      "title": "Les Laboratoires Zeroual - Accueil",
+      "loading_hero": "Chargement de la section Hero...",
+      "loading_announce": "Chargement de l’annonce...",
+      "loading_slider": "Chargement des cartes slider...",
+      "loading_values": "Chargement des valeurs...",
+      "loading_specialties": "Chargement des spécialités...",
+      "loading_gallery": "Chargement de la galerie...",
+      "loading_blog": "Chargement du blog..."
+    },
+    "pro": {
+      "title": "Espace Pros - Laboratoires Zeroual",
+      "loading_resources": "Chargement des ressources professionnelles...",
+      "features": {
+        "recommendations": {
+          "title": "Récommandations pré-analytiques",
+          "description": "Préparer vos examens de manière optimale."
+        },
+        "sampling": {
+          "title": "Prélèvements",
+          "description": "Accès aux soins simplifié partout."
+        },
+        "central_purchase": {
+          "title": "Centrales d'achats",
+          "description": "Centrales d'achats pour les professionnels."
+        },
+        "documents": {
+          "title": "Documentation",
+          "description": "Des documents indispensables."
+        }
+      }
+    },
+    "patient": {
+      "title": "Espace Patient - Les Laboratoires Zeroual",
+      "welcome": "Bienvenue sur Espace Patient",
+      "description": "Organisez votre visite, accédez à vos résultats d'analyse, et trouvez toutes les informations utiles pour votre parcours patient.",
+      "og_description": "Tout ce qu'il vous faut pour naviguer sereinement dans vos démarches médicales.",
+      "hero_text": "Tout ce qu'il vous faut pour organiser votre visite, accéder à vos analyses et naviguer plus sereinement dans vos démarches médicales.",
+      "loading_results": "Chargement des résultats...",
+      "loading_faq": "Chargement de la FAQ...",
+      "features": {
+        "prepare_visit": {
+          "title": "Préparez votre visite",
+          "description": "Conseils pratiques pour préparer vos examens et faciliter vos démarches au laboratoire."
+        },
+        "find_lab": {
+          "title": "Trouvez votre laboratoire",
+          "description": "Un accès simplifié aux soins où que vous soyez, avec un service de proximité."
+        },
+        "access_results": {
+          "title": "Accédez à vos résultats",
+          "description": "Consultez vos analyses rapidement et en toute sécurité, depuis chez vous."
+        },
+        "faq": {
+          "title": "Foire aux questions",
+          "description": "Une réponse claire à chaque interrogation : explorez notre FAQ complète."
+        }
+      }
+    },
+    "politic": {
+      "title": "Politiques Institutionnelles - Les Laboratoires Zeroual",
+      "heading": "Nos Politiques Institutionnelles",
+      "loading_documents": "Chargement des documents politiques..."
+    },
+    "login": {
+      "title": "Connexion",
+      "email": "Email",
+      "password": "Mot de passe"
+    },
+    "notfound": {
+      "title": "404 - Page non trouvée",
+      "message": "La page que vous cherchez n’existe pas."
+    },
+    "feedback": {
+      "title": "Retour & Avis - Les Laboratoires Zeroual",
+      "description": "Donnez votre avis ou envoyez vos réclamations aux Laboratoires Zeroual.",
+      "og_title": "Retour & Avis - Les Laboratoires Zeroual",
+      "og_description": "Partagez votre expérience avec les Laboratoires Zeroual.",
+      "whatsapp_text": "📱 Pour toute réclamation veuillez nous contacter au :",
+      "loading": "Chargement du formulaire de retour...",
+      "title_text": "Merci de nous soumettre votre avis, suggestion ou réclamation",
+      "tabs": {
+        "personnel": "Personnel",
+        "patient": "Patients",
+        "utilisateur": "Utilisateurs",
+        "satisfaction": "Satisfaction"
+      }
+    },
+    "contact": {
+      "title": "Contact - Les Laboratoires Zeroual",
+      "description": "Contactez les Laboratoires Zeroual...",
+      "og_title": "Contact - Les Laboratoires Zeroual",
+      "og_description": "Formulaire de contact et informations...",
+      "heading": "Formulaire de contact & Nos laboratoires médicaux",
+      "email_text": "Veuillez nous contacter par mail au contact@leslaboratoireszeroual.ma",
+      "loading": "Chargement du formulaire..."
+    },
+    "about": {
+      "title": "À propos - Les Laboratoires Zeroual"
+    }
+  },
+  "components": {
+    "rdv": {
+      "title": "Prise de RDV à domicile",
+      "submit": "Envoyer la demande",
+      "success": "✅ Demande envoyée avec succès !",
+      "name": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "date": "Date du prélèvement",
+      "time": "Heure souhaitée",
+      "notes": "Remarques",
+      "choose_date": "Choisissez une date"
+    },
+    "valeur": {
+      "fallback": {
+        "quality_title": "Qualité & Recherche Biomédicale",
+        "quality_text": "Technologies avancées et amélioration continue.",
+        "services_title": "Services & Proximité",
+        "services_text": "Accueil personnalisé et maillage territorial efficace.",
+        "competence_title": "Compétence & Réseautage",
+        "competence_text": "Un esprit d’équipe fort et une expertise rigoureuse.",
+        "impartiality_title": "Impartialité & Confidentialité",
+        "impartiality_text": "Éthique, confiance et relations humaines solides."
+      }
+    },
+    "contact": {
+      "labs": {
+        "kawacim": "Kawacim",
+        "souani": "Souani",
+        "charf": "Charf"
+      }
+    },
+    "loading_form": "Chargement du formulaire...",
+    "loading_presentation": "Chargement de la présentation...",
+    "loading_history": "Chargement de l’historique...",
+    "loading_numbers": "Chargement des chiffres...",
+    "loading_partners": "Chargement des partenaires...",
+    "loading_specialties": "Chargement des spécialités...",
+    "loading_feedback": "Chargement du formulaire de retour...",
+    "language_names": {
+      "es": "Español",
+      "fr": "Français",
+      "en": "English",
+      "ar": "العربية"
+    }
   }
 }
