@@ -62,7 +62,17 @@
 }
 
 [dir="rtl"] .language-switcher {
-  flex-direction: row-reverse;
+  direction: rtl;
+}
+
+[dir="rtl"] .language-dropdown {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .language-option {
+  text-align: right;
+  direction: rtl;
 }
 
 /* RTL adjustments for content layout */
