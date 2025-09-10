@@ -32,6 +32,44 @@
     "impartiality_title": "Imparcialidad y Confidencialidad",
     "impartiality_text": "Ética, confianza y relaciones humanas sólidas."
   },
+  "blog": {
+    "search": {
+      "placeholder": "Buscar un artículo…"
+    },
+    "empty": "Ningún artículo corresponde a su búsqueda.",
+    "read_more": "Leer el artículo →",
+    "previous": "← Anterior",
+    "next": "Siguiente →",
+    "hero": {
+      "title": "Blog y Consejos de Salud",
+      "subtitle": "Actualidades, explicaciones de análisis y buenas prácticas en el día a día."
+    },
+    "back_button": "← Volver al blog (Esc)",
+    "pagination_label": "Paginación del blog",
+    "image_unavailable": "Imagen no disponible",
+    "articles": {
+      "article1": {
+        "title": "¿Por qué hacer un análisis de sangre regular?",
+        "excerpt": "¿Por qué hacer un análisis de sangre regular?",
+        "content": "Un análisis de sangre regular es esencial para vigilar su salud general. Nuestros biólogos recomiendan controles periódicos para detectar precozmente posibles anomalías y prevenir complicaciones. Descubra por qué estos exámenes son importantes y cómo contribuyen a su bienestar."
+      },
+      "article2": {
+        "title": "Entender sus resultados de análisis",
+        "excerpt": "Entender sus resultados de análisis",
+        "content": "Nuestros biólogos le explican cómo leer e interpretar sus resultados de laboratorio. Aprenda a descifrar los valores normales, comprender las unidades de medida e identificar las señales que requieren una consulta médica. Una interpretación correcta de sus análisis es la clave de una atención adaptada."
+      },
+      "article3": {
+        "title": "Preparar su visita al laboratorio",
+        "excerpt": "Preparar su visita al laboratorio",
+        "content": "Para una visita óptima al laboratorio, una buena preparación es esencial. Descubra los documentos a aportar, las condiciones de ayuno a respetar y los consejos prácticos para facilitar su toma de muestra. Nuestros equipos están ahí para acompañarlo en cada etapa."
+      },
+      "article4": {
+        "title": "Las novedades en biología médica",
+        "excerpt": "Las novedades en biología médica",
+        "content": "La biología médica evoluciona constantemente con nuevas técnicas y tecnologías. Descubra los últimos avances en materia de análisis, los nuevos marcadores biológicos y las innovaciones que mejoran la precisión y la rapidez de los diagnósticos."
+      }
+    }
+  },
   "documents": {
     "title": "Recursos documentales",
     "description": "Encuentre aquí todos los documentos esenciales para sus actividades profesionales.\n\nSe actualizan regularmente.",
@@ -98,7 +136,32 @@
       "cta": "Descubrir nuestros servicios",
       "video_fallback": "Su navegador no admite el vídeo HTML5."
     },
-    "annonces": { "title": "Anuncios", "view": "Ver anuncio" },
+    "annonces": {
+      "title": "Anuncios",
+      "view": "Ver anuncio",
+      "items": [
+        {
+          "titre": "Chequeo de Salud Completo",
+          "description": "Realice un chequeo médico completo para conocer mejor su salud."
+        },
+        {
+          "titre": "Nuevo Centro en Charf",
+          "description": "Apertura de un nuevo laboratorio con equipos de vanguardia."
+        },
+        {
+          "titre": "Reclutamiento: Únase a Nuestro Equipo",
+          "description": "Por favor, envíe su solicitud a través de este enlace."
+        },
+        {
+          "titre": "Horarios 7/24",
+          "description": "Nuestros laboratorios están abiertos 7 días a la semana y 24 horas al día."
+        },
+        {
+          "titre": "Servicio a Domicilio",
+          "description": "Realice sus pruebas con total serenidad sin desplazarse."
+        }
+      ]
+    },
     "slider": {
       "policies": { "title": "NUESTRAS POLÍTICAS", "text": "Consulte nuestras políticas: Privacidad, Calidad y RR.HH." },
       "visit": { "title": "PREPARE SU VISITA", "text": "Consejos útiles para sus exámenes médicos." },
@@ -366,44 +429,6 @@
       "loading_gallery": "Cargando galería...",
       "loading_blog": "Cargando blog..."
     },
-    "blog": {
-      "search": {
-        "placeholder": "Buscar un artículo…"
-      },
-      "empty": "Ningún artículo corresponde a su búsqueda.",
-      "read_more": "Leer el artículo →",
-      "previous": "← Anterior",
-      "next": "Siguiente →",
-      "hero": {
-        "title": "Blog y Consejos de Salud",
-        "subtitle": "Actualidades, explicaciones de análisis y buenas prácticas en el día a día."
-      },
-      "back_button": "← Volver al blog (Esc)",
-      "pagination_label": "Paginación del blog",
-      "image_unavailable": "Imagen no disponible",
-      "articles": {
-        "article1": {
-          "title": "¿Por qué hacer un análisis de sangre regular?",
-          "excerpt": "¿Por qué hacer un análisis de sangre regular?",
-          "content": "Un análisis de sangre regular es esencial para vigilar su salud general. Nuestros biólogos recomiendan controles periódicos para detectar precozmente posibles anomalías y prevenir complicaciones. Descubra por qué estos exámenes son importantes y cómo contribuyen a su bienestar."
-        },
-        "article2": {
-          "title": "Entender sus resultados de análisis",
-          "excerpt": "Entender sus resultados de análisis",
-          "content": "Nuestros biólogos le explican cómo leer e interpretar sus resultados de laboratorio. Aprenda a descifrar los valores normales, comprender las unidades de medida e identificar las señales que requieren una consulta médica. Una interpretación correcta de sus análisis es la clave de una atención adaptada."
-        },
-        "article3": {
-          "title": "Preparar su visita al laboratorio",
-          "excerpt": "Preparar su visita al laboratorio",
-          "content": "Para una visita óptima al laboratorio, una buena preparación es esencial. Descubra los documentos a aportar, las condiciones de ayuno a respetar y los consejos prácticos para facilitar su toma de muestra. Nuestros equipos están ahí para acompañarlo en cada etapa."
-        },
-        "article4": {
-          "title": "Las novedades en biología médica",
-          "excerpt": "Las novedades en biología médica",
-          "content": "La biología médica evoluciona constantemente con nuevas técnicas y tecnologías. Descubra los últimos avances en materia de análisis, los nuevos marcadores biológicos y las innovaciones que mejoran la precisión y la rapidez de los diagnósticos."
-        }
-      }
-    },
     "pro": {
       "title": "Área Profesional - Laboratorios Zeroual",
       "loading_resources": "Cargando recursos profesionales...",
@@ -475,7 +500,14 @@
       "og_title": "Comentarios y Opiniones - Laboratorios Zeroual",
       "og_description": "Comparta su experiencia con los Laboratorios Zeroual.",
       "whatsapp_text": "📱 Para cualquier queja, contáctenos en:",
-      "loading": "Cargando formulario de comentarios..."
+      "loading": "Cargando formulario de comentarios...",
+      "title_text": "Gracias por enviarnos su opinión, sugerencia o reclamación",
+      "tabs": {
+        "personnel": "Personal",
+        "patient": "Pacientes",
+        "utilisateur": "Usuarios",
+        "satisfaction": "Satisfacción"
+      }
     },
     "contact": {
       "title": "Contacto - Laboratorios Zeroual",

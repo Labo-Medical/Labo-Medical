@@ -11,39 +11,29 @@ type Annonce = {
   lien: string;
 };
 
-const DEFAULT_ANNONCES: Annonce[] = [
+const DEFAULT_ANNONCES: Omit<Annonce, 'titre' | 'description'>[] = [
   {
     id: '1',
-    titre: 'Bilan de santé complet',
-    description: 'Faites un bilan médical pour mieux connaître votre santé.',
     image: { url: '/annonces/5.webp' },
     lien: '/annonce/1',
   },
   {
     id: '2',
-    titre: 'Nouveau centre à Charf',
-    description: 'Ouverture d’un nouveau laboratoire avec équipement de pointe.',
     image: { url: '/annonces/Charf.png' },
     lien: '/annonce/2',
   },
   {
     id: '3',
-    titre: 'Recrutement : rejoignez notre équipe',
-    description: 'Veuillez deposer votre candidature sur ce lien.',
     image: { url: '/annonces/9.jpg' },
     lien: '/annonce/3',
   },
   {
     id: '4',
-    titre: 'Horaires 7/24',
-    description: 'Nos laboratoires sont ouverts 7j/7 et 24h/24.',
     image: { url: '/annonces/3.webp' },
     lien: '/annonce/4',
   },
   {
     id: '5',
-    titre: 'Service à domicile',
-    description: 'Prélevez en toute sérénité sans vous déplacer.',
     image: { url: '/annonces/4.webp' },
     lien: '/annonce/5',
   },
@@ -51,7 +41,7 @@ const DEFAULT_ANNONCES: Annonce[] = [
 
 export default function Annonce() {
   const { t } = useTranslation();
-  const [annonces, setAnnonces] = useState<Annonce[]>(DEFAULT_ANNONCES);
+  const [annonces, setAnnonces] = useState<Annonce[]>([]);
   const [index, setIndex] = useState(0);
   const [selectedAnnonce, setSelectedAnnonce] = useState<Annonce | null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -78,12 +68,22 @@ export default function Annonce() {
               image: typeof a.image === 'string' ? { url: a.image } : a.image,
             }))
           );
+        } else {
+          setAnnonces(DEFAULT_ANNONCES.map((a, index) => ({
+            ...a,
+            titre: t(`home.annonces.items.${index}.titre`),
+            description: t(`home.annonces.items.${index}.description`),
+          })));
         }
       })
       .catch(() => {
-        setAnnonces(DEFAULT_ANNONCES);
+        setAnnonces(DEFAULT_ANNONCES.map((a, index) => ({
+          ...a,
+          titre: t(`home.annonces.items.${index}.titre`),
+          description: t(`home.annonces.items.${index}.description`),
+        })));
       });
-  }, []);
+  }, [t]);
 
   const next = () => setIndex((i) => (i + 1) % annonces.length);
   const prev = () => setIndex((i) => (i - 1 + annonces.length) % annonces.length);

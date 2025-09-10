@@ -110,7 +110,32 @@
       "cta": "Découvrir nos services",
       "video_fallback": "Votre navigateur ne supporte pas la vidéo HTML5."
     },
-    "annonces": { "title": "Annonces", "view": "Voir l’annonce" },
+    "annonces": {
+      "title": "Annonces",
+      "view": "Voir l’annonce",
+      "items": [
+        {
+          "titre": "Bilan de santé complet",
+          "description": "Faites un bilan médical pour mieux connaître votre santé."
+        },
+        {
+          "titre": "Nouveau centre à Charf",
+          "description": "Ouverture d’un nouveau laboratoire avec équipement de pointe."
+        },
+        {
+          "titre": "Recrutement : rejoignez notre équipe",
+          "description": "Veuillez deposer votre candidature sur ce lien."
+        },
+        {
+          "titre": "Horaires 7/24",
+          "description": "Nos laboratoires sont ouverts 7j/7 et 24h/24."
+        },
+        {
+          "titre": "Service à domicile",
+          "description": "Prélevez en toute sérénité sans vous déplacer."
+        }
+      ]
+    },
     "slider": {
       "policies": { "title": "NOS POLITIQUES", "text": "Consultez nos politiques : Confidentialité, Qualité et RH." },
       "visit": { "title": "PRÉPAREZ VOTRE VISITE", "text": "Conseils utiles pour vos examens médicaux." },

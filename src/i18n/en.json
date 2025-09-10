@@ -110,7 +110,32 @@
       "cta": "Discover our services",
       "video_fallback": "Your browser does not support HTML5 video."
     },
-    "annonces": { "title": "Announcements", "view": "View announcement" },
+    "annonces": {
+      "title": "Announcements",
+      "view": "View announcement",
+      "items": [
+        {
+          "titre": "Complete Health Check",
+          "description": "Get a comprehensive medical checkup to better understand your health."
+        },
+        {
+          "titre": "New Center in Charf",
+          "description": "Opening of a new laboratory with state-of-the-art equipment."
+        },
+        {
+          "titre": "Recruitment: Join Our Team",
+          "description": "Please submit your application via this link."
+        },
+        {
+          "titre": "24/7 Hours",
+          "description": "Our laboratories are open 7 days a week and 24 hours a day."
+        },
+        {
+          "titre": "Home Service",
+          "description": "Get tested in complete serenity without leaving home."
+        }
+      ]
+    },
     "slider": {
       "policies": { "title": "OUR POLICIES", "text": "See our policies: Privacy, Quality and HR." },
       "visit": { "title": "PREPARE YOUR VISIT", "text": "Helpful tips for your medical exams." },

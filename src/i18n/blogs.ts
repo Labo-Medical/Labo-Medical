@@ -1,7 +1,10 @@
 // Client-side blog translation registry.
-// Map by language -> (slug or id) -> field overrides.
-// Fill this with your translations per article.
+// This file manages translations for blog articles that are not stored in a CMS.
+// It maps language codes to article identifiers and their translated content.
+// Used when articles don't have dynamic translations from a backend.
 
+// Type definition for blog article translations
+// Each field can be overridden per language
 export type BlogTranslation = {
   title?: string;
   excerpt?: string;
@@ -10,9 +13,11 @@ export type BlogTranslation = {
   image?: { url: string };
 };
 
+// Translation registry structure:
+// language -> articleId -> translation overrides
 export const blogTranslations: Record<string, Record<string, BlogTranslation>> = {
-  // Keys here are article identifiers to match against `article.slug || article.id`.
-  // Since the fallback articles use ids `fallback1..fallback4`, we target those ids.
+  // Keys here are article identifiers (slug or id) to match against article data.
+  // For fallback articles, we use ids like 'fallback1', 'fallback2', etc.
   fr: {
     fallback1: {
       title: 'Pourquoi faire un bilan sanguin régulier ?',

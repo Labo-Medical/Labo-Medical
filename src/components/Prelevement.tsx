@@ -3,32 +3,32 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { fetchPayloadPrelevement, type PrelevementContent } from '../services/payloadApi2';
 
-const getDefaultContent = (): PrelevementContent => ({
+const getDefaultContent = (t: any): PrelevementContent => ({
   id: "prelevement",
-  title: "Prélèvements",
-  description: "Simplifiez vos prélèvements grâce à nos solutions accessibles partout.\n\nContactez-nous pour plus d'informations.",
+  title: t('sampling.title'),
+  description: t('sampling.description'),
   documentUrl: "/docs/Prelevement.pdf",
 });
 
 export default function Prelevements() {
   const { t, i18n } = useTranslation();
-  const [content, setContent] = useState<PrelevementContent>(getDefaultContent());
+  const [content, setContent] = useState<PrelevementContent | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchPayloadPrelevement(i18n.language)
       .then((data) => {
         if (data) {
-          setContent({ ...getDefaultContent(), documentUrl: data.documentUrl || getDefaultContent().documentUrl });
+          setContent({ ...getDefaultContent(t), documentUrl: data.documentUrl || getDefaultContent(t).documentUrl });
         } else {
-          setContent(getDefaultContent());
+          setContent(getDefaultContent(t));
         }
       })
       .catch(() => {
-        setContent(getDefaultContent());
+        setContent(getDefaultContent(t));
       })
       .finally(() => setLoading(false));
-  }, [i18n.language]);
+  }, [i18n.language, t]);
 
   const openFullscreenPDF = (url: string) => {
     const win = window.open(url, '_blank', 'toolbar=no,scrollbars=yes,resizable=yes,fullscreen=yes');
@@ -37,7 +37,7 @@ export default function Prelevements() {
     }
   };
 
-  if (loading) return <p style={styles.placeholder}>{t('common.loading')}</p>;
+  if (loading || !content) return <p style={styles.placeholder}>{t('common.loading')}</p>;
 
   return (
     <motion.section
