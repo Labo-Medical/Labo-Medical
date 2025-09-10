@@ -1,6 +1,9 @@
-import React, { useMemo, useRef, useState } from "react";
-import { type ArticlePayload } from "../services/payloadApi";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { type ArticlePayload, fetchPayloadBlogs } from "../services/payloadApi";
 import { useTranslation } from 'react-i18next';
+import { translateArticles, coverageCount } from '../utils/blogI18n';
+import { tBlog } from '../utils/i18nHelpers';
+import { blogTranslations } from '../i18n/blogs';
 
 /**
  * Listing + lecture inline (même page)
@@ -9,47 +12,68 @@ import { useTranslation } from 'react-i18next';
  *   → si votre collection Payload expose `content` ou `body`, il sera rendu ici sans rien changer à l'API.
  */
 
-const buildFallbackArticles = (t: (key: string) => string): ArticlePayload[] => [
-  {
-    id: "fallback1",
-    title: t('blog.articles.article1.title'),
-    excerpt: t('blog.articles.article1.excerpt'),
-    slug: "blogarticle",
-    image: { url: "/blog/blog1.jpg" },
-    content: t('blog.articles.article1.content')
-  },
-  {
-    id: "fallback2",
-    title: t('blog.articles.article2.title'),
-    excerpt: t('blog.articles.article2.excerpt'),
-    slug: "blogarticle",
-    image: { url: "/blog/blog2.jpg" },
-    content: t('blog.articles.article2.content')
-  },
-  {
-    id: "fallback3",
-    title: t('blog.articles.article3.title'),
-    excerpt: t('blog.articles.article3.excerpt'),
-    slug: "blogarticle",
-    image: { url: "/blog/blog3.jpg" },
-    content: t('blog.articles.article3.content')
-  },
-  {
-    id: "fallback4",
-    title: t('blog.articles.article4.title'),
-    excerpt: t('blog.articles.article4.excerpt'),
-    slug: "blogarticle",
-    image: { url: "/blog/blog4.jpg" },
-    content: t('blog.articles.article4.content')
-  },
-];
+const buildFallbackArticles = (i18n: any, t: (key: string) => string): ArticlePayload[] => {
+  const lang = (i18n.language || '').split('-')[0] || i18n.language;
+  const reg = (blogTranslations as any)[lang];
+  if (reg && reg.fallback1 && reg.fallback2 && reg.fallback3 && reg.fallback4) {
+    const mapIdToImg: Record<string, string> = {
+      fallback1: '/blog/blog1.jpg',
+      fallback2: '/blog/blog2.jpg',
+      fallback3: '/blog/blog3.jpg',
+      fallback4: '/blog/blog4.jpg',
+    };
+    return ['fallback1','fallback2','fallback3','fallback4'].map((id) => ({
+      id,
+      title: reg[id].title || '',
+      excerpt: reg[id].excerpt || '',
+      slug: 'blogarticle',
+      image: { url: mapIdToImg[id] },
+      content: reg[id].content || '',
+    })) as ArticlePayload[];
+  }
+  return [
+    {
+      id: 'fallback1',
+      title: tBlog(i18n, t as any, 'articles.article1.title'),
+      excerpt: tBlog(i18n, t as any, 'articles.article1.excerpt'),
+      slug: 'blogarticle',
+      image: { url: '/blog/blog1.jpg' },
+      content: tBlog(i18n, t as any, 'articles.article1.content')
+    },
+    {
+      id: 'fallback2',
+      title: tBlog(i18n, t as any, 'articles.article2.title'),
+      excerpt: tBlog(i18n, t as any, 'articles.article2.excerpt'),
+      slug: 'blogarticle',
+      image: { url: '/blog/blog2.jpg' },
+      content: tBlog(i18n, t as any, 'articles.article2.content')
+    },
+    {
+      id: 'fallback3',
+      title: tBlog(i18n, t as any, 'articles.article3.title'),
+      excerpt: tBlog(i18n, t as any, 'articles.article3.excerpt'),
+      slug: 'blogarticle',
+      image: { url: '/blog/blog3.jpg' },
+      content: tBlog(i18n, t as any, 'articles.article3.content')
+    },
+    {
+      id: 'fallback4',
+      title: tBlog(i18n, t as any, 'articles.article4.title'),
+      excerpt: tBlog(i18n, t as any, 'articles.article4.excerpt'),
+      slug: 'blogarticle',
+      image: { url: '/blog/blog4.jpg' },
+      content: tBlog(i18n, t as any, 'articles.article4.content')
+    },
+  ];
+};
 
 // Petit helper TypeScript pour lire un éventuel champ HTML "content" ou "body" sans changer le modèle
 type MaybeWithContent = ArticlePayload & { content?: string; body?: string };
 
 export default function BlogPage() {
-  const { t } = useTranslation();
-  const [articles] = useState<ArticlePayload[]>(buildFallbackArticles(t));
+  const { t, i18n } = useTranslation();
+  const [rawArticles, setRawArticles] = useState<ArticlePayload[] | null>(null);
+  const [articles, setArticles] = useState<ArticlePayload[]>(buildFallbackArticles(i18n, t));
   // const [loading, setLoading] = useState(false); // No longer needed without API calls
   // const [error, setError] = useState<string | null>(null);
 
@@ -61,8 +85,41 @@ export default function BlogPage() {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Remove API call - always use translated fallback articles
-  // useEffect(() => { ... }, [t]);
+  // Fetch canonical articles once; translate client-side on language changes
+  useEffect(() => {
+    let mounted = true;
+    fetchPayloadBlogs()
+      .then((docs) => {
+        if (!mounted) return;
+        setRawArticles((docs && docs.length > 0) ? docs : null);
+      })
+      .catch(() => mounted && setRawArticles(null));
+    return () => { mounted = false; };
+  }, []);
+
+  useEffect(() => {
+    if (rawArticles && rawArticles.length > 0) {
+      const translated = translateArticles(rawArticles, i18n.language);
+      const top = rawArticles.slice(0, 4);
+      const fullCoverage = coverageCount(top, i18n.language) === top.length;
+      if (fullCoverage) {
+        setArticles(translated);
+      } else {
+        setArticles(buildFallbackArticles(i18n, t));
+      }
+    } else {
+      setArticles(buildFallbackArticles(i18n, t));
+    }
+  }, [rawArticles, i18n.language, t]);
+
+  // Keep the opened article in sync when language/articles change
+  useEffect(() => {
+    if (!selected) return;
+    const updated = articles.find(a => a.id === selected.id) || null;
+    if (updated && (updated.title !== selected.title || (updated as any).content !== (selected as any).content)) {
+      setSelected(updated);
+    }
+  }, [articles]);
 
   // Quand on ouvre un article: scroll au début du bloc + activer ESC pour fermer
   // Removed useEffect for scroll behavior - can be implemented differently if needed
@@ -104,7 +161,7 @@ export default function BlogPage() {
         {selected ? (
           <article style={sx.articleFull}>
             <button style={sx.backBtn} onClick={() => setSelected(null)} aria-label="Retour au listing">
-              {t('blog.back_button')}
+              {tBlog(i18n as any, t as any, 'back_button')}
             </button>
             <h2 style={sx.fullTitle}>{selected.title}</h2>
             {selected.image?.url && (
@@ -127,7 +184,7 @@ export default function BlogPage() {
                     setQuery(e.target.value);
                     setPage(1);
                   }}
-                  placeholder={t('blog.search.placeholder')}
+                  placeholder={tBlog(i18n as any, t as any, 'search.placeholder')}
                   aria-label="Rechercher dans le blog"
                   style={sx.searchInput}
                 />
@@ -140,7 +197,7 @@ export default function BlogPage() {
             {/* Grille d'articles */}
             <div style={sx.grid}>
               {visible.length === 0 ? (
-                <div style={sx.empty}>{t('blog.empty')}</div>
+                <div style={sx.empty}>{tBlog(i18n as any, t as any, 'empty')}</div>
               ) : (
                 visible.map((a: ArticlePayload) => (
                   <div key={a.id} style={sx.card}>
@@ -149,7 +206,7 @@ export default function BlogPage() {
                         <img src={a.image.url} alt={a.title} style={sx.thumb} loading="lazy" />
                       ) : (
                         <div style={{ ...sx.thumb, display: "grid", placeItems: "center", fontSize: 12, color: "#888" }}>
-                          {t('blog.image_unavailable')}
+                          {tBlog(i18n as any, t as any, 'image_unavailable')}
                         </div>
                       )}
                     </div>
@@ -163,7 +220,7 @@ export default function BlogPage() {
                           aria-expanded={selected && (selected as ArticlePayload).id === a.id ? "true" : "false"}
                           aria-controls={`article-${a.id}`}
                         >
-                          {t('blog.read_more')}
+                          {tBlog(i18n as any, t as any, 'read_more')}
                         </button>
                       </div>
                     </div>
@@ -174,9 +231,9 @@ export default function BlogPage() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <nav style={sx.pagination} aria-label={t('blog.pagination_label')}>
+              <nav style={sx.pagination} aria-label={tBlog(i18n as any, t as any, 'pagination_label')}>
                 <button style={sx.pageBtn} onClick={() => goTo(pageSafe - 1)} disabled={pageSafe === 1}>
-                  {t('blog.previous')}
+                  {tBlog(i18n as any, t as any, 'previous')}
                 </button>
                 <ul style={sx.pageList}>
                   {Array.from({ length: totalPages }).map((_, i) => {
@@ -196,7 +253,7 @@ export default function BlogPage() {
                   })}
                 </ul>
                 <button style={sx.pageBtn} onClick={() => goTo(pageSafe + 1)} disabled={pageSafe === totalPages}>
-                  {t('blog.next')}
+                  {tBlog(i18n as any, t as any, 'next')}
                 </button>
               </nav>
             )}
@@ -209,12 +266,12 @@ export default function BlogPage() {
 
 /* ----------------------------- UI sub-components ---------------------------- */
 function Hero() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <header style={sx.hero}>
       <div style={sx.heroInner}>
-        <h1 style={sx.heroTitle}>{t('blog.hero.title')}</h1>
-        <p style={sx.heroSubtitle}>{t('blog.hero.subtitle')}</p>
+        <h1 style={sx.heroTitle}>{tBlog(i18n as any, t as any, 'hero.title')}</h1>
+        <p style={sx.heroSubtitle}>{tBlog(i18n as any, t as any, 'hero.subtitle')}</p>
       </div>
     </header>
   );

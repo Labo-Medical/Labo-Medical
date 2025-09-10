@@ -87,8 +87,10 @@ export type ArticlePayload = {
   content?: string;
 };
 
-export async function fetchPayloadBlogs(): Promise<ArticlePayload[]> {
-  return await fetchCollection<ArticlePayload>('blog');
+export async function fetchPayloadBlogs(locale?: string): Promise<ArticlePayload[]> {
+  const endpoint = locale ? `blog?limit=10&locale=${locale}` : 'blog?limit=10';
+  const data = await fetcher<{ docs: ArticlePayload[] }>(endpoint);
+  return data?.docs || [];
 }
 
 // BlogArticle
