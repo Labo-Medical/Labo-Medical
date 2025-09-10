@@ -41,7 +41,7 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-    debug: false,
+    debug: true, // Temporarily enable debug mode to check for translation issues
   });
 
 export default i18n;

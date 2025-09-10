@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { fetchPayloadDocuments, type DocumentPayload } from '../services/payloadApi';
 
-const getDefaultContent = (): DocumentPayload => ({
+const getDefaultContent = (t: any): DocumentPayload => ({
   id: "document",
-  title: "Ressources documentaires",
-  description: "Retrouvez ici tous les documents indispensables à vos activités professionnelles.\n\nIls sont mis à jour régulièrement.",
+  title: t('documents.title'),
+  description: t('documents.description'),
   documents: [
     {
-      title: "Guide des bonnes pratiques (PDF)",
+      title: t('documents.good_practices'),
       url: "/docs/guides.pdf",
     },
   ],
@@ -17,7 +17,7 @@ const getDefaultContent = (): DocumentPayload => ({
 
 export default function Documents() {
   const { t, i18n } = useTranslation();
-  const [content, setContent] = useState<DocumentPayload>(() => getDefaultContent());
+  const [content, setContent] = useState<DocumentPayload>(() => getDefaultContent(t));
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Documents() {
         if (data) setContent(data);
       })
       .catch(() => {
-        setContent(getDefaultContent());
+        setContent(getDefaultContent(t));
       })
       .finally(() => {
         setLoading(false);

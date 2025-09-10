@@ -1,29 +1,39 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadChiffres, type ChiffresPayload } from '../services/payloadApi';
 import { FaMicroscope, FaMapMarkerAlt, FaChartPie, FaCogs } from 'react-icons/fa';
 
-const fallbackData: ChiffresPayload = {
-  title: "En chiffres",
+const getFallbackData = (t: (key: string) => string): ChiffresPayload => ({
+  title: t('components.chiffres.title'),
   stats: [
-    { label: "Examens spécialisés/semaines", value: "300" },
-    { label: "Laboratoires", value: "03" },
-    { label: "Interventions", value: "15%" },
-    { label: "Plateau technique", value: "01" },
+    { label: t('components.chiffres.stats.examens'), value: "300" },
+    { label: t('components.chiffres.stats.laboratoires'), value: "03" },
+    { label: t('components.chiffres.stats.interventions'), value: "15%" },
+    { label: t('components.chiffres.stats.plateau'), value: "01" },
   ],
-};
+});
 
 export default function Chiffres() {
-  const [data, setData] = useState<ChiffresPayload>(fallbackData);
+  const { t, i18n } = useTranslation();
+  const [data, setData] = useState<ChiffresPayload>(getFallbackData(t));
 
   useEffect(() => {
-    fetchPayloadChiffres()
-      .then((remoteData) => {
-        if (remoteData) setData(remoteData);
-      })
-      .catch(() => {
+    const loadData = async () => {
+      try {
+        const remoteData = await fetchPayloadChiffres();
+        if (remoteData) {
+          setData(remoteData);
+        } else {
+          setData(getFallbackData(t));
+        }
+      } catch {
         console.warn('PayloadCMS indisponible, fallback utilisé.');
-      });
-  }, []);
+        setData(getFallbackData(t));
+      }
+    };
+
+    loadData();
+  }, [i18n.language, t]);
 
   return (
     <section style={{

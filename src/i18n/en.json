@@ -178,19 +178,23 @@
     "articles": {
       "article1": {
         "title": "Why get regular blood tests?",
-        "excerpt": "Why get regular blood tests?"
+        "excerpt": "Why get regular blood tests?",
+        "content": "Regular blood tests are essential for monitoring your overall health. Our biologists recommend periodic checks to detect potential abnormalities early and prevent complications. Discover why these tests are important and how they contribute to your well-being."
       },
       "article2": {
         "title": "Understanding your test results",
-        "excerpt": "Understanding your test results"
+        "excerpt": "Understanding your test results",
+        "content": "Our biologists explain how to read and interpret your laboratory results. Learn to decipher normal values, understand measurement units, and identify signs that require medical consultation. Correct interpretation of your tests is key to appropriate care."
       },
       "article3": {
         "title": "Preparing your laboratory visit",
-        "excerpt": "Preparing your laboratory visit"
+        "excerpt": "Preparing your laboratory visit",
+        "content": "For an optimal laboratory visit, good preparation is essential. Discover the documents to bring, fasting conditions to respect, and practical tips to facilitate your sampling. Our teams are here to accompany you every step of the way."
       },
       "article4": {
         "title": "Latest developments in medical biology",
-        "excerpt": "Latest developments in medical biology"
+        "excerpt": "Latest developments in medical biology",
+        "content": "Medical biology is constantly evolving with new techniques and technologies. Discover the latest advances in analyses, new biological markers, and innovations that improve the accuracy and speed of diagnoses."
       }
     }
   },
@@ -419,6 +423,8 @@
     "pro": {
       "title": "Professional Area - Zeroual Laboratories",
       "loading_resources": "Loading professional resources...",
+      "description": "Doctors, nurses, midwives — access your dedicated tools and resources.",
+      "og_description": "Doctors, nurses, midwives — Find all the resources to facilitate your professional procedures.",
       "features": {
         "recommendations": {
           "title": "Pre-analytical recommendations",
@@ -535,16 +541,16 @@
     },
     "historique": {
       "title": "Greater population coverage at the local level.",
-      "paragraphs": [
-        "This proximity network aims to establish independent medical biology,",
-        "of quality and innovation for the health and well-being of patients."
-      ],
-      "history": [
-        { "year": "2023", "title": "Year of creation", "text": "LES LABORATOIRES ZEROUAL Network" },
-        { "year": "2023", "title": "1st laboratory in the network", "text": "First laboratory in the network in Kawassim" },
-        { "year": "2024", "title": "Second laboratory in the network", "text": "Second laboratory in the network in Souani." },
-        { "year": "2025", "title": "Third laboratory in the network", "text": "Third laboratory in the network in Charf." }
-      ]
+      "paragraphs": {
+        "0": "This proximity network aims to establish independent medical biology,",
+        "1": "of quality and innovation for the health and well-being of patients."
+      },
+      "history": {
+        "0": { "year": "2023", "title": "Year of creation", "text": "LES LABORATOIRES ZEROUAL Network" },
+        "1": { "year": "2023", "title": "1st laboratory in the network", "text": "First laboratory in the network in Kawassim" },
+        "2": { "year": "2024", "title": "Second laboratory in the network", "text": "Second laboratory in the network in Souani." },
+        "3": { "year": "2025", "title": "Third laboratory in the network", "text": "Third laboratory in the network in Charf." }
+      }
     },
     "contact": {
       "labs": {
@@ -558,6 +564,18 @@
       "fr": "Français",
       "en": "English",
       "ar": "العربية"
+    },
+    "chiffres": {
+      "title": "In numbers",
+      "stats": {
+        "examens": "Specialized exams/weeks",
+        "laboratoires": "Laboratories",
+        "interventions": "Interventions",
+        "plateau": "Technical platform"
+      }
+    },
+    "partenaires": {
+      "title": "Our partners"
     },
     "loading_form": "Loading form...",
     "loading_presentation": "Loading presentation...",

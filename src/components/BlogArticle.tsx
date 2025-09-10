@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { fetchPayloadBlogs, type ArticlePayload } from "../services/payloadApi";
+import React, { useMemo, useRef, useState } from "react";
+import { type ArticlePayload } from "../services/payloadApi";
 import { useTranslation } from 'react-i18next';
 
 /**
@@ -9,34 +9,38 @@ import { useTranslation } from 'react-i18next';
  *   → si votre collection Payload expose `content` ou `body`, il sera rendu ici sans rien changer à l'API.
  */
 
-const buildFallbackArticles = (): ArticlePayload[] => [
+const buildFallbackArticles = (t: (key: string) => string): ArticlePayload[] => [
   {
     id: "fallback1",
-    title: "Pourquoi faire un bilan sanguin régulier ?",
-    excerpt: "Découvrez pourquoi il est essentiel de réaliser des bilans sanguins réguliers pour surveiller votre santé et détecter précocement d'éventuels problèmes.",
+    title: t('blog.articles.article1.title'),
+    excerpt: t('blog.articles.article1.excerpt'),
     slug: "blogarticle",
-    image: { url: "/blog/blog1.jpg" }
+    image: { url: "/blog/blog1.jpg" },
+    content: t('blog.articles.article1.content')
   },
   {
     id: "fallback2",
-    title: "Comprendre vos résultats d'analyses",
-    excerpt: "Apprenez à déchiffrer vos résultats d'analyses médicales et comprendre leur signification pour une meilleure prise en charge de votre santé.",
+    title: t('blog.articles.article2.title'),
+    excerpt: t('blog.articles.article2.excerpt'),
     slug: "blogarticle",
-    image: { url: "/blog/blog2.jpg" }
+    image: { url: "/blog/blog2.jpg" },
+    content: t('blog.articles.article2.content')
   },
   {
     id: "fallback3",
-    title: "Préparer sa visite au laboratoire",
-    excerpt: "Conseils pratiques pour bien préparer votre visite au laboratoire médical et faciliter le déroulement de vos examens.",
+    title: t('blog.articles.article3.title'),
+    excerpt: t('blog.articles.article3.excerpt'),
     slug: "blogarticle",
-    image: { url: "/blog/blog3.jpg" }
+    image: { url: "/blog/blog3.jpg" },
+    content: t('blog.articles.article3.content')
   },
   {
     id: "fallback4",
-    title: "Les nouveautés en biologie médicale",
-    excerpt: "Découvrez les dernières avancées et innovations dans le domaine de la biologie médicale et leur impact sur les soins de santé.",
+    title: t('blog.articles.article4.title'),
+    excerpt: t('blog.articles.article4.excerpt'),
     slug: "blogarticle",
-    image: { url: "/blog/blog4.jpg" }
+    image: { url: "/blog/blog4.jpg" },
+    content: t('blog.articles.article4.content')
   },
 ];
 
@@ -45,8 +49,8 @@ type MaybeWithContent = ArticlePayload & { content?: string; body?: string };
 
 export default function BlogPage() {
   const { t } = useTranslation();
-  const [articles, setArticles] = useState<ArticlePayload[]>(buildFallbackArticles());
-  const [loading, setLoading] = useState(true);
+  const [articles] = useState<ArticlePayload[]>(buildFallbackArticles(t));
+  // const [loading, setLoading] = useState(false); // No longer needed without API calls
   // const [error, setError] = useState<string | null>(null);
 
   // UI state (front-only)
@@ -57,44 +61,13 @@ export default function BlogPage() {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    let mounted = true;
-    (async () => {
-      try {
-        const data = await fetchPayloadBlogs();
-        if (!mounted) return;
-        if (Array.isArray(data) && data.length > 0) {
-          setArticles(data);
-        } else {
-          setArticles(buildFallbackArticles());
-        }
-      } catch (e: any) {
-        // setError("Impossible de charger les articles. Affichage des contenus par défaut.");
-        setArticles(buildFallbackArticles());
-      } finally {
-        setLoading(false);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, []);
+  // Remove API call - always use translated fallback articles
+  // useEffect(() => { ... }, [t]);
 
   // Quand on ouvre un article: scroll au début du bloc + activer ESC pour fermer
-  useEffect(() => {
-    if (selected && containerRef.current) {
-      const top = containerRef.current.getBoundingClientRect().top + window.scrollY - 16;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
-  }, [selected]);
+  // Removed useEffect for scroll behavior - can be implemented differently if needed
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && selected) setSelected(null);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [selected]);
+  // Removed useEffect for ESC key handling - can be implemented differently if needed
 
   // Recherche (titre + extrait)
   const filtered = useMemo(() => {
@@ -121,20 +94,7 @@ export default function BlogPage() {
     return basicSanitize(raw);
   };
 
-  if (loading) {
-    return (
-      <section style={sx.section}>
-        <Hero />
-        <div style={sx.container}>
-          <div style={sx.grid}>
-            {Array.from({ length: 9 }).map((_, i) => (
-              <SkeletonCard key={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
+  // No loading state needed since we always use translated fallback articles
 
   return (
     <section style={sx.section}>
@@ -260,18 +220,7 @@ function Hero() {
   );
 }
 
-function SkeletonCard() {
-  return (
-    <div style={sx.card}>
-      <div style={{ ...sx.thumbWrap, background: "#f2f2f2" }} />
-      <div style={sx.cardBody}>
-        <div style={{ height: 20, background: "#eee", borderRadius: 8, marginBottom: 10 }} />
-        <div style={{ height: 14, background: "#f0f0f0", borderRadius: 8, marginBottom: 8 }} />
-        <div style={{ height: 14, width: "70%", background: "#f5f5f5", borderRadius: 8 }} />
-      </div>
-    </div>
-  );
-}
+// Removed SkeletonCard component - no longer needed without loading state
 
 /* ----------------------------- Sanitize minimal ----------------------------- */
 function basicSanitize(html: string): string {

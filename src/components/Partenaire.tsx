@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadLogos } from '../services/payloadApi2';
 
 const styles = `
@@ -57,7 +58,9 @@ const fallbackLogos = [
 ];
 
 const LogoSlider: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [logos, setLogos] = useState<string[]>(fallbackLogos);
+  const [, forceUpdate] = useState({});
 
   useEffect(() => {
     fetchPayloadLogos()
@@ -69,13 +72,18 @@ const LogoSlider: React.FC = () => {
       });
   }, []);
 
+  // Force re-render when language changes
+  useEffect(() => {
+    forceUpdate({});
+  }, [i18n.language]);
+
   const duplicatedLogos = [...logos, ...logos];
 
   return (
     <>
       <style>{styles}</style>
       <div className="logo-slider-container">
-        <h2 className="logo-slider-title">Nos partenaires</h2>
+        <h2 className="logo-slider-title">{t('components.partenaires.title')}</h2>
         <div className="logo-slider">
           <div className="slider-track">
             {duplicatedLogos.map((logo, index) => (

@@ -47,8 +47,8 @@ function buildSpecialites(t: (key: string) => string): ServiceData[] {
 
 // === Section spécialités avec GRID responsive ===
 function SpecialitesSection() {
-  const { t } = useTranslation();
-  const items = useMemo(() => buildSpecialites(t), [t]);
+  const { t, i18n } = useTranslation();
+  const items = useMemo(() => buildSpecialites(t), [t, i18n.language]);
   return (
     <section style={{ marginTop: '2rem', backgroundColor: '#f4f6fa', padding: '2rem 1rem', borderRadius: '12px' }}>
       <h2 style={{ fontSize: '1.6rem', textAlign: 'center', marginBottom: '1.5rem', color: '#800020' }}>
@@ -124,15 +124,22 @@ function AutomateCard({ title, description, iconSrc }: ServiceData) {
 
 // === Composant principal ===
 export default function Services() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [visibleCount, setVisibleCount] = useState(4);
   const [automates, setAutomates] = useState<ServiceData[]>(() => buildFallbackAutomates(t));
 
   useEffect(() => {
+    const fallbackData = buildFallbackAutomates(t);
     fetchPayloadAutomates()
-      .then((data) => { if (data.length > 0) setAutomates(data); })
-      .catch(() => setAutomates(buildFallbackAutomates(t)));
-  }, [t]);
+      .then((data) => { 
+        if (data.length > 0) {
+          setAutomates(data); 
+        } else {
+          setAutomates(fallbackData);
+        }
+      })
+      .catch(() => setAutomates(fallbackData));
+  }, [i18n.language, t]);
 
   return (
     <section style={{ padding: '2rem', backgroundColor: '#f8f9fb', borderRadius: '12px' }}>

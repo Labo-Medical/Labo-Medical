@@ -107,41 +107,10 @@
     },
     "gallery": { "title": "GALERÍA", "more": "Ver más" },
     "blog": {
-    "search": {
-      "placeholder": "Buscar un artículo…"
+      "title": "Actualidades de la biología médica",
+      "read": "Leer el artículo"
     },
-    "empty": "Ningún artículo coincide con su búsqueda.",
-    "read_more": "Leer el artículo →",
-    "previous": "← Anterior",
-    "next": "Siguiente →",
-    "hero": {
-      "title": "Blog & Consejos de Salud",
-      "subtitle": "Actualidades, explicaciones de análisis y buenas prácticas diarias."
-    },
-    "back_button": "← Volver al blog (Esc)",
-    "pagination_label": "Paginación del blog",
-    "image_unavailable": "Imagen no disponible",
-    "articles": {
-      "article1": {
-        "title": "¿Por qué hacerse análisis de sangre regulares?",
-        "excerpt": "¿Por qué hacerse análisis de sangre regulares?"
-      },
-      "article2": {
-        "title": "Comprender sus resultados de análisis",
-        "excerpt": "Comprender sus resultados de análisis"
-      },
-      "article3": {
-        "title": "Preparar su visita al laboratorio",
-        "excerpt": "Preparar su visita al laboratorio"
-      },
-      "article4": {
-        "title": "Las novedades en biología médica",
-        "excerpt": "Las novedades en biología médica"
-      }
-    }
-  },
     "specialties": {
-      "title": "Nuestros ámbitos de especialización",
       "items": {
         "s1": { "title": "Tomas de muestra", "desc": "Simplifique sus tomas de muestra." },
         "s2": { "title": "Bioquímica", "desc": "Análisis de sustancias químicas." },
@@ -397,9 +366,49 @@
       "loading_gallery": "Cargando galería...",
       "loading_blog": "Cargando blog..."
     },
+    "blog": {
+      "search": {
+        "placeholder": "Buscar un artículo…"
+      },
+      "empty": "Ningún artículo corresponde a su búsqueda.",
+      "read_more": "Leer el artículo →",
+      "previous": "← Anterior",
+      "next": "Siguiente →",
+      "hero": {
+        "title": "Blog y Consejos de Salud",
+        "subtitle": "Actualidades, explicaciones de análisis y buenas prácticas en el día a día."
+      },
+      "back_button": "← Volver al blog (Esc)",
+      "pagination_label": "Paginación del blog",
+      "image_unavailable": "Imagen no disponible",
+      "articles": {
+        "article1": {
+          "title": "¿Por qué hacer un análisis de sangre regular?",
+          "excerpt": "¿Por qué hacer un análisis de sangre regular?",
+          "content": "Un análisis de sangre regular es esencial para vigilar su salud general. Nuestros biólogos recomiendan controles periódicos para detectar precozmente posibles anomalías y prevenir complicaciones. Descubra por qué estos exámenes son importantes y cómo contribuyen a su bienestar."
+        },
+        "article2": {
+          "title": "Entender sus resultados de análisis",
+          "excerpt": "Entender sus resultados de análisis",
+          "content": "Nuestros biólogos le explican cómo leer e interpretar sus resultados de laboratorio. Aprenda a descifrar los valores normales, comprender las unidades de medida e identificar las señales que requieren una consulta médica. Una interpretación correcta de sus análisis es la clave de una atención adaptada."
+        },
+        "article3": {
+          "title": "Preparar su visita al laboratorio",
+          "excerpt": "Preparar su visita al laboratorio",
+          "content": "Para una visita óptima al laboratorio, una buena preparación es esencial. Descubra los documentos a aportar, las condiciones de ayuno a respetar y los consejos prácticos para facilitar su toma de muestra. Nuestros equipos están ahí para acompañarlo en cada etapa."
+        },
+        "article4": {
+          "title": "Las novedades en biología médica",
+          "excerpt": "Las novedades en biología médica",
+          "content": "La biología médica evoluciona constantemente con nuevas técnicas y tecnologías. Descubra los últimos avances en materia de análisis, los nuevos marcadores biológicos y las innovaciones que mejoran la precisión y la rapidez de los diagnósticos."
+        }
+      }
+    },
     "pro": {
       "title": "Área Profesional - Laboratorios Zeroual",
       "loading_resources": "Cargando recursos profesionales...",
+      "description": "Médicos, enfermeras, matronas — accedan a sus herramientas y recursos dedicados.",
+      "og_description": "Médicos, enfermeras, matronas — Encuentren todos los recursos para facilitar sus trámites profesionales.",
       "features": {
         "recommendations": {
           "title": "Recomendaciones preanalíticas",
@@ -519,6 +528,31 @@
       "fr": "Français",
       "en": "English",
       "ar": "العربية"
+    },
+    "historique": {
+      "title": "Una cobertura poblacional más importante a nivel local.",
+      "paragraphs": {
+        "0": "Esta red de proximidad tiene como objetivo establecer una biología médica independiente,",
+        "1": "de calidad e innovación para la salud y el bienestar de los pacientes."
+      },
+      "history": {
+        "0": { "year": "2023", "title": "Año de creación", "text": "Red LOS LABORATORIOS ZEROUAL" },
+        "1": { "year": "2023", "title": "Primer laboratorio en la red", "text": "Primer laboratorio en la red en Kawassim" },
+        "2": { "year": "2024", "title": "Segundo laboratorio en la red", "text": "Segundo laboratorio en la red en Souani." },
+        "3": { "year": "2025", "title": "Tercer laboratorio en la red", "text": "Tercer laboratorio en la red en Charf." }
+      }
+    },
+    "chiffres": {
+      "title": "En cifras",
+      "stats": {
+        "examens": "Exámenes especializados/semanas",
+        "laboratoires": "Laboratorios",
+        "interventions": "Intervenciones",
+        "plateau": "Plataforma técnica"
+      }
+    },
+    "partenaires": {
+      "title": "Nuestros socios"
     },
     "loading_form": "Cargando formulario...",
     "loading_presentation": "Cargando presentación...",

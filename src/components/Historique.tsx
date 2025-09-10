@@ -5,54 +5,97 @@ import { fetchPayloadHistorique, type HistoriquePayload } from '../services/payl
 export default function Historique() {
   const { t } = useTranslation();
 
-  const fallbackData: Required<HistoriquePayload> = {
+  // Function to get fallback data with current translations
+  const getFallbackData = (): Required<HistoriquePayload> => ({
     title: t('components.historique.title'),
     paragraphs: [
-      t('components.historique.paragraphs[0]'),
-      t('components.historique.paragraphs[1]'),
+      t('components.historique.paragraphs.0'),
+      t('components.historique.paragraphs.1'),
     ],
     history: [
-      { 
-        year: t('components.historique.history[0].year'), 
-        title: t('components.historique.history[0].title'), 
-        text: t('components.historique.history[0].text') 
+      {
+        year: t('components.historique.history.0.year'),
+        title: t('components.historique.history.0.title'),
+        text: t('components.historique.history.0.text'),
       },
-      { 
-        year: t('components.historique.history[1].year'), 
-        title: t('components.historique.history[1].title'), 
-        text: t('components.historique.history[1].text') 
+      {
+        year: t('components.historique.history.1.year'),
+        title: t('components.historique.history.1.title'),
+        text: t('components.historique.history.1.text'),
       },
-      { 
-        year: t('components.historique.history[2].year'), 
-        title: t('components.historique.history[2].title'), 
-        text: t('components.historique.history[2].text') 
+      {
+        year: t('components.historique.history.2.year'),
+        title: t('components.historique.history.2.title'),
+        text: t('components.historique.history.2.text'),
       },
-      { 
-        year: t('components.historique.history[3].year'), 
-        title: t('components.historique.history[3].title'), 
-        text: t('components.historique.history[3].text') 
+      {
+        year: t('components.historique.history.3.year'),
+        title: t('components.historique.history.3.title'),
+        text: t('components.historique.history.3.text'),
       },
     ],
-  };
+  });
 
-  const [data, setData] = useState<Required<HistoriquePayload>>(fallbackData);
+  const [data, setData] = useState<Required<HistoriquePayload>>(() => {
+    try {
+      return getFallbackData();
+    } catch (error) {
+      console.warn('Error getting fallback data:', error);
+      return {
+        title: "Greater population coverage at the local level.",
+        paragraphs: [
+          "This proximity network aims to establish independent medical biology,",
+          "of quality and innovation for the health and well-being of patients."
+        ],
+        history: [
+          { year: "2023", title: "Year of creation", text: "LES LABORATOIRES ZEROUAL Network" },
+          { year: "2023", title: "1st laboratory in the network", text: "First laboratory in the network in Kawassim" },
+          { year: "2024", title: "Second laboratory in the network", text: "Second laboratory in the network in Souani." },
+          { year: "2025", title: "Third laboratory in the network", text: "Third laboratory in the network in Charf." }
+        ]
+      };
+    }
+  });
 
   useEffect(() => {
-    fetchPayloadHistorique()
-      .then((remoteData) => {
-        if (remoteData?.title && remoteData?.paragraphs && remoteData?.history) {
-          setData({
-            title: remoteData.title,
-            paragraphs: remoteData.paragraphs,
-            history: remoteData.history,
-          });
-        }
-      })
-      .catch(() => {
-        console.warn('PayloadCMS indisponible, fallback utilisé.');
-        setData(fallbackData); // Ensure fallback data is set with translations
+    try {
+      // Update fallback data when language changes
+      const fallbackData = getFallbackData();
+      
+      fetchPayloadHistorique()
+        .then((remoteData) => {
+          if (remoteData?.title && remoteData?.paragraphs && remoteData?.history) {
+            setData({
+              title: remoteData.title,
+              paragraphs: remoteData.paragraphs,
+              history: remoteData.history,
+            });
+          } else {
+            setData(fallbackData);
+          }
+        })
+        .catch(() => {
+          console.warn('PayloadCMS indisponible, fallback utilisé.');
+          setData(fallbackData);
+        });
+    } catch (error) {
+      console.error('Error in Historique useEffect:', error);
+      // Use hardcoded fallback in case of translation errors
+      setData({
+        title: "Greater population coverage at the local level.",
+        paragraphs: [
+          "This proximity network aims to establish independent medical biology,",
+          "of quality and innovation for the health and well-being of patients."
+        ],
+        history: [
+          { year: "2023", title: "Year of creation", text: "LES LABORATOIRES ZEROUAL Network" },
+          { year: "2023", title: "1st laboratory in the network", text: "First laboratory in the network in Kawassim" },
+          { year: "2024", title: "Second laboratory in the network", text: "Second laboratory in the network in Souani." },
+          { year: "2025", title: "Third laboratory in the network", text: "Third laboratory in the network in Charf." }
+        ]
       });
-  }, [t]); // Add t as dependency to re-run when language changes
+    }
+  }, [t]); // Re-run when language changes
 
   return (
     <section style={{

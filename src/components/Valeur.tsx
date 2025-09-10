@@ -11,7 +11,8 @@ type ValeurItem = {
 export default function Valeur() {
   const { t } = useTranslation();
 
-  const fallbackValeurs: ValeurItem[] = [
+  // Function to get fallback data with current translations
+  const getFallbackValeurs = (): ValeurItem[] => [
     {
       title: t('components.valeur.fallback.quality_title'),
       text: t('components.valeur.fallback.quality_text'),
@@ -34,9 +35,11 @@ export default function Valeur() {
     },
   ];
 
-  const [valeurs, setValeurs] = useState<ValeurItem[]>(fallbackValeurs);
+  const [valeurs, setValeurs] = useState<ValeurItem[]>(() => getFallbackValeurs());
 
   useEffect(() => {
+    const fallbackValeurs = getFallbackValeurs();
+    
     fetchPayloadValeurs()
       .then((data) => {
         if (data && data.length > 0) {
@@ -47,10 +50,15 @@ export default function Valeur() {
             icon: data[index]?.icon || fallback.icon,
           }));
           setValeurs(merged);
+        } else {
+          setValeurs(fallbackValeurs);
         }
       })
-      .catch(() => setValeurs(fallbackValeurs));
-  }, [fallbackValeurs]);
+      .catch(() => {
+        console.warn('PayloadCMS valeurs indisponible, fallback utilisé.');
+        setValeurs(fallbackValeurs);
+      });
+  }, [t]); // Re-run when language changes
 
   return (
     <main style={{ padding: '2rem 1rem', backgroundColor: '#fff' }}>

@@ -178,19 +178,23 @@
     "articles": {
       "article1": {
         "title": "Pourquoi faire un bilan sanguin régulier ?",
-        "excerpt": "Pourquoi faire un bilan sanguin régulier"
+        "excerpt": "Pourquoi faire un bilan sanguin régulier",
+        "content": "Un bilan sanguin régulier est essentiel pour surveiller votre santé globale. Nos biologistes recommandent des contrôles périodiques pour détecter précocement d'éventuelles anomalies et prévenir les complications. Découvrez pourquoi ces examens sont importants et comment ils contribuent à votre bien-être."
       },
       "article2": {
         "title": "Comprendre vos résultats d'analyses",
-        "excerpt": "Comprendre vos résultats d'analyses"
+        "excerpt": "Comprendre vos résultats d'analyses",
+        "content": "Nos biologistes vous expliquent comment lire et interpréter vos résultats de laboratoire. Apprenez à déchiffrer les valeurs normales, comprendre les unités de mesure et identifier les signes qui nécessitent une consultation médicale. Une interprétation correcte de vos analyses est la clé d'une prise en charge adaptée."
       },
       "article3": {
         "title": "Préparer sa visite au laboratoire",
-        "excerpt": "Préparer sa visite au laboratoire"
+        "excerpt": "Préparer sa visite au laboratoire",
+        "content": "Pour une visite optimale au laboratoire, une bonne préparation est essentielle. Découvrez les documents à apporter, les conditions de jeûne à respecter et les conseils pratiques pour faciliter votre prélèvement. Nos équipes sont là pour vous accompagner à chaque étape."
       },
       "article4": {
         "title": "Les nouveautés en biologie médicale",
-        "excerpt": "Les nouveautés en biologie médicale"
+        "excerpt": "Les nouveautés en biologie médicale",
+        "content": "La biologie médicale évolue constamment avec de nouvelles techniques et technologies. Découvrez les dernières avancées en matière d'analyses, les nouveaux marqueurs biologiques et les innovations qui améliorent la précision et la rapidité des diagnostics."
       }
     }
   },
@@ -421,6 +425,8 @@
     "pro": {
       "title": "Espace Pros - Laboratoires Zeroual",
       "loading_resources": "Chargement des ressources professionnelles...",
+      "description": "Médecins, infirmiers, sages-femmes — accédez à vos outils et ressources dédiés.",
+      "og_description": "Médecins, infirmiers, sages-femmes — Retrouvez toutes les ressources pour faciliter vos démarches professionnelles.",
       "features": {
         "recommendations": {
           "title": "Récommandations pré-analytiques",
@@ -541,6 +547,31 @@
         "souani": "Souani",
         "charf": "Charf"
       }
+    },
+    "historique": {
+      "title": "Une couverture populationnelle plus importante au niveau local.",
+      "paragraphs": {
+        "0": "Ce réseau de proximité vise à établir une biologie médicale indépendante,",
+        "1": "de qualité et d'innovation pour la santé et le bien-être des patients."
+      },
+      "history": {
+        "0": { "year": "2023", "title": "Année de création", "text": "Réseau LES LABORATOIRES ZEROUAL" },
+        "1": { "year": "2023", "title": "1er laboratoire dans le réseau", "text": "Premier laboratoire dans le réseau à Kawassim" },
+        "2": { "year": "2024", "title": "Deuxième laboratoire dans le réseau", "text": "Deuxième laboratoire dans le réseau à Souani." },
+        "3": { "year": "2025", "title": "Troisième laboratoire dans le réseau", "text": "Troisième laboratoire dans le réseau à Charf." }
+      }
+    },
+    "chiffres": {
+      "title": "En chiffres",
+      "stats": {
+        "examens": "Examens spécialisés/semaines",
+        "laboratoires": "Laboratoires",
+        "interventions": "Interventions",
+        "plateau": "Plateau technique"
+      }
+    },
+    "partenaires": {
+      "title": "Nos partenaires"
     },
     "loading_form": "Chargement du formulaire...",
     "loading_presentation": "Chargement de la présentation...",

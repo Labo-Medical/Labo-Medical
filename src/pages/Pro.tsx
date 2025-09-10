@@ -4,7 +4,7 @@ import {
   MdVisibility,
   MdHelpOutline,
 } from "react-icons/md";
-import { useState, lazy, Suspense, type JSX } from "react";
+import { lazy, Suspense, type JSX } from "react";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from 'react-i18next';
 
@@ -136,22 +136,18 @@ export default function ProPage() {
     },
   ];
 
-  const [description] = useState<string>(
-    "Médecins, infirmiers, sages-femmes — accédez à vos outils et ressources dédiés."
-  );
-
   return (
     <>
       <Helmet>
         <title>{t('pages.pro.title')}</title>
         <meta
           name="description"
-          content="Accédez aux outils, ressources et documentations dédiées aux professionnels de santé chez Laboratoires Zeroual."
+          content={t('pages.pro.og_description')}
         />
         <meta property="og:title" content={t('pages.pro.title')} />
         <meta
           property="og:description"
-          content="Médecins, infirmiers, sages-femmes — Retrouvez toutes les ressources pour faciliter vos démarches professionnelles."
+          content={t('pages.pro.og_description')}
         />
         <meta property="og:image" content="/logo.jpg" />
       </Helmet>
@@ -176,7 +172,7 @@ export default function ProPage() {
               lineHeight: 1.5,
             }}
           >
-            {description}
+            {t('pages.pro.description')}
           </p>
         </section>
 

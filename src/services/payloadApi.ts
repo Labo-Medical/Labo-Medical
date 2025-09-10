@@ -84,6 +84,7 @@ export type ArticlePayload = {
   excerpt: string;
   slug: string;
   image: { url: string };
+  content?: string;
 };
 
 export async function fetchPayloadBlogs(): Promise<ArticlePayload[]> {
