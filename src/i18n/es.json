@@ -1,0 +1,598 @@
+{
+  "header": {
+    "nav_labs": "NUESTROS LABORATORIOS ASOCIADOS",
+    "nav_presentation": "Presentación",
+    "nav_kawassim": "Laboratorio Zeroual Kawassim",
+    "nav_souani": "Laboratorio Zeroual Souani",
+    "nav_charf": "Laboratorio Zeroual Charf",
+    "nav_specialties": "Especialidades Biológicas",
+    "nav_pros": "ÁREA PROFESIONAL",
+    "nav_catalogues": "Catálogos",
+    "nav_recommendations": "Recomendaciones preanalíticas",
+    "nav_central_purchase": "Central de compras",
+    "nav_resources": "Recursos documentales",
+    "nav_sampling": "Muestreo",
+    "nav_patient": "ÁREA DEL PACIENTE",
+    "nav_appointment": "Cita previa (Muestreo)",
+    "nav_prepare": "Preparar análisis",
+    "nav_results": "Resultados",
+    "nav_faq": "FAQ",
+    "nav_news": "Noticias biológicas",
+    "nav_complaints": "QUEJAS Y SUGERENCIAS",
+    "nav_contact": "CONTACTO"
+  },
+  "values": {
+    "title": "Los Laboratorios Zeroual le brindan un servicio de calidad y proximidad.",
+    "quality_title": "Calidad e Investigación Biomédica",
+    "quality_text": "Tecnologías avanzadas y mejora continua.",
+    "services_title": "Servicios y Proximidad",
+    "services_text": "Acogida personalizada y red territorial eficiente.",
+    "competence_title": "Competencia y Redes",
+    "competence_text": "Fuerte espíritu de equipo y experiencia rigurosa.",
+    "impartiality_title": "Imparcialidad y Confidencialidad",
+    "impartiality_text": "Ética, confianza y relaciones humanas sólidas."
+  },
+  "blog": {
+    "search": {
+      "placeholder": "Buscar un artículo…"
+    },
+    "empty": "Ningún artículo corresponde a su búsqueda.",
+    "read_more": "Leer el artículo →",
+    "previous": "← Anterior",
+    "next": "Siguiente →",
+    "hero": {
+      "title": "Blog y Consejos de Salud",
+      "subtitle": "Actualidades, explicaciones de análisis y buenas prácticas en el día a día."
+    },
+    "back_button": "← Volver al blog (Esc)",
+    "pagination_label": "Paginación del blog",
+    "image_unavailable": "Imagen no disponible",
+    "articles": {
+      "article1": {
+        "title": "¿Por qué hacer un análisis de sangre regular?",
+        "excerpt": "¿Por qué hacer un análisis de sangre regular?",
+        "content": "Un análisis de sangre regular es esencial para vigilar su salud general. Nuestros biólogos recomiendan controles periódicos para detectar precozmente posibles anomalías y prevenir complicaciones. Descubra por qué estos exámenes son importantes y cómo contribuyen a su bienestar."
+      },
+      "article2": {
+        "title": "Entender sus resultados de análisis",
+        "excerpt": "Entender sus resultados de análisis",
+        "content": "Nuestros biólogos le explican cómo leer e interpretar sus resultados de laboratorio. Aprenda a descifrar los valores normales, comprender las unidades de medida e identificar las señales que requieren una consulta médica. Una interpretación correcta de sus análisis es la clave de una atención adaptada."
+      },
+      "article3": {
+        "title": "Preparar su visita al laboratorio",
+        "excerpt": "Preparar su visita al laboratorio",
+        "content": "Para una visita óptima al laboratorio, una buena preparación es esencial. Descubra los documentos a aportar, las condiciones de ayuno a respetar y los consejos prácticos para facilitar su toma de muestra. Nuestros equipos están ahí para acompañarlo en cada etapa."
+      },
+      "article4": {
+        "title": "Las novedades en biología médica",
+        "excerpt": "Las novedades en biología médica",
+        "content": "La biología médica evoluciona constantemente con nuevas técnicas y tecnologías. Descubra los últimos avances en materia de análisis, los nuevos marcadores biológicos y las innovaciones que mejoran la precisión y la rapidez de los diagnósticos."
+      }
+    }
+  },
+  "documents": {
+    "title": "Recursos documentales",
+    "description": "Encuentre aquí todos los documentos esenciales para sus actividades profesionales.\n\nSe actualizan regularmente.",
+    "good_practices": "Guía de buenas prácticas (PDF)"
+  },
+  "presentation": {
+    "title": "Presentación de los Laboratorios Zeroual",
+    "paragraph1": "La red LOS LABORATORIOS ZEROUAL consta de 03 Laboratorios Médicos ubicados en Kawassim, Souani y Charf. La plataforma técnica principal se encuentra en Kawassim y 2 plataformas secundarias están instaladas en Souani y Charf, con:",
+    "paragraph2": "- Acogida personalizada con o sin cita previa.",
+    "paragraph3": "- Calidad técnica y competencia que garantizan la fiabilidad y precisión de los resultados de los exámenes.",
+    "paragraph4": "- Entrega rápida de resultados dentro de los plazos anunciados, accesibles en línea.",
+    "paragraph5": "- Expediente médico único en todos nuestros laboratorios.",
+    "paragraph6": "El laboratorio Zeroual Kawassim se ha comprometido en un proceso de acreditación según la Norma NM ISO 15189."
+  },
+  "catalogue": {
+    "title": "Catálogo",
+    "description": "Descubra nuestros catálogos completos de productos y servicios adaptados a sus necesidades profesionales.\n\nConsúltelos regularmente para mantenerse al día.",
+    "documents": {
+      "general": "Catálogo general 2025 (PDF)"
+    }
+  },
+  "central_purchase": {
+    "title": "Central de compras",
+    "description": "LOS LABORATORIOS ZEROUAL es una central de compras especializada en las industrias médicas presentes en África.\n\nEstando ubicados lo más cerca posible de nuestros clientes, nuestra promesa es abordar todas las preguntas planteadas por un proyecto en términos de aprovisionamiento y Cadena de Suministro para aportar, en todas las circunstancias, una respuesta adaptada a las necesidades de los laboratorios médicos, clínicas, hospitales etc.\n\nMás que un proveedor de equipos, reactivos y consumibles, somos el socio privilegiado para impulsar la calidad de sus compras y optimizar sus costes de aprovisionamiento.\n\nEl principio es simple: la unión hace la fuerza. Al agrupar las compras de nuestros clientes, podemos comprar en mayores cantidades a los fabricantes y proveedores. Esto nos da mayor peso para negociar los mejores precios en los mejores plazos para usted.\n\nAl confiarnos sus compras no estratégicas hará economías de escala pero sobre todo se librará de las restricciones administrativas y logísticas para ganar tiempo y concentrarse mejor en sus actividades principales."
+  },
+  "sampling": {
+    "title": "Muestreo",
+    "description": "Simplifique su muestreo con nuestras soluciones accesibles en todas partes.\n\nContáctenos para más información.",
+    "view_pdf": "Ver documento PDF"
+  },
+  "pro_menu": {
+    "documents": "Documentos",
+    "recommendations": "Recomendaciones preanalíticas",
+    "central_purchase": "Central de compras",
+    "catalogues": "Catálogos",
+    "sampling": "Muestreo"
+  },
+  "footer": {
+    "engagement": "Nuestros laboratorios asociados se comprometen con la calidad, la proximidad y la confidencialidad de sus análisis médicos.",
+    "quick_access": "Acceso rápido",
+    "partner_labs": "Nuestros laboratorios asociados",
+    "legal": "Aviso legal",
+    "privacy": "Política de confidencialidad",
+    "services": "Nuestros servicios",
+    "all_rights": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "name": "Nombre",
+    "name_placeholder": "Su nombre",
+    "email": "Correo electrónico",
+    "email_placeholder": "Su correo electrónico",
+    "lab": "Laboratorio",
+    "choose_lab": "Elija un laboratorio",
+    "message": "Mensaje",
+    "message_placeholder": "Su mensaje",
+    "send": "Enviar",
+    "sent": "Mensaje enviado"
+  },
+  "home": {
+    "hero": {
+      "title": "Bienvenido a<br />LOS LABORATORIOS ZEROUAL",
+      "description": "Su red de laboratorios médicos.",
+      "cta": "Descubrir nuestros servicios",
+      "video_fallback": "Su navegador no admite el vídeo HTML5."
+    },
+    "annonces": {
+      "title": "Anuncios",
+      "view": "Ver anuncio",
+      "items": [
+        {
+          "titre": "Chequeo de Salud Completo",
+          "description": "Realice un chequeo médico completo para conocer mejor su salud."
+        },
+        {
+          "titre": "Nuevo Centro en Charf",
+          "description": "Apertura de un nuevo laboratorio con equipos de vanguardia."
+        },
+        {
+          "titre": "Reclutamiento: Únase a Nuestro Equipo",
+          "description": "Por favor, envíe su solicitud a través de este enlace."
+        },
+        {
+          "titre": "Horarios 7/24",
+          "description": "Nuestros laboratorios están abiertos 7 días a la semana y 24 horas al día."
+        },
+        {
+          "titre": "Servicio a Domicilio",
+          "description": "Realice sus pruebas con total serenidad sin desplazarse."
+        }
+      ]
+    },
+    "slider": {
+      "policies": { "title": "NUESTRAS POLÍTICAS", "text": "Consulte nuestras políticas: Privacidad, Calidad y RR.HH." },
+      "visit": { "title": "PREPARE SU VISITA", "text": "Consejos útiles para sus exámenes médicos." },
+      "results": { "title": "ACCEDA A SUS RESULTADOS", "text": "Consulte sus resultados en línea, de forma segura." },
+      "faq": { "title": "FAQ", "text": "Respuestas a las preguntas frecuentes." }
+    },
+    "gallery": { "title": "GALERÍA", "more": "Ver más" },
+    "blog": {
+      "title": "Actualidades de la biología médica",
+      "read": "Leer el artículo"
+    },
+    "specialties": {
+      "items": {
+        "s1": { "title": "Tomas de muestra", "desc": "Simplifique sus tomas de muestra." },
+        "s2": { "title": "Bioquímica", "desc": "Análisis de sustancias químicas." },
+        "s3": { "title": "Hematología", "desc": "Estudio de células sanguíneas." },
+        "s4": { "title": "Microbiología", "desc": "Identificación de agentes patógenos." },
+        "s5": { "title": "Inmunología", "desc": "Pruebas del sistema inmunitario." },
+        "s6": { "title": "Hormonología", "desc": "Exploración del sistema endocrino." },
+        "s7": { "title": "Alergología", "desc": "Diagnóstico de alergias." },
+        "s8": { "title": "Hemostasia", "desc": "Análisis de la coagulación." },
+        "s9": { "title": "Glicohemoglobina", "desc": "Seguimiento de la HbA1c." },
+        "s10": { "title": "Serología", "desc": "Detección de anticuerpos." },
+        "s11": { "title": "Virología", "desc": "Diagnóstico viral." },
+        "s12": { "title": "Vitaminología", "desc": "Evaluación de carencias." },
+        "s13": { "title": "Parasitología", "desc": "Búsqueda de parásitos." },
+        "s14": { "title": "Micología", "desc": "Identificación de hongos." },
+        "s15": { "title": "Genética y Genómica", "desc": "Análisis genéticos." },
+        "s16": { "title": "Biología molecular", "desc": "Análisis moleculares." }
+      }
+    },
+    "automates": {
+      "title": "Nuestros dispositivos médicos de diagnóstico",
+      "items": {
+        "auto1": { "title": "Automat. de inmunoensayo", "desc": "Análisis inmunológico, serológico, hormonológico y alergológico." },
+        "auto2": { "title": "Analizador de hematología", "desc": "Hemograma y detección de anomalías sanguíneas." },
+        "auto3": { "title": "Analizador bioquímico", "desc": "Química clínica para análisis in vitro." },
+        "auto4": { "title": "Analizador hematológico", "desc": "Imp. y citometría para analizar células sanguíneas." },
+        "auto5": { "title": "Analizador inmunológico (ECL)", "desc": "Electroquimioluminiscencia para detectar analitos." },
+        "auto6": { "title": "Espectrofotómetro", "desc": "Medición de absorbancia para concentraciones." },
+        "auto7": { "title": "Analizador de química clínica", "desc": "Bioquímica, inmunología, hematología, etc." },
+        "auto8": { "title": "Analizador de hemostasia", "desc": "Estudio de la coagulación sanguínea." },
+        "auto9": { "title": "Analizador de HbA1c", "desc": "Medición de HbA1c por HPLC para el seguimiento de la diabetes." },
+        "auto10": { "title": "Analizador hematológico automatizado", "desc": "Análisis completos del hemograma." },
+        "auto11": { "title": "Analizador clínico compacto", "desc": "Pruebas bioquímicas compactas y automatizadas." },
+        "auto12": { "title": "Sistema de electroforesis automatizado", "desc": "Sistema automatizado de electroforesis." },
+        "auto13": { "title": "Analizador de inmunoanálisis automático", "desc": "Analizador de inmunoanálisis automático." }
+      }
+    },
+    "common": { "more": "Ver más" }
+  },
+  "results": {
+    "menu": {
+      "results": "Sus resultados",
+      "appointment": "Pedir cita",
+      "prepare": "Preparar mi visita",
+      "faq": "FAQ"
+    },
+    "title": "Sus resultados de análisis",
+    "description": "Los Laboratorios Zeroual se comprometen con la fiabilidad y precisión de los resultados, respetando las buenas prácticas profesionales y garantizando un servicio rápido y fiable.",
+    "methods": {
+      "online": { "title": "En línea", "desc": "Solicite acceso a las secretarias durante su registro. Sus resultados estarán disponibles en un servidor seguro en Internet desde la ficha de su laboratorio.", "link": "servidor de resultados" },
+      "phone": { "title": "Por teléfono", "desc": "Comunicar su número de móvil durante su registro." },
+      "lab": { "title": "En el laboratorio", "desc": "Indique que prefiere recoger sus resultados en el laboratorio. Le entregaremos un justificante que garantice su confidencialidad." },
+      "doctor": { "title": "Su médico", "desc": "Sus resultados se transmitirán a su médico por el medio de su elección: correo, fax o conexión segura." }
+    },
+    "login_required": "Inicie sesión para acceder a sus resultados."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "before_title": "Antes del muestreo",
+    "after_title": "Después del muestreo",
+    "before": {
+      "question1": "¿Tengo varias prescripciones de diferentes médicos, qué debo hacer?",
+      "answer1": "No hay ningún problema, crearemos un expediente para cada una de las prescripciones. Cada médico tendrá los resultados de los análisis que ha solicitado. Solo se facturarán una vez. Es totalmente transparente para usted, todo se gestiona en secretaría. Solo se le extraerá sangre una vez.",
+      "question2": "¿Puedo estar acompañado y acostado?",
+      "answer2": "Puede estar acompañado siempre que el acompañante no interfiera en la correcta realización del muestreo. Si es necesario, todos los laboratorios del grupo Zeroual tienen salas de muestreo con sillones que se pueden inclinar o camas para acostarse. Simplemente avísenos o pídanoslo.",
+      "question3": "¿Voy a esperar mucho tiempo?",
+      "answer3": "Todos nuestros equipos hacen lo máximo para minimizar la espera. Sin embargo, se necesita un tiempo mínimo para garantizar la máxima seguridad, tanto para usted como para nosotros (verificación de la información de identidad, atención, acto de extracción de sangre sin precipitación, etiquetado de los tubos...). Además, el número de flebotomistas está en acuerdo con las previsiones de afluencia al laboratorio.",
+      "question4": "¿Puedo venir a cualquier hora?",
+      "answer4": "Le atendemos 7 días a la semana y 24 horas al día. Los detalles se deben verificar en cada laboratorio en la sección <a href=\"/contact\">Encontrar un laboratorio</a>. Las extracciones de sangre se pueden realizar en su mayoría sin restricciones horarias, respetando las condiciones de ayuno eventuales. Sin embargo, los muestreos para ciertos análisis deben respetar restricciones horarias: algunos parámetros varían durante el día. Infórmese en su laboratorio o en la sección <a href=\"#\">Prepare sus análisis</a>. Para garantizar una fiabilidad óptima de los resultados evitando el almacenamiento de su muestra en el sitio, algunos laboratorios ya no realizarán extracciones de sangre a partir de una cierta hora. De hecho, su muestra ya no podrá enviarse a tiempo al laboratorio técnico. Infórmese sobre los horarios límite de muestreos.",
+      "question5": "La extracción de sangre y mis medicamentos",
+      "answer5": "Antes de su extracción de sangre, puede tomar los medicamentos que le han sido prescritos. Sin embargo, existe una excepción: la extracción de sangre debe realizarse ANTES de la toma habitual del tratamiento si su prescripción especifica que se trata de una dosificación del medicamento mismo. Será importante señalar a su laboratorio cualquier tratamiento en curso, en particular aquellos que contienen BIOTINA o vitamina B8 (QIZENDAY®, complementos alimenticios, etc.). Si tiene alguna duda, consulte a su médico y/o biólogo.",
+      "question6": "Soy menor de edad",
+      "answer6": "Un muestreo en un menor no puede realizarse sin la presencia de un padre responsable, o en el marco de la planificación familiar, pero siempre acompañado de un adulto. Los resultados se transmitirán al médico prescriptor o al responsable legal.",
+      "question7": "Me gustaría hacer un análisis, pero no tengo prescripción",
+      "answer7": "Para un análisis llamado «corriente» (beta-HCG, glucemia, colesterol, VIH…): no hay ningún problema, realizaremos el análisis que nos solicita. Se le tarifará según su cotización en la Nomenclatura de Biología Médica. Para una solicitud más particular, desde el momento en que el análisis es realizable en Marruecos en un laboratorio acreditado, le propondremos un presupuesto. El análisis se tarifará según su cotización en la Nomenclatura de Biología Médica o según su cotización por el Laboratorio ejecutante, mayorada de los eventuales gastos de transmisión. En todos los casos, nada se realizará sin su acuerdo ni validación del precio anunciado. Para un análisis realizado en un laboratorio extranjero o fuera del circuito de atención, contacte con su Biólogo.",
+      "question8": "¿Debo pedir cita en el laboratorio?",
+      "answer8": "Los laboratorios Zeroual le atienden durante todo el día sin cita previa. Algunos laboratorios pueden proponer citas para facilitar su paso. Para las extracciones de sangre en niños menores de 5 años y los muestreos bacteriológicos, independientemente de la edad, a veces es necesaria una cita. Para ver los horarios o pedir cita, seleccione su laboratorio en la lista de <a href=\"/rdv\">Encontrar un laboratorio</a>.",
+      "question9": "¿Qué exámenes requieren estar en ayunas?",
+      "answer9": "El estado de ayuno es necesario para obtener una muestra sanguínea conforme a la realización de ciertos análisis. <strong>Se define por una ausencia de ingesta de alimentos desde 8 a 12 horas.</strong> <ul><li>CALCITONINA (Tiocalcitonina): Interrupción del tratamiento con IPP antiulcerosos, Inhibidores de la Bomba de Protones desde 15 días (omeprazol, esomeprazol, lanzoprazol, pantoprazol, rabeprazol).</li><li>CROSSLAPS – CTX</li><li>CRIOGLOBULINA</li><li>GLUCEMIA EN AYUNAS</li><li>HELIKIT: Sin tabaco desde la víspera por la noche, interrupción del tratamiento con IPP antiulcerosos (Inhibidores de la Bomba de Protones desde 15 días: omeprazol, esomeprazol, lanzoprazol, pantoprazol, rabeprazol).</li><li>HOMOCISTEÍNA</li><li>PARATHORMONA – PTH</li><li>FÓSFORO</li><li>TESTOSTERONA</li><li>TRIGLICÉRIDOS – PERFIL LIPÍDICO</li></ul>",
+      "question10": "Soy una persona con discapacidad, ¿cómo puedo ser atendido?",
+      "answer10": "Todos nuestros laboratorios proponen una solución para nuestros pacientes con discapacidad. El registro público de accesibilidad del laboratorio puede proporcionársele bajo petición. No dude en contactar el laboratorio para organizar su muestreo en las mejores condiciones."
+    },
+    "after": {
+      "question1": "Me ha pasado tener un hematoma después de un muestreo",
+      "answer1": "Si la vena no se cierra lo suficientemente rápido o si el muestreo ha sido difícil, puede aparecer un hematoma. Nuestros flebotomistas hacen todo para evitar este tipo de inconvenientes. El hematoma viene de la acumulación de sangre entre la pared de la vena y la piel. Puede ser impresionante pero nunca es grave y desaparece espontáneamente. Para minimizar la aparición de estos hematomas, se recomienda ejercer presión durante varios minutos después de la extracción de sangre.",
+      "question2": "¿Cuándo y cómo recibiré mis resultados?",
+      "answer2": "Clásicamente, recibirá sus resultados el mismo día, por vía electrónica, más rápida y más ecológica, bajo forma de correo cifrado o accediendo al servidor de resultados seguro de su laboratorio. Algunos exámenes más especializados pueden requerir un plazo adicional. También tiene la posibilidad de venir a buscar sus resultados al laboratorio. En este caso, deberá señalárselo a la secretaria de recepción, quien le entregará un cupón que garantiza su confidencialidad. El laboratorio también puede enviarle los resultados por correo postal con un plazo prolongado de 2 a 3 días después de la validación del expediente. Podrán cobrársele gastos de envío postal de 2€ por resultado. En caso de resultados preocupantes o si lo juzgan necesario, los biólogos del laboratorio pueden contactar a su médico o a un médico de guardia o a usted mismo directamente por teléfono.",
+      "question3": "¿Alguien en el laboratorio puede interpretarme los resultados?",
+      "answer3": "Por supuesto, los biólogos de los laboratorios Zeroual están disponibles para responder a todas sus preguntas e interpretar en toda confidencialidad sus resultados. ¡Pídalo en recepción!",
+      "question4": "¿Qué pasa en caso de anomalía importante en un resultado?",
+      "answer4": "Su médico prescriptor es sistemáticamente prevenido en caso de anomalía importante en su resultado. En caso de que no sea localizable, el laboratorio le contactará para prevenirle y darle las directivas a seguir: volver a pedir cita con su médico, contactar SOS médico, ir directamente a urgencias…",
+      "question5": "¿Cómo hacer una solicitud de acceso a mi expediente médico?",
+      "answer5": "Para acceder a su expediente médico, puede rellenar los siguientes formularios y transmitirlos por email o por correo a su laboratorio: <ul><li>Formulario de acceso al expediente médico por el paciente</li><li>Formulario de acceso al expediente médico de un paciente fallecido por los derechohabientes</li><li>Formulario de oposición del paciente a la comunicación de su expediente médico después de su fallecimiento</li></ul>",
+      "question6": "¿Cómo señalar una no conformidad o hacer una reclamación?",
+      "answer6": "Para toda reclamación o señalamiento de una no conformidad, le invitamos a rellenar el formulario en nuestro espacio dedicado: <a href=\"#\">Deposite una reclamación &gt;…</a>",
+      "question7": "He recibido mi informe cifrado, ¿por qué?",
+      "answer7": "El laboratorio le ha transmitido su informe de exámenes bajo la forma de un archivo PDF cifrado adjunto al correo electrónico de notificación. Para protegerle, este cifrado permite que este documento médico no sea directamente legible o indexado en Internet. Solo el destinatario del correo electrónico está en medida de asociar el archivo recibido y la clave (impropiamente llamada contraseña) necesaria para su apertura. La solución técnica Adobe no permite la supresión o modificación de la clave de cifrado. El archivo permanece protegido durante su almacenamiento en su ordenador. En contrapartida, no es reutilizable o difusible a un tercero, salvo transmitirle al mismo tiempo su clave de cifrado personal. Si desea conservar en su expediente médico documentos no cifrados, debe utilizar el servidor de resultados del laboratorio. Este le permite el acceso a la totalidad de su expediente médico y le da la posibilidad de descargar piezas no protegidas.",
+      "question8": "¿Qué hacer si he perdido la clave de cifrado de mis informes?",
+      "answer8": "El laboratorio le ha transmitido su informe de exámenes bajo la forma de un archivo PDF cifrado adjunto al correo electrónico de notificación. El PDF no es legible, salvo conocer la clave de descifrado. Le invitamos a contactar la secretaría del laboratorio que podrá indicarle la marcha a seguir para recuperar la clave utilizada en el momento del envío de sus documentos."
+    }
+  },
+  "prepare_visit": {
+    "title": "Preparo mis análisis",
+    "subtitle": "Encuentre la información y consejos prácticos a seguir para facilitar sus trámites en el laboratorio.",
+    "sections": {
+      "preparer": "Preparar su visita",
+      "ajeun": "¿En ayunas?",
+      "enfants": "El muestreo de niños",
+      "femmes_enceintes": "Seguimiento de mujeres embarazadas",
+      "microbio": "Los análisis microbiológicos",
+      "domicile": "El muestreo a domicilio"
+    },
+    "content": {
+      "preparer": {
+        "title": "Preparar su visita",
+        "intro": "En su recepción en el laboratorio, una secretaria médica creará un expediente informático completo que contenga la información esencial que permita una atención fiable y una prestación de resultados conforme a las expectativas del prescriptor. Siga nuestros consejos para prepararse lo mejor posible para su visita.",
+        "documents_title": "Documentos a traer:",
+        "documents": {
+          "ordonnance": "La prescripción médica que contiene los análisis prescritos por su médico.",
+          "carte_vitale": "Su tarjeta sanitaria y/o certificado de seguridad social.",
+          "mutuelle": "Su certificado de seguro mutual y/o certificado CMU.",
+          "prise_en_charge": "Documentos justificativos (enfermedad de larga duración, maternidad, accidente laboral...).",
+          "identite": "Como parte de la implementación del INS, se le pedirá un documento de identidad en cada primera visita, así como cada 5 años. También necesitará presentarlo en caso de cambios en los rasgos de identidad o para ciertos análisis como el grupo sanguíneo, comisión de permiso de conducir, etc. para respetar una identitovigilancia estricta."
+        },
+        "highlight": "Por favor traiga estos documentos.",
+        "honoraires_title": "¿Cuáles son los honorarios?",
+        "honoraires_text": "Los laboratorios Biogroup están afiliados a organizaciones obligatorias y complementarias. Aplican tarifas reguladas por la ley siguiente: Decreto 03/12/87 (BO 12/12/87).",
+        "prise_en_charge": "Para beneficiarse de una cobertura completa, recuerde traer su tarjeta sanitaria, su certificado de seguro mutual actualizado, así como cualquier documento que justifique sus derechos (certificado CMU, AME...).",
+        "sans_prescription": "En ausencia de prescripción, se le facturará el monto total de los exámenes sin suplemento ni sobrecarga de honorarios.",
+        "hors_nomenclature": "Aunque la mayoría de los exámenes están cubiertos por la Seguridad Social, algunos no dan lugar a reembolso. Se dice entonces que están \"Fuera de Nomenclatura\". Si su médico prescribe exámenes no reembolsados por la seguridad social, nuestras secretarias médicas le informarán del costo de los exámenes y le pedirán su acuerdo a su realización durante su registro. Todos los laboratorios pertenecen a una asociación de gestión aprobada (AGA).",
+        "rdv_title": "¿Necesito pedir cita?",
+        "rdv_text": "El muestreo se realiza generalmente sin cita. Sin embargo, ciertos exámenes requieren una atención particular. Si tiene alguna duda, es preferible llamar a su laboratorio.",
+        "rdv_text2": "Algunos laboratorios pueden ofrecer citas para reducir el tiempo de espera. Pregunte en su laboratorio o encuentre esta información en las fichas de nuestros laboratorios.",
+        "horaire_title": "¿Cuándo debo ir al laboratorio?",
+        "horaire_intro": "Algunos análisis deben hacerse en momentos precisos, en días determinados. Por ejemplo:",
+        "horaire_list": {
+          "cortisol": "El cortisol debe realizarse a las 8 a.m. (a menos que se indique lo contrario en la prescripción).",
+          "hormones": "Las dosificaciones hormonales requieren respetar los días indicados por su médico: ej: D2 = 2º día del ciclo.",
+          "t4": "La dosificación de T4 libre debe realizarse <b>antes de tomar Levotiroxina</b>.",
+          "tsh": "La TSH debe dosificarse preferentemente <b>por la mañana</b>.",
+          "medicament": "Para dosificación de medicamento (antirrechazo por ejemplo), el muestreo sanguíneo debe realizarse <b>antes</b> de la toma habitual. Se le preguntará la dosificación y la fecha y hora de la última toma.",
+          "antibiotique": "Un muestreo bacteriológico o micologico debe realizarse <b>antes de tomar el antibiótico/antimicótico</b> (a menos que el médico indique lo contrario).",
+          "spermogramme": "Para un espermiograma: debe respetarse un período de abstinencia."
+        }
+      },
+      "ajeun": {
+        "title": "¿En ayunas?",
+        "intro": "El estado de ayuno es necesario para obtener una muestra sanguínea adecuada para la realización de ciertos análisis.",
+        "highlight": "Se define por una ausencia de ingesta de alimentos de más de 8 horas.",
+        "allowed": "Sin embargo, puede:",
+        "allowed_list": {
+          "dents": "Lavarse los dientes.",
+          "eau": "Beber agua, café o té sin azúcar ni leche.",
+          "medicaments": "Tomar sus medicamentos EXCEPTO si se solicita una dosificación específica de los mismos."
+        },
+        "biotine": "Será importante informar a su laboratorio de cualquier tratamiento en curso, particularmente aquellos que contienen BIOTINA o vitamina B8 (QIZENDAY®, suplementos alimenticios, etc.).",
+        "doute": "En caso de duda sobre sus exámenes, venga en ayunas durante al menos 8 horas o contacte su laboratorio.",
+        "liste_title": "A continuación encontrará una lista no exhaustiva de los principales exámenes que requieren ayuno:",
+        "liste": {
+          "calcitonine": "CALCITONINA (Tiocalcitonina): Interrupción del tratamiento con IPP antiulcerosos, Inhibidores de la Bomba de Protones durante 15 días (omeprazol, esomeprazol, lanzoprazol, pentoprazol, rabeprazol).",
+          "crosslaps": "CROSSLAPS – CTX",
+          "cryoglobulin": "CRIOGLOBULINA",
+          "glycemie": "GLUCEMIA EN AYUNAS",
+          "glycosurie": "GLICOSURIA",
+          "homocysteine": "HOMOCISTEÍNA",
+          "parathormone": "PARATHORMONA – PTH",
+          "phosphore": "FÓSFORO",
+          "testosterone": "TESTOSTERONA",
+          "triglycerides": "TRIGLICÉRIDOS – PERFIL LIPÍDICO",
+          "helikit": "HELIKIT (búsqueda de portador de Helicobacter pylori – test respiratorio de Urea 13C – aire expirado):"
+        },
+        "helikit_note": "Debe venir con el kit que recogió en la farmacia con la misma prescripción.",
+        "helikit_note2": "Test respiratorio a realizar en ayuno estricto durante al menos 6 horas (sin beber, comer ni fumar).",
+        "helikit_conditions": "Debe respetarse imperativamente:",
+        "helikit_conditions_list": {
+          "antibiotique": "interrupción de cualquier tratamiento antibiótico al menos 4 semanas antes del test.",
+          "ipp": "interrupción de inhibidores de la bomba de protones, anti-secretorios, al menos 2 semanas antes del test (omeprazol, esomeprazol, lanzoprazol, pentoprazol, rabeprazol).",
+          "antiacides": "interrupción de antiácidos y vendajes gastro-intestinales 24 horas antes del test."
+        }
+      },
+      "enfants": {
+        "title": "El muestreo de niños",
+        "intro": "Nuestros flebotomistas están formados en muestreo pediátrico en los más pequeños.",
+        "help_title": "¿Cómo puede ayudar a su hijo?",
+        "help_intro": "Es muy importante poder gestionar su reacción ante una situación estresante para usted y para su hijo. Los niños son muy sensibles al estrés de sus padres. Cuanto más relajado esté usted, más relajado estará su hijo.",
+        "preparer_title": "Prepararlo:",
+        "preparer_text": "es preferible informar a su hijo con antelación que se hará una extracción de sangre y explicarle por qué necesita hacerse. Si su hijo sabe qué esperar, probablemente estará menos ansioso por lo que sucederá. Le recomendamos informar a su hijo 1 a 2 días antes de la extracción de sangre.",
+        "expliquer_title": "Explicarle el procedimiento:",
+        "expliquer_text": "sea honesto con su hijo y explíquele el procedimiento de extracción de sangre. Use palabras tranquilizadoras que pueda entender. Puede explicarle lo que verá, sentirá y oirá durante todo el procedimiento.",
+        "rassurer_title": "Tranquilizarlo:",
+        "rassurer_text": "es importante tranquilizar a su hijo sobre la duración de una extracción de sangre, que generalmente dura solo unos minutos.",
+        "jouets": "También puede acostumbrarlo a las agujas y otros equipos médicos mostrándole versiones de juguete.",
+        "expression": "También puede decirle que tiene derecho a no gustarle lo que está pasando y expresarlo si duele. El niño tendrá menos aprensión sobre la extracción de sangre si sabe que puede expresar lo que siente. Sin embargo, será importante decirle que su papel más importante es no moverse durante la extracción de sangre.",
+        "distraire_title": "Distraerlo:",
+        "distraire_text": "distraer a su hijo durante una extracción de sangre puede ayudarlo a pasar el procedimiento con serenidad. Puede traer un pequeño juguete, su osito de peluche, un libro… También puede distraerlo usando su imaginación. Pídale que cierre los ojos y le cuente su lugar favorito."
+      },
+      "femmes_enceintes": {
+        "title": "Seguimiento de mujeres embarazadas",
+        "intro": "Durante el embarazo, se realizarán numerosos exámenes biológicos en el laboratorio:",
+        "hcg_title": "Dosificación de la hormona HCG",
+        "hcg_text": "Su test de embarazo es positivo, el primer examen a realizar es una extracción de sangre que permita dosificar la hormona HCG (Gonadotropina Coriónica Humana) para confirmar el embarazo.",
+        "hcg_doubling": "Para evaluar el buen desarrollo del embrión, se puede renovar la dosificación de HCG dos días después, la tasa debe duplicarse. Puede haber interferencia o falso positivo al inicio del embarazo con ciertos tratamientos de estimulación hormonal.",
+        "depistages_title": "Las detecciones de Rubeola y Toxoplasmosis",
+        "depistages_text": "Desde hace varios años, las detecciones de Rubeola y Toxoplasmosis se han convertido en obligatorias en Francia. Estas dos enfermedades son enfermedades benignas que sin embargo pueden ser peligrosas para el feto si se contraen durante el embarazo. Al inicio del embarazo, debe realizarse una extracción de sangre para medir el nivel de anticuerpos antirubéolicos y realizar una serología de toxoplasmosis.",
+        "depistages_followup": "Si sus tests son negativos, deberá repetir estos análisis cada mes para controlar que no se haya contaminado.",
+        "groupe_sanguin_title": "Grupo sanguíneo",
+        "groupe_sanguin_text": "Al inicio del embarazo, también se le pedirá que se haga una extracción de sangre para verificar su grupo sanguíneo y rhesus. Este análisis es importante para determinar cualquier incompatibilidad sanguínea entre su feto y usted, pero también en caso de que se declare una hemorragia importante durante el parto.",
+        "anemie_title": "La búsqueda de anemia y deficiencias",
+        "anemie_text": "Se pueden prescribir varios exámenes para detectar anemia o deficiencias. La anemia siendo frecuente en mujeres embarazadas en el 3er trimestre, la NFS (Fórmula Sanguínea Completa) se prescribe durante el 6º mes de embarazo.",
+        "diabete_title": "La detección de diabetes gestacional",
+        "diabete_text": "La diabetes gestacional puede aparecer durante el embarazo durante el 2º y 3er trimestres. Se realizará una primera medición de glucemia en ayunas desde las primeras consultas, luego se planificará otro examen entre la 24ª y 28ª semana de embarazo. Este examen es una medición de glucemia en ayunas, a 1h y a 2h. Después de la primera extracción de sangre en ayunas, nuestros equipos médicos le proporcionarán una bebida azucarada que deberá beber. Luego se realizará una extracción de sangre a 1h y luego a 2h después de la ingesta de glucosa. Esto se llama Prueba de Tolerancia Oral a la Glucosa (PTOG)."
+      },
+      "microbio": {
+        "title": "Los análisis microbiológicos",
+        "intro": "Algunos exámenes bacteriológicos deben realizarse por usted (recogida de heces, orina, esputos…). Se le darán kits dedicados con hojas de recomendaciones dependiendo de la prescripción. Otros análisis se realizarán en el laboratorio o por su enfermera a domicilio.",
+        "modalites": "Deben respetarse modalidades específicas de muestreo. Se describen en hojas explicativas que pueden entregársele en el laboratorio.",
+        "disposition": "Todo nuestro personal está a su disposición para explicarle el procedimiento a seguir.",
+        "depot": "Una vez realizado el muestreo en su casa, puede venir a depositar sus recipientes en el laboratorio."
+      },
+      "domicile": {
+        "title": "El muestreo a domicilio",
+        "intro": "Algunos de nuestros laboratorios ofrecen realizar ciertos muestreos sanguíneos en domicilio por cita.",
+        "rdv_text": "Al pedir cita en su laboratorio o por teléfono, pregunte si su laboratorio ofrece este servicio. Si es así, entonces necesitará especificar la lista de exámenes prescritos para que podamos informarle sobre su preparación antes del muestreo.",
+        "programmation": "Se le dará un intervalo de tiempo dependiendo del horario del programador de recorridos.",
+        "remboursement": "El desplazamiento se reembolsará si se especifica en la prescripción \"muestreo a domicilio\" o se le facturará extra.",
+        "attestation": "Se le pedirá que prepare una copia de su certificado de seguridad social y su seguro mutual, para que podamos encargarnos del Tercer Pago."
+      }
+    }
+  },
+  "common": {
+    "home": "Inicio",
+    "loading": "Cargando...",
+    "error": "Se ha producido un error",
+    "retry": "Reintentar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "menu": "Menú",
+    "language": "Idioma",
+    "contact_us": "Contáctenos"
+  },
+  "pages": {
+    "home": {
+      "title": "Laboratorios Zeroual - Inicio",
+      "loading_hero": "Cargando sección Hero...",
+      "loading_announce": "Cargando anuncio...",
+      "loading_slider": "Cargando tarjetas deslizantes...",
+      "loading_values": "Cargando valores...",
+      "loading_specialties": "Cargando especialidades...",
+      "loading_gallery": "Cargando galería...",
+      "loading_blog": "Cargando blog..."
+    },
+    "pro": {
+      "title": "Área Profesional - Laboratorios Zeroual",
+      "loading_resources": "Cargando recursos profesionales...",
+      "description": "Médicos, enfermeras, matronas — accedan a sus herramientas y recursos dedicados.",
+      "og_description": "Médicos, enfermeras, matronas — Encuentren todos los recursos para facilitar sus trámites profesionales.",
+      "features": {
+        "recommendations": {
+          "title": "Recomendaciones preanalíticas",
+          "description": "Prepare sus exámenes de manera óptima."
+        },
+        "sampling": {
+          "title": "Muestreo",
+          "description": "Acceso simplificado a la atención en todas partes."
+        },
+        "central_purchase": {
+          "title": "Compras centrales",
+          "description": "Compras centrales para profesionales."
+        },
+        "documents": {
+          "title": "Documentación",
+          "description": "Documentos esenciales."
+        }
+      }
+    },
+    "patient": {
+      "title": "Área del Paciente - Laboratorios Zeroual",
+      "welcome": "Bienvenido al Área del Paciente",
+      "description": "Organice su visita, acceda a sus resultados de análisis y encuentre toda la información útil para su recorrido como paciente.",
+      "og_description": "Todo lo que necesita para navegar serenamente por sus trámites médicos.",
+      "hero_text": "Todo lo que necesita para organizar su visita, acceder a sus análisis y navegar más serenamente por sus trámites médicos.",
+      "loading_results": "Cargando resultados...",
+      "loading_faq": "Cargando FAQ...",
+      "features": {
+        "prepare_visit": {
+          "title": "Prepare su visita",
+          "description": "Consejos prácticos para preparar sus exámenes y facilitar sus trámites en el laboratorio."
+        },
+        "find_lab": {
+          "title": "Encuentre su laboratorio",
+          "description": "Acceso simplificado a la atención dondequiera que esté, con un servicio de proximidad."
+        },
+        "access_results": {
+          "title": "Acceda a sus resultados",
+          "description": "Consulte sus análisis de forma rápida y segura, desde casa."
+        },
+        "faq": {
+          "title": "Preguntas frecuentes",
+          "description": "Una respuesta clara a cada pregunta: explore nuestra FAQ completa."
+        }
+      }
+    },
+    "politic": {
+      "title": "Políticas Institucionales - Laboratorios Zeroual",
+      "heading": "Nuestras Políticas Institucionales",
+      "loading_documents": "Cargando documentos de políticas..."
+    },
+    "login": {
+      "title": "Iniciar Sesión",
+      "email": "Correo electrónico",
+      "password": "Contraseña"
+    },
+    "notfound": {
+      "title": "404 - Página no encontrada",
+      "message": "La página que busca no existe."
+    },
+    "feedback": {
+      "title": "Comentarios y Opiniones - Laboratorios Zeroual",
+      "description": "Dé su opinión o envíe sus quejas a los Laboratorios Zeroual.",
+      "og_title": "Comentarios y Opiniones - Laboratorios Zeroual",
+      "og_description": "Comparta su experiencia con los Laboratorios Zeroual.",
+      "whatsapp_text": "📱 Para cualquier queja, contáctenos en:",
+      "loading": "Cargando formulario de comentarios...",
+      "title_text": "Gracias por enviarnos su opinión, sugerencia o reclamación",
+      "tabs": {
+        "personnel": "Personal",
+        "patient": "Pacientes",
+        "utilisateur": "Usuarios",
+        "satisfaction": "Satisfacción"
+      }
+    },
+    "contact": {
+      "title": "Contacto - Laboratorios Zeroual",
+      "description": "Contacte a los Laboratorios Zeroual...",
+      "og_title": "Contacto - Laboratorios Zeroual",
+      "og_description": "Formulario de contacto e información...",
+      "heading": "Formulario de contacto y nuestros laboratorios médicos",
+      "email_text": "Contáctenos por correo electrónico a contact@leslaboratoireszeroual.ma",
+      "loading": "Cargando formulario..."
+    },
+    "about": {
+      "title": "Acerca de - Laboratorios Zeroual"
+    }
+  },
+  "components": {
+    "rdv": {
+      "title": "Cita a Domicilio",
+      "submit": "Enviar solicitud",
+      "success": "✅ Solicitud enviada con éxito!",
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "address": "Dirección",
+      "date": "Fecha de muestreo",
+      "time": "Hora preferida",
+      "notes": "Notas",
+      "choose_date": "Elija una fecha"
+    },
+    "valeur": {
+      "fallback": {
+        "quality_title": "Calidad e Investigación Biomédica",
+        "quality_text": "Tecnologías avanzadas y mejora continua.",
+        "services_title": "Servicios y Proximidad",
+        "services_text": "Acogida personalizada y red territorial eficiente.",
+        "competence_title": "Competencia y Redes",
+        "competence_text": "Fuerte espíritu de equipo y experiencia rigurosa.",
+        "impartiality_title": "Imparcialidad y Confidencialidad",
+        "impartiality_text": "Ética, confianza y relaciones humanas sólidas."
+      }
+    },
+    "contact": {
+      "labs": {
+        "kawacim": "Kawacim",
+        "souani": "Souani",
+        "charf": "Charf"
+      }
+    },
+    "language_names": {
+      "es": "Español",
+      "fr": "Français",
+      "en": "English",
+      "ar": "العربية"
+    },
+    "historique": {
+      "title": "Una cobertura poblacional más importante a nivel local.",
+      "paragraphs": {
+        "0": "Esta red de proximidad tiene como objetivo establecer una biología médica independiente,",
+        "1": "de calidad e innovación para la salud y el bienestar de los pacientes."
+      },
+      "history": {
+        "0": { "year": "2023", "title": "Año de creación", "text": "Red LOS LABORATORIOS ZEROUAL" },
+        "1": { "year": "2023", "title": "Primer laboratorio en la red", "text": "Primer laboratorio en la red en Kawassim" },
+        "2": { "year": "2024", "title": "Segundo laboratorio en la red", "text": "Segundo laboratorio en la red en Souani." },
+        "3": { "year": "2025", "title": "Tercer laboratorio en la red", "text": "Tercer laboratorio en la red en Charf." }
+      }
+    },
+    "chiffres": {
+      "title": "En cifras",
+      "stats": {
+        "examens": "Exámenes especializados/semanas",
+        "laboratoires": "Laboratorios",
+        "interventions": "Intervenciones",
+        "plateau": "Plataforma técnica"
+      }
+    },
+    "partenaires": {
+      "title": "Nuestros socios"
+    },
+    "loading_form": "Cargando formulario...",
+    "loading_presentation": "Cargando presentación...",
+    "loading_history": "Cargando historial...",
+    "loading_numbers": "Cargando números...",
+    "loading_partners": "Cargando socios...",
+    "loading_specialties": "Cargando especialidades...",
+    "loading_feedback": "Cargando formulario de comentarios..."
+  }
+}
+

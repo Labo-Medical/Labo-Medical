@@ -133,14 +133,6 @@ export type ServiceData = {
   iconSrc: string;
 };
 
-export async function fetchPayloadAutomates(): Promise<ServiceData[]> {
-  const data = await fetcher<{ docs: any[] }>('specialite?limit=100');
-  return data?.docs?.map((item) => ({
-    title: item.title,
-    description: item.description,
-    iconSrc: item.icon?.url || '/assets/default-icon.png',
-  })) || [];
-}
 
 // Contacts / Lieux
 export type Lab = {

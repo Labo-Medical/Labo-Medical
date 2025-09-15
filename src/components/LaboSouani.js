@@ -5,7 +5,7 @@ import { fetchPayloadLabSouaniPage } from "../services/payloadApi";
 const fallbackData = {
     doctor: {
         name: "Dr. LYOUSSI NOUREDDINE",
-        photo: { url: "/fond/sar.jpg" },
+        photo: { url: "/icons/Man.png" },
         description: "Spécialiste en biologie médicale.",
     },
     contact: {

@@ -1,75 +1,26 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from 'react';
 import { fetchPayloadAutomates } from '../services/payloadApi2';
-// Automates médicaux
+// === Données fallback automates ===
 const fallbackAutomates = [
-    {
-        title: "Automate d'immunoessais",
-        description: "Analyse immunologique, sérologique, hormonologique et allergologique.",
-        iconSrc: '/automates/a2.png',
-    },
-    {
-        title: "Analyseur d'hématologie",
-        description: "Numération Formule Sanguine (NFS) et détection d’anomalies sanguines.",
-        iconSrc: '/automates/a3.png',
-    },
-    {
-        title: 'Analyseur biochimique',
-        description: "Chimie clinique pour analyses in vitro.",
-        iconSrc: '/automates/a4.png',
-    },
-    {
-        title: 'Analyseur Hématologique',
-        description: "Utilise l’impédance et la cytométrie pour analyser les cellules sanguines.",
-        iconSrc: '/automates/a5.png',
-    },
-    {
-        title: 'Analyseur immunologique ',
-        description: "Électrochimiluminescence pour détection d'analytes dans divers fluides.",
-        iconSrc: '/automates/a6.png',
-    },
-    {
-        title: 'Spectrophotomètre',
-        description: "Mesure de l’absorbance pour analyser la concentration d’une substance.",
-        iconSrc: '/automates/a7.png',
-    },
-    {
-        title: 'Analyseur de chimie clinique',
-        description: "Biochimie, immunologie, hématologie, hormonologie, serologie, vitaminologie.",
-        iconSrc: '/automates/a8.png',
-    },
-    {
-        title: "Analyseur d'hémostase",
-        description: "Étude de la coagulation sanguine.",
-        iconSrc: '/automates/a9.png',
-    },
-    {
-        title: 'Analyseur de glycohémoglobine',
-        description: "Mesure HbA1c via HPLC pour suivi du diabète.",
-        iconSrc: '/automates/a10.png',
-    },
-    {
-        title: 'Analyseur hématologique automatisé',
-        description: "Analyses complètes de la formule sanguine.",
-        iconSrc: '/automates/4.png',
-    },
-    {
-        title: 'Analyseur de chimie clinique compact et automatisé',
-        description: "Tests biochimiques.",
-        iconSrc: '/automates/7.png',
-    },
-    {
-        title: "Système d'électrophorèse automatisé",
-        description: "Système d'électrophorèse automatisé.",
-        iconSrc: '/automates/9.png',
-    },
-    {
-        title: " Analyseur d'immunoanalyse automatique",
-        description: "Analyseur d'immunoanalyse automatique.",
-        iconSrc: '/automates/12.png',
-    },
+    { title: "BA 400", description: "Analyseur de biochimie automatique 400 tests/h", iconSrc: '/automates/ba400.jpg' },
+    { title: "Biosensor F200", description: " Analyseur d'immuno-analyse par fluorescence qui sert au diagnostic in vitro rapide et fiable d'un large éventail de paramètres : les infections, les maladies chroniques et d'autres biomarqueurs", iconSrc: '/automates/biosenser.png' },
+    { title: 'Cobas E411', description: "Immunologique analyseur pour un accès aléatoire traitement des immunoessais basés ECL.", iconSrc: '/automates/cobas.png' },
+    { title: 'Cobas C311', description: "Analyseur de chimie clinique automatisé qui sert à effectuer des tests qualitatifs, semi-quantitatifs et quantitatifs sur des échantillons de sang, de sérum, de plasma et d'urine, ainsi que des mesures sélectives d'ions", iconSrc: '/automates/cobas301.png' },
+    { title: 'GENEXPERT', description: "Il permet la réalisation de test de biologie moléculaire (PCR, nested PCR et RT-PCR en temps réelle), de manière flexible, à la demande, avec un temps de rendu de résultat rapide (60 min)", iconSrc: '/automates/genexpert.jpg' },
+    { title: 'GENRUi KT6610', description: "Analyseur automatisé qui permet d'analyser le sang tels que la formule leucocytaire des globules blancs en cinq parties, et d'autres paramètres comme les globules rouges et les plaquettes", iconSrc: '/automates/genru.png' },
+    { title: "HLC 723GX", description: "Cette technologie comprend un système HPLC (chromatographie en phase liquide à haute performance) précis et entièrement automatisé qui permet le dosage d’un échantillon en 1 min 30 s", iconSrc: '/automates/hlc.jpg' },
+    { title: 'ABX Pentra XL 80', description: "Cadence jusqu’a 80 échantillons analysés par heure : Cytochimie, impedance, optique", iconSrc: '/automates/apx.jpeg' },
+    { title: 'KONELAB 20', description: "Analyseur à chargement continu et aléatoire destiné à la réalisation d’analyses biochimiques de routine, ainsi qu’au dosage des électrolytes et à la recherche de protéines spécifiques", iconSrc: '/automates/konelab.jpg' },
+    { title: 'Minicap Flex Piercing', description: "Analyseur qui va permettre cette séparation afin de dépister les anomalies portant sur les protéines présentes dans le sang ", iconSrc: '/automates/minicap.png' },
+    { title: "SPIN 640 Plus", description: "Analyseur automatique de chimie clinique qui sert à effectuer des tests de laboratoire sur des échantillons de patients pour détecter des maladies, des marqueurs cardiaques, des drogues et des maladies infectieuses", iconSrc: '/automates/spin.png' },
+    { title: "STA Satellite®", description: "Automate d’Hémostase de paillasse, permet la réalisation simultanée des tests chronométriques, colorimétriques et immunologiques", iconSrc: '/automates/sta.jpg' },
+    { title: 'START', description: "Analyseur de coagulation semi-automatique", iconSrc: '/automates/start.jpg' },
+    { title: 'SYSMEX XN-550', description: "Le XN-550 dispose d’un passeur automatique, du système Rerun-Reflex et du chargement en continu des échantillons", iconSrc: '/automates/sysmex.jpg' },
+    { title: "VIDAS", description: "Automate d’immunoanalyses multiparamétriques", iconSrc: '/automates/vidas.jpg' },
+    { title: "VITEK 2 COMPACT 60", description: "Appareil automatisé et compact pour l’Identification bactérienne et l’antibiogramme sous forme d’appareil compact", iconSrc: '/automates/vitek.jpg' },
 ];
-// Spécialités médicales
+// === Spécialités médicales ===
 const specialites = [
     { title: 'Prélèvements', description: 'Simplifiez vos prélèvements.', iconSrc: '/icons/prelevement.png' },
     { title: 'Biochimie', description: 'Analyse des substances chimiques.', iconSrc: '/icons/biochemy.svg' },
@@ -83,109 +34,81 @@ const specialites = [
     { title: 'Sérologie', description: 'Détection d’anticorps.', iconSrc: '/icons/serology.svg' },
     { title: 'Virologie', description: 'Diagnostic viral.', iconSrc: '/icons/bacteria.svg' },
     { title: 'Vitaminologie', description: 'Évaluation des carences.', iconSrc: '/icons/vitamine.svg' },
-    { title: 'Parasitologie', description: 'Recherche de parasites.', iconSrc: '/icons/parasite.svg' },
-    { title: 'Mycologie', description: 'Identification des champignons.', iconSrc: '/icons/molecule.svg' },
+    { title: 'Parasitologie', description: 'Recherche de parasites.', iconSrc: '/icons/parasite.png' },
+    { title: 'Mycologie', description: 'Identification des champignons.', iconSrc: '/icons/mycology.png' },
     { title: 'Génétique & Génomique', description: 'Analyses genétiques.', iconSrc: '/icons/gene.png' },
     { title: 'Biologie moléculaire', description: 'Analyses moléculaires.', iconSrc: '/icons/molecule.png' },
+    { title: 'Immunofluoroscence', description: 'Analyses immunofluoroscences.', iconSrc: '/icons/fluore.png' },
 ];
-// Nouveau composant spécialités (icônes + titres)
-function SpecialiteIcon({ title, iconSrc }) {
-    return (_jsxs("div", { style: {
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            width: '85px',
-            margin: '0.5rem',
-            transition: 'transform 0.3s ease, color 0.3s ease',
-        }, onMouseEnter: (e) => {
-            e.currentTarget.style.transform = 'scale(1.1)';
-        }, onMouseLeave: (e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-        }, children: [_jsx("div", { style: {
-                    backgroundColor: '#f0f0f0',
-                    borderRadius: '50%',
-                    width: '68px',
-                    height: '68px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '0.5rem',
-                    boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-                }, children: _jsx("img", { src: iconSrc, alt: title, style: { width: '40.8px', height: '40.8px' } }) }), _jsx("span", { style: { color: '#000', fontWeight: 500, fontSize: '0.85rem', textAlign: 'center' }, children: title })] }));
-}
-// Section spécialités
+// === Section spécialités avec GRID responsive ===
 function SpecialitesSection() {
     return (_jsxs("section", { style: {
-            marginTop: '3rem',
+            marginTop: '2rem',
             backgroundColor: '#f4f6fa',
             padding: '2rem 1rem',
             borderRadius: '12px',
         }, children: [_jsx("h2", { style: {
                     fontSize: '1.6rem',
                     textAlign: 'center',
-                    marginBottom: '1.5rem',
+                    marginBottom: '2rem',
                     color: '#800020',
                 }, children: "Nos domaines d\u2019expertise" }), _jsx("div", { style: {
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(8, 1fr)',
-                    maxWidth: '980px',
-                    margin: '0 auto',
-                    gap: '0.5rem',
-                }, children: specialites.map((s, i) => (_jsx(SpecialiteIcon, { ...s }, i))) })] }));
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))', // colonnes plus petites
+                    gap: '1rem', // réduire l’espacement
+                    justifyContent: 'center',
+                }, children: specialites.map((s, i) => (_jsxs("div", { style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        cursor: 'pointer',
+                        transition: 'transform 0.3s ease',
+                        width: '100%',
+                    }, onMouseEnter: (e) => { e.currentTarget.style.transform = 'scale(1.05)'; }, onMouseLeave: (e) => { e.currentTarget.style.transform = 'scale(1)'; }, children: [_jsx("div", { style: {
+                                backgroundColor: '#f0f0f0',
+                                borderRadius: '50%',
+                                width: '70px', // réduit 
+                                height: '70px', // réduit 
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginBottom: '0.8rem', // réduit de 1rem → 0.8rem
+                                boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+                            }, children: _jsx("img", { src: s.iconSrc, alt: s.title, style: {
+                                    width: '50%', // réduit de 60% → 50%
+                                    height: '50%',
+                                    objectFit: 'contain',
+                                } }) }), _jsx("span", { style: {
+                                textAlign: 'center',
+                                fontSize: '0.9rem', // réduit de 0.9rem 
+                                fontWeight: 500,
+                                color: '#000',
+                                lineHeight: '1.1',
+                                marginTop: '0.4rem', // réduit de 0.5rem → 0.4rem
+                            }, children: s.title })] }, i))) })] }));
 }
-// Carte automate
+// === Carte automate ===
 function AutomateCard({ title, description, iconSrc }) {
     return (_jsxs("div", { style: {
             background: '#fff',
             borderRadius: '10px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
-            padding: '1.5rem',
+            padding: '1rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             minHeight: '260px',
-        }, children: [_jsx("img", { src: iconSrc, alt: title, style: {
-                    width: '200px',
-                    height: '200px',
-                    objectFit: 'cover',
-                    borderRadius: '12px',
-                    marginBottom: '1rem',
-                    background: '#f4f6fa',
-                } }), _jsx("h3", { style: { fontSize: '1.1rem', color: '#800020', marginBottom: '0.5rem', textAlign: 'center' }, children: title }), _jsx("p", { style: { fontSize: '0.97rem', color: '#444', textAlign: 'center' }, children: description })] }));
+        }, children: [_jsx("img", { src: iconSrc, alt: title, style: { width: '200px', height: '200px', objectFit: 'cover', borderRadius: '12px', marginBottom: '1rem', background: '#f4f6fa' } }), _jsx("h3", { style: { fontSize: '1.1rem', color: '#800020', marginBottom: '0.5rem', textAlign: 'center' }, children: title }), _jsx("p", { style: { fontSize: '0.97rem', color: '#444', textAlign: 'center' }, children: description })] }));
 }
-// Composant principal
+// === Composant principal ===
 export default function Services() {
     const [visibleCount, setVisibleCount] = useState(4);
     const [automates, setAutomates] = useState(fallbackAutomates);
     useEffect(() => {
         fetchPayloadAutomates()
-            .then((data) => {
-            if (data.length > 0)
-                setAutomates(data);
-        })
-            .catch(() => {
-            setAutomates(fallbackAutomates);
-        });
+            .then((data) => { if (data.length > 0)
+            setAutomates(data); })
+            .catch(() => setAutomates(fallbackAutomates));
     }, []);
-    return (_jsxs("section", { style: { padding: '2rem', backgroundColor: '#f8f9fb', borderRadius: '12px' }, children: [_jsx(SpecialitesSection, {}), _jsx("h2", { style: {
-                    color: '#800020',
-                    marginBottom: '2rem',
-                    fontWeight: 700,
-                    textAlign: 'center',
-                }, children: "Nos dispositifs m\u00E9dicaux de diagnostic" }), _jsx("div", { style: {
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-                    gap: '24px',
-                }, children: automates.slice(0, visibleCount).map((item, index) => (_jsx(AutomateCard, { ...item }, index))) }), visibleCount < automates.length && (_jsx("div", { style: { textAlign: 'center', marginTop: 32 }, children: _jsx("button", { onClick: () => setVisibleCount((prev) => Math.min(prev + 4, automates.length)), style: {
-                        backgroundColor: '#800020',
-                        color: '#fff',
-                        border: 'none',
-                        padding: '12px 28px',
-                        fontSize: '1rem',
-                        borderRadius: 8,
-                        cursor: 'pointer',
-                        fontWeight: 600,
-                    }, children: "Voir plus" }) }))] }));
+    return (_jsxs("section", { style: { padding: '2rem', backgroundColor: '#f8f9fb', borderRadius: '12px' }, children: [_jsx("h2", { style: { color: '#800020', marginBottom: '2rem', fontWeight: 700, textAlign: 'center' }, children: "Nos dispositifs m\u00E9dicaux de diagnostic" }), _jsx("div", { style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '24px' }, children: automates.slice(0, visibleCount).map((item, index) => (_jsx(AutomateCard, { ...item }, index))) }), visibleCount < automates.length && (_jsx("div", { style: { textAlign: 'center', marginTop: 32 }, children: _jsx("button", { onClick: () => setVisibleCount((prev) => Math.min(prev + 4, automates.length)), style: { backgroundColor: '#800020', color: '#fff', border: 'none', padding: '12px 28px', fontSize: '1rem', borderRadius: 8, cursor: 'pointer', fontWeight: 600 }, children: "Voir plus" }) })), _jsx(SpecialitesSection, {})] }));
 }

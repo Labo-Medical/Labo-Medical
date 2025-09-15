@@ -40,21 +40,8 @@ export type FooterPayload = {
     }[];
 };
 export declare function fetchPayloadFooter(): Promise<FooterPayload | null>;
-export type ArticlePayload = {
-    id: string;
-    title: string;
-    excerpt: string;
-    slug: string;
-    image: {
-        url: string;
-    };
-};
+import { ArticlePayload } from "../types/articles";
 export declare function fetchPayloadBlogs(): Promise<ArticlePayload[]>;
-export declare function fetchPayloadBlogArticles(): Promise<{
-    id: string;
-    title: string;
-    content: string;
-}[]>;
 export type CataloguePayload = {
     id: string;
     title: string;

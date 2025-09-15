@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { fetchPayloadHeader, type HeaderPayload } from '../services/payloadApi';
 import './Header.css';
 
@@ -13,6 +14,7 @@ const fallback = {
 };
 
 export default function Header() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [headerConfig, setHeaderConfig] = useState<HeaderPayload | null>(null);
 
@@ -116,6 +118,7 @@ export default function Header() {
                 </a>
               ))}
             </div>
+           
           </div>
         </nav>
       </div>

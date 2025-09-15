@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchPayloadFooter } from '../services/payloadApi';
 export default function Footer() {
     const fallback = {
-        logo: '/logo.jpg',
+        logo: '/logo.png',
         engagementText: 'Nos Laboratoires partenaires s’engagent pour la qualité, la proximité et la confidentialité de vos analyses médicales.',
         socialLinks: [
             { href: 'https://web.facebook.com/laboratoire.zeroual.kawassim/', icon: '/icons/facebook.svg', alt: 'Facebook' },

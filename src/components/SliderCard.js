@@ -27,51 +27,63 @@ const cards = [
         link: '/faq',
     },
 ];
-const cardStyle = {
-    background: '#fff',
-    borderRadius: '16px',
-    boxShadow: '0 8px 20px rgba(0,0,0,0.06)',
-    width: '180px',
-    minHeight: '200px',
-    padding: '1.2rem 1rem',
-    flexShrink: 0,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
-    border: '1px solid #eee',
-    transition: 'all 0.3s ease',
-};
-const iconWrapperStyle = {
-    background: '#f2f2f2',
-    borderRadius: '50%',
-    padding: '10px',
-    marginBottom: '1rem',
-    border: '1px solid #ddd',
-};
-const iconStyle = {
-    width: '40px',
-    height: '40px',
-};
-const titleStyle = {
-    color: '#6e0b14',
-    fontSize: '1rem',
-    marginBottom: '0.4rem',
-    fontWeight: 600,
-};
-const textStyle = {
-    color: '#444',
-    fontSize: '0.9rem',
-    lineHeight: '1.4',
-    padding: '0 0.5rem',
-};
 export default function SliderCards() {
-    return (_jsx("section", { style: { padding: '2rem 1rem', background: 'transparent' }, children: _jsx(motion.div, { style: {
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'stretch',
-                gap: '1.5rem',
-                flexWrap: 'nowrap',
-                flexDirection: 'row',
-            }, initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6 }, children: cards.map((card, idx) => (_jsx(motion.div, { style: cardStyle, whileHover: { scale: 1.05, y: -4 }, whileTap: { scale: 0.96 }, children: _jsxs(Link, { to: card.link, style: { textDecoration: 'none', color: 'inherit' }, children: [_jsx("div", { style: iconWrapperStyle, children: _jsx("img", { src: card.icon, alt: "", style: iconStyle }) }), _jsx("h4", { style: titleStyle, children: card.title }), _jsx("p", { style: textStyle, children: card.text })] }) }, idx))) }) }));
+    return (_jsx("section", { style: styles.section, children: _jsx(motion.div, { style: styles.grid, initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6 }, children: cards.map((card, idx) => (_jsx(motion.div, { style: styles.card, whileHover: { scale: 1.05, y: -4 }, whileTap: { scale: 0.96 }, children: _jsxs(Link, { to: card.link, style: styles.link, children: [_jsx("div", { style: styles.iconWrapper, children: _jsx("img", { src: card.icon, alt: "", style: styles.icon }) }), _jsx("h4", { style: styles.title, children: card.title }), _jsx("p", { style: styles.text, children: card.text })] }) }, idx))) }) }));
 }
+const styles = {
+    section: {
+        padding: '2rem 1rem',
+        background: 'transparent',
+    },
+    grid: {
+        display: 'grid',
+        gap: '1.5rem',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+        justifyItems: 'center',
+    },
+    card: {
+        background: '#fff',
+        borderRadius: '16px',
+        boxShadow: '0 8px 20px rgba(0,0,0,0.06)',
+        padding: '1.2rem 1rem',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        border: '1px solid #eee',
+        transition: 'all 0.3s ease',
+        width: '100%',
+        maxWidth: '300px',
+    },
+    link: {
+        textDecoration: 'none',
+        color: 'inherit',
+        width: '100%',
+    },
+    iconWrapper: {
+        background: '#f2f2f2',
+        borderRadius: '50%',
+        padding: '10px',
+        marginBottom: '1rem',
+        border: '1px solid #ddd',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    icon: {
+        width: '40px',
+        height: '40px',
+    },
+    title: {
+        color: '#6e0b14',
+        fontSize: 'clamp(0.95rem, 1.2vw, 1.1rem)',
+        marginBottom: '0.4rem',
+        fontWeight: 600,
+    },
+    text: {
+        color: '#444',
+        fontSize: 'clamp(0.85rem, 1vw, 0.95rem)',
+        lineHeight: 1.4,
+        padding: '0 0.5rem',
+    },
+};

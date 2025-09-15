@@ -5,7 +5,7 @@ import { fetchPayloadLabSouaniPage, type LabSouaniPageData } from "../services/p
 const fallbackData: LabSouaniPageData = {
   doctor: {
     name: "Dr. LYOUSSI NOUREDDINE",
-    photo: { url: "/fond/sar.jpg" },
+    photo: { url: "/icons/Man.png" },
     description:
       "Spécialiste en biologie médicale.",
   },

@@ -48,20 +48,16 @@ export default function ValeursDisplay() {
                         marginBottom: '2rem',
                         fontWeight: 700,
                     }, children: "Les Laboratoires Zeroual vous apportent un service de qualit\u00E9 et de proximit\u00E9." }), _jsx("div", { style: {
-                        display: 'flex',
-                        flexWrap: 'nowrap',
-                        justifyContent: 'center',
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                         gap: '1.5rem',
-                        overflowX: 'auto',
-                        paddingBottom: '0.5rem',
                     }, children: valeurs.map((valeur, index) => (_jsxs("div", { style: {
-                            width: '200px',
                             textAlign: 'center',
                             padding: '1rem',
                             borderRadius: '10px',
                             background: '#fafafa',
                             boxShadow: '0 4px 12px rgba(0,0,0,0.06)',
-                            flexShrink: 0,
+                            transition: 'transform 0.3s ease',
                         }, children: [_jsx("h3", { style: {
                                     color: '#515557',
                                     fontSize: '1.05rem',

@@ -1,0 +1,613 @@
+{
+  "header": {
+    "nav_labs": "OUR PARTNER LABORATORIES",
+    "nav_presentation": "Presentation",
+    "nav_kawassim": "Zeroual Kawassim Laboratory",
+    "nav_souani": "Zeroual Souani Laboratory",
+    "nav_charf": "Zeroual Charf Laboratory",
+    "nav_specialties": "Biological Specialties",
+    "nav_pros": "PROFESSIONAL AREA",
+    "nav_catalogues": "Catalogues",
+    "nav_recommendations": "Pre-analytical recommendations",
+    "nav_central_purchase": "Central purchasing",
+    "nav_resources": "Documentary resources",
+    "nav_sampling": "Sampling",
+    "nav_patient": "PATIENT AREA",
+    "nav_appointment": "Book appointment (Sampling)",
+    "nav_prepare": "Prepare analyses",
+    "nav_results": "Results",
+    "nav_faq": "FAQ",
+    "nav_news": "Biological news",
+    "nav_complaints": "COMPLAINTS & SUGGESTIONS",
+    "nav_contact": "CONTACT"
+  },
+  "values": {
+    "title": "Zeroual Laboratories provide you with quality and proximity service.",
+    "quality_title": "Quality & Biomedical Research",
+    "quality_text": "Advanced technologies and continuous improvement.",
+    "services_title": "Services & Proximity",
+    "services_text": "Personalized welcome and efficient territorial network.",
+    "competence_title": "Competence & Networking",
+    "competence_text": "Strong team spirit and rigorous expertise.",
+    "impartiality_title": "Impartiality & Confidentiality",
+    "impartiality_text": "Ethics, trust and solid human relationships."
+  },
+  "specialties": {
+    "immunoassay_title": "Immunoassay analyzer",
+    "immunoassay_desc": "Immunological, serological, hormonal and allergological analysis.",
+    "hematology_title": "Hematology analyzer",
+    "hematology_desc": "Complete Blood Count (CBC) and blood abnormality detection.",
+    "biochemistry_title": "Biochemical analyzer",
+    "biochemistry_desc": "Clinical chemistry for in vitro analyses."
+  },
+  "documents": {
+    "title": "Documentary resources",
+    "description": "Find here all the essential documents for your professional activities.\n\nThey are updated regularly.",
+    "good_practices": "Good practices guide (PDF)"
+  },
+  "presentation": {
+    "title": "Presentation of Zeroual Laboratories",
+    "paragraph1": "The ZEROUAL LABORATORIES network consists of 03 Medical Laboratories located in Kawassim, Souani and Charf. The main technical platform is located in Kawassim and 2 secondary platforms are installed in Souani and Charf, with:",
+    "paragraph2": "- Personalized welcome with or without appointment.",
+    "paragraph3": "- Technical quality and competence guaranteeing reliability and precision of examination results.",
+    "paragraph4": "- Rapid delivery of results within the announced deadlines, accessible online.",
+    "paragraph5": "- Unique medical file in all our laboratories.",
+    "paragraph6": "The Zeroual Kawassim laboratory has committed to an accreditation process according to the NM ISO 15189 standard."
+  },
+  "catalogue": {
+    "title": "Catalogue",
+    "description": "Discover our complete catalogs of products and services adapted to your professional needs.\n\nConsult them regularly to stay up to date.",
+    "documents": {
+      "general": "General catalog 2025 (PDF)"
+    }
+  },
+  "sampling": {
+    "title": "Sampling",
+    "description": "Simplify your sampling with our accessible solutions everywhere.\n\nContact us for more information.",
+    "view_pdf": "View PDF document"
+  },
+  "recommendations": {
+    "title": "Pre-analytical recommendations",
+    "description": "Prepare your tests optimally with our detailed pre-analytical recommendations.\n\nThese tips ensure reliable results."
+  },
+  "central_purchase": {
+    "title": "Central purchasing",
+    "description": "ZEROUAL LABORATORIES is a purchasing center specialized in medical industries present in Africa.\n\nBeing located as close as possible to our customers, our promise is to address all the questions posed by a project in terms of supply and Supply Chain in order to provide, in all circumstances, a response adapted to the needs of medical laboratories, clinics, hospitals etc.\n\nMore than a supplier of equipment, reagents and consumables, we are the privileged partner to boost the quality of your purchases and optimize your procurement costs.\n\nThe principle is simple: union makes strength. By pooling our clients' purchases, we are able to buy in larger quantities from manufacturers and suppliers. This gives us greater weight to negotiate the best prices at the best deadlines for you.\n\nBy entrusting us with your non-strategic purchases you will make economies of scale but above all you will be rid of administrative and logistical constraints to gain time and better concentrate on your core activities."
+  },
+  "pro_menu": {
+    "documents": "Documents",
+    "recommendations": "Pre-analytical recommendations",
+    "central_purchase": "Central purchasing",
+    "catalogues": "Catalogues",
+    "sampling": "Sampling"
+  },
+  "footer": {
+    "engagement": "Our partner laboratories are committed to quality, proximity, and confidentiality of your medical analyses.",
+    "quick_access": "Quick access",
+    "partner_labs": "Our partner laboratories",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "services": "Our services",
+    "all_rights": "All rights reserved."
+  },
+  "contact": {
+    "title": "Contact us",
+    "name": "Name",
+    "name_placeholder": "Your name",
+    "email": "Email",
+    "email_placeholder": "Your email",
+    "lab": "Laboratory",
+    "choose_lab": "Choose a laboratory",
+    "message": "Message",
+    "message_placeholder": "Your message",
+    "send": "Send",
+    "sent": "Message sent!"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to<br />ZEROUAL LABORATORIES",
+      "description": "Your network of medical laboratories.",
+      "cta": "Discover our services",
+      "video_fallback": "Your browser does not support HTML5 video."
+    },
+    "annonces": {
+      "title": "Announcements",
+      "view": "View announcement",
+      "items": [
+        {
+          "titre": "Complete Health Check",
+          "description": "Get a comprehensive medical checkup to better understand your health."
+        },
+        {
+          "titre": "New Center in Charf",
+          "description": "Opening of a new laboratory with state-of-the-art equipment."
+        },
+        {
+          "titre": "Recruitment: Join Our Team",
+          "description": "Please submit your application via this link."
+        },
+        {
+          "titre": "24/7 Hours",
+          "description": "Our laboratories are open 7 days a week and 24 hours a day."
+        },
+        {
+          "titre": "Home Service",
+          "description": "Get tested in complete serenity without leaving home."
+        }
+      ]
+    },
+    "slider": {
+      "policies": { "title": "OUR POLICIES", "text": "See our policies: Privacy, Quality and HR." },
+      "visit": { "title": "PREPARE YOUR VISIT", "text": "Helpful tips for your medical exams." },
+      "results": { "title": "ACCESS YOUR RESULTS", "text": "Securely view your results online." },
+      "faq": { "title": "FAQ", "text": "Answers to frequently asked questions." }
+    },
+    "gallery": { "title": "GALLERY", "more": "Show more" },
+    "blog": { "title": "News in medical biology", "read": "Read the article" },
+    "specialties": {
+      "title": "Our areas of expertise",
+      "items": {
+        "s1": { "title": "Sampling", "desc": "Simplify your sampling." },
+        "s2": { "title": "Biochemistry", "desc": "Analysis of chemical substances." },
+        "s3": { "title": "Hematology", "desc": "Study of blood cells." },
+        "s4": { "title": "Microbiology", "desc": "Identification of pathogens." },
+        "s5": { "title": "Immunology", "desc": "Immune response testing." },
+        "s6": { "title": "Hormonology", "desc": "Endocrine system exploration." },
+        "s7": { "title": "Allergology", "desc": "Allergy diagnostics." },
+        "s8": { "title": "Hemostasis", "desc": "Coagulation analyses." },
+        "s9": { "title": "Glycohemoglobin", "desc": "HbA1c monitoring." },
+        "s10": { "title": "Serology", "desc": "Antibody detection." },
+        "s11": { "title": "Virology", "desc": "Viral diagnostics." },
+        "s12": { "title": "Vitaminology", "desc": "Deficiency assessment." },
+        "s13": { "title": "Parasitology", "desc": "Parasite detection." },
+        "s14": { "title": "Mycology", "desc": "Fungi identification." },
+        "s15": { "title": "Genetics & Genomics", "desc": "Genetic analyses." },
+        "s16": { "title": "Molecular biology", "desc": "Molecular analyses." }
+      }
+    },
+    "automates": {
+      "title": "Our medical diagnostic devices",
+      "items": {
+        "auto1": { "title": "Immunoassay analyzer", "desc": "Immunology, serology, hormonology and allergology." },
+        "auto2": { "title": "Hematology analyzer", "desc": "CBC and detection of blood anomalies." },
+        "auto3": { "title": "Biochemical analyzer", "desc": "Clinical chemistry for in vitro analysis." },
+        "auto4": { "title": "Hematological analyzer", "desc": "Impedance and cytometry." },
+        "auto5": { "title": "Immunological analyzer (ECL)", "desc": "Electrochemiluminescence for analyte detection." },
+        "auto6": { "title": "Spectrophotometer", "desc": "Absorbance measurement for concentrations." },
+        "auto7": { "title": "Clinical chemistry analyzer", "desc": "Biochemistry, immunology, hematology, etc." },
+        "auto8": { "title": "Hemostasis analyzer", "desc": "Study of blood coagulation." },
+        "auto9": { "title": "Glycohemoglobin analyzer", "desc": "HbA1c measurement by HPLC." },
+        "auto10": { "title": "Automated hematology analyzer", "desc": "Complete blood count analyses." },
+        "auto11": { "title": "Compact clinical analyzer", "desc": "Compact automated biochemistry tests." },
+        "auto12": { "title": "Automated electrophoresis system", "desc": "Automated electrophoresis system." },
+        "auto13": { "title": "Automatic immunoassay analyzer", "desc": "Automatic immunoassay analyzer." }
+      }
+    },
+    "common": { "more": "Show more" }
+  },
+  "blog": {
+    "search": {
+      "placeholder": "Search for an article…"
+    },
+    "empty": "No articles match your search.",
+    "read_more": "Read the article →",
+    "previous": "← Previous",
+    "next": "Next →",
+    "hero": {
+      "title": "Blog & Health Tips",
+      "subtitle": "News, test explanations and daily best practices."
+    },
+    "back_button": "← Back to blog (Esc)",
+    "pagination_label": "Blog pagination",
+    "image_unavailable": "Image unavailable",
+    "articles": {
+      "article1": {
+        "title": "Why get regular blood tests?",
+        "excerpt": "Why get regular blood tests?",
+        "content": "Regular blood tests are essential for monitoring your overall health. Our biologists recommend periodic checks to detect potential abnormalities early and prevent complications. Discover why these tests are important and how they contribute to your well-being."
+      },
+      "article2": {
+        "title": "Understanding your test results",
+        "excerpt": "Understanding your test results",
+        "content": "Our biologists explain how to read and interpret your laboratory results. Learn to decipher normal values, understand measurement units, and identify signs that require medical consultation. Correct interpretation of your tests is key to appropriate care."
+      },
+      "article3": {
+        "title": "Preparing your laboratory visit",
+        "excerpt": "Preparing your laboratory visit",
+        "content": "For an optimal laboratory visit, good preparation is essential. Discover the documents to bring, fasting conditions to respect, and practical tips to facilitate your sampling. Our teams are here to accompany you every step of the way."
+      },
+      "article4": {
+        "title": "Latest developments in medical biology",
+        "excerpt": "Latest developments in medical biology",
+        "content": "Medical biology is constantly evolving with new techniques and technologies. Discover the latest advances in analyses, new biological markers, and innovations that improve the accuracy and speed of diagnoses."
+      }
+    }
+  },
+  "results": {
+    "menu": {
+      "results": "Your results",
+      "appointment": "Book appointment",
+      "prepare": "Prepare my visit",
+      "faq": "FAQ"
+    },
+    "title": "Your test results",
+    "description": "Zeroual Laboratories are committed to the reliability and accuracy of results, following best practices and ensuring fast, dependable service.",
+    "methods": {
+      "online": { "title": "Online", "desc": "Request access at registration. Your results will be available on a secure internet server from your laboratory page.", "link": "results server" },
+      "phone": { "title": "By phone", "desc": "Provide your mobile number at registration." },
+      "lab": { "title": "At the laboratory", "desc": "Let us know you prefer to collect your results onsite. We will provide a slip to ensure confidentiality." },
+      "doctor": { "title": "Your doctor", "desc": "Your results will be sent to your doctor by their preferred method: mail, fax or secure connection." }
+    },
+    "login_required": "Please log in to access your results."
+  },
+  "results_menu": {
+    "results": "Your results",
+    "appointment": "Make appointment",
+    "prepare": "Prepare my visit",
+    "faq": "FAQ"
+  },
+  "prepare_visit": {
+    "title": "I prepare my analyses",
+    "subtitle": "Find the information and practical advice to follow to facilitate your procedures at the laboratory.",
+    "sections": {
+      "preparer": "Prepare your visit",
+      "ajeun": "Fasting?",
+      "enfants": "Children's sampling",
+      "femmes_enceintes": "Pregnant women's follow-up",
+      "microbio": "Microbiological analyses",
+      "domicile": "Home sampling"
+    },
+    "content": {
+      "preparer": {
+        "title": "Prepare your visit",
+        "intro": "At your laboratory reception, a medical secretary will create a complete computerized file containing the essential information allowing reliable care and results rendering in accordance with the prescriber's expectations. Follow our advice to prepare as best as possible for your visit.",
+        "documents_title": "Documents to bring:",
+        "documents": {
+          "ordonnance": "The medical prescription containing the analyses prescribed by your doctor.",
+          "carte_vitale": "Your health card and/or your social security certificate.",
+          "mutuelle": "Your mutual insurance certificate valid and/or your CMU certificate.",
+          "prise_en_charge": "Supporting documents (long-term illness, maternity, work accident...).",
+          "identite": "As part of the INS implementation, you will be asked for an identity document at each first visit, as well as every 5 years. You will also need to present it in case of changes in identity traits or for certain analyses such as blood group, driving license commission, etc. in order to respect strict identitovigilance."
+        },
+        "highlight": "Please bring these documents.",
+        "honoraires_title": "What are the fees?",
+        "honoraires_text": "Biogroup laboratories are affiliated with mandatory and complementary organizations. They apply rates regulated by law following: Decree 03/12/87 (JO 12/12/87).",
+        "prise_en_charge": "To benefit from full coverage, please remember to bring your health card, your up-to-date mutual insurance certificate, as well as any document justifying your rights (CMU certificate, AME...).",
+        "sans_prescription": "In the absence of prescription, you will have to pay the total amount of examinations without supplement or fee overruns.",
+        "hors_nomenclature": "Although most examinations are covered by Social Security, some are not reimbursed. They are then said to be \"Out of Nomenclature\". If your doctor prescribes examinations not reimbursed by social security, our medical secretaries will inform you of the cost of the examinations and ask for your agreement to their realization during your registration. All laboratories belong to an approved management association (AGA).",
+        "rdv_title": "Do I need to make an appointment?",
+        "rdv_text": "Sampling is generally done without appointment. However, certain examinations require special care. If you have any doubt, it is therefore preferable to call your laboratory.",
+        "rdv_text2": "Some laboratories may offer appointments to reduce waiting time. Ask your laboratory or find this information on our laboratory sheets.",
+        "horaire_title": "When should I come to the laboratory?",
+        "horaire_intro": "Some analyses must be done at precise times, on certain days. For example:",
+        "horaire_list": {
+          "cortisol": "Cortisol should be performed at 8 a.m. (unless otherwise indicated on the prescription).",
+          "hormones": "Hormonal dosages require respecting the days indicated by your doctor: e.g. D2 = 2nd day of cycle.",
+          "t4": "Free T4 dosage should be performed <b>before taking Levothyrox</b>.",
+          "tsh": "TSH should preferably be dosed <b>in the morning</b>.",
+          "medicament": "For drug dosage (anti-rejection for example), blood sampling must take place <b>before</b> the usual intake. The dosage and date and time of last intake will be asked.",
+          "antibiotique": "A bacteriological or mycological sample must be taken <b>before taking the antibiotic/antimycotic</b> (unless otherwise advised by the doctor).",
+          "spermogramme": "For a spermogram: an abstinence period must be respected."
+        }
+      },
+      "ajeun": {
+        "title": "Fasting?",
+        "intro": "The fasting state is necessary to obtain a blood specimen suitable for performing certain analyses.",
+        "highlight": "It is defined by an absence of food intake for more than 8 hours.",
+        "allowed": "However, you can:",
+        "allowed_list": {
+          "dents": "Brush your teeth.",
+          "eau": "Drink water, coffee or tea without sugar or milk.",
+          "medicaments": "Take your medications EXCEPT if a specific dosage of them is requested."
+        },
+        "biotine": "It will be important to inform your laboratory of any ongoing treatment, particularly those containing BIOTIN or vitamin B8 (QIZENDAY®, food supplements, etc.).",
+        "doute": "In case of doubt about your examinations, come fasting for at least 8 hours or contact your laboratory.",
+        "liste_title": "Below is a non-exhaustive list of the main examinations requiring fasting:",
+        "liste": {
+          "calcitonine": "CALCITONINE (Thyrocalcitonine): Stop PPI anti-ulcer treatment, Proton Pump Inhibitors for 15 days (omeprazole, esomeprazole, lanzoprazole, pentoprazole, rabeprazole).",
+          "crosslaps": "CROSSLAPS – CTX",
+          "cryoglobulin": "CRYOGLOBULINE",
+          "glycemie": "FASTING GLYCEMIA",
+          "glycosurie": "GLYCOSURIA",
+          "homocysteine": "HOMOCYSTEINE",
+          "parathormone": "PARATHORMONE – PTH",
+          "phosphore": "PHOSPHORUS",
+          "testosterone": "TESTOSTERONE",
+          "triglycerides": "TRIGLYCERIDES – LIPID PROFILE",
+          "helikit": "HELIKIT (search for Helicobacter pylori carriage – Urea 13C breath test – exhaled air):"
+        },
+        "helikit_note": "You must come with the kit you picked up at the pharmacy with the same prescription.",
+        "helikit_note2": "Breath test to be performed in strict fasting for at least 6 hours (no drinking, eating or smoking).",
+        "helikit_conditions": "The following must be respected:",
+        "helikit_conditions_list": {
+          "antibiotique": "stop any antibiotic treatment at least 4 weeks before the test.",
+          "ipp": "stop proton pump inhibitors, anti-secretory drugs, at least 2 weeks before the test (omeprazole, esomeprazole, lanzoprazole, pentoprazole, rabeprazole).",
+          "antiacides": "stop antacids and gastro-intestinal dressings 24 hours before the test."
+        }
+      },
+      "enfants": {
+        "title": "Children's sampling",
+        "intro": "Our samplers are trained in pediatric sampling on the very young.",
+        "help_title": "How can you help your child?",
+        "help_intro": "It is very important to be able to manage your reaction to a stressful situation for you and for your child. Children are very sensitive to their parent's stress. The more relaxed you are, the more relaxed your child will be.",
+        "preparer_title": "Prepare them:",
+        "preparer_text": "it is preferable to inform your child in advance that they will have a blood test and explain why they need to have it. If your child knows what to expect, they will probably be less anxious about what will happen. We recommend informing your child 1 to 2 days before the blood test.",
+        "expliquer_title": "Explain the procedure:",
+        "expliquer_text": "be honest with your child and explain the blood test procedure. Use reassuring words they can understand. You can explain what they will see, feel and hear throughout the procedure.",
+        "rassurer_title": "Reassure them:",
+        "rassurer_text": "it is important to reassure your child about the duration of a blood test, which generally lasts only a few minutes.",
+        "jouets": "You can also get them used to needles and other medical equipment by showing them toy versions.",
+        "expression": "You can also tell them that they have the right not to like what's happening and to express it if it hurts. The child will be less apprehensive about the blood test if they know they can express what they feel. However, it will be important to tell them that their most important role is not to move during the blood test.",
+        "distraire_title": "Distract them:",
+        "distraire_text": "distracting your child during a blood test can help them get through the procedure serenely. You can bring a small toy, their comforter, a book… You can also distract them by using their imagination. Ask them to close their eyes and tell you their favorite place."
+      },
+      "femmes_enceintes": {
+        "title": "Pregnant women's follow-up",
+        "intro": "During pregnancy, a large number of biological examinations will be performed at the laboratory:",
+        "hcg_title": "HCG hormone dosage",
+        "hcg_text": "Your pregnancy test is positive, the first examination to perform is a blood test allowing the dosage of the HCG hormone (Human Chorionic Gonadotropin) to confirm the pregnancy.",
+        "hcg_doubling": "To assess good embryo development, the HCG dosage can be renewed two days later, the rate should double. There may also be interference or false positive at the beginning of pregnancy with certain hormonal stimulation treatments.",
+        "depistages_title": "Rubella and Toxoplasmosis screenings",
+        "depistages_text": "For several years, Rubella and Toxoplasmosis screenings have become mandatory in France. These two diseases are benign diseases that can however be dangerous for the fetus if contracted during pregnancy. At the beginning of pregnancy, a blood test must therefore be performed to measure anti-rubella antibody levels and perform toxoplasmosis serology.",
+        "depistages_followup": "If your tests are negative, you will have to redo these analyses every month to check that you have not been contaminated.",
+        "groupe_sanguin_title": "Blood group",
+        "groupe_sanguin_text": "At the beginning of pregnancy, you will also be asked to have a blood test to check your blood group and rhesus. This analysis is important to determine any blood incompatibility between your fetus and you, but also in the event of significant bleeding occurring during childbirth.",
+        "anemie_title": "Anemia and deficiency research",
+        "anemie_text": "A number of examinations may be prescribed to screen for anemia or deficiencies. Anemia being frequent in pregnant women in the 3rd trimester, the CBC (Complete Blood Count) is therefore prescribed during the 6th month of pregnancy.",
+        "diabete_title": "Gestational diabetes screening",
+        "diabete_text": "Gestational diabetes can appear during pregnancy during the 2nd and 3rd trimesters. A first fasting blood glucose measurement will be performed from the first consultations then another examination will be planned between the 24th and 28th week of pregnancy. This examination is a fasting blood glucose measurement, at 1h and at 2h. After the first fasting blood test, our medical teams will provide you with a sweetened drink that you must drink. A blood test will then be performed at 1h then at 2h after glucose intake. This is called Oral Glucose Tolerance Test (OGTT)."
+      },
+      "microbio": {
+        "title": "Microbiological analyses",
+        "intro": "Some bacteriological examinations must be performed by you (stool, urine, sputum collection…). Dedicated kits with recommendation sheets will be given to you depending on the prescription. Other analyses will be performed at the laboratory or by your nurse at home.",
+        "modalites": "Specific sampling modalities must be respected. They are described in explanatory sheets that can be given to you at the laboratory.",
+        "disposition": "All our staff is at your disposal to explain the procedure to follow.",
+        "depot": "Once the sample is taken at home, you can come and deposit your containers at the laboratory."
+      },
+      "domicile": {
+        "title": "Home sampling",
+        "intro": "Some of our laboratories offer to perform certain blood tests at home by appointment.",
+        "rdv_text": "When making an appointment at your laboratory or by telephone, ask if your laboratory offers this service. If yes, you will then need to specify the list of prescribed examinations so that we can inform you about your preparation before sampling.",
+        "programmation": "A time slot will be given to you depending on the programmer's tour schedule.",
+        "remboursement": "Travel will be reimbursed if specified on the prescription \"home sampling\" or you will be charged extra.",
+        "attestation": "You will be asked to prepare a copy of your social security certificate and your mutual insurance, so that we can take care of the Third-Party Payment."
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "before_title": "Before sampling",
+    "after_title": "After sampling",
+    "before": {
+      "question1": "I have several prescriptions from different doctors, what should I do?",
+      "answer1": "There is no problem, we will make a file for each prescription. Each doctor will have the results of the analyses they requested. We will bill them only once. It is completely transparent for you, everything happens at the secretariat. We will only sample you once.",
+      "question2": "Can I be accompanied and lying down?",
+      "answer2": "You can be accompanied as long as the companion does not disturb the proper performance of the sampling. If needed, all Zeroual group laboratories have sampling rooms with reclining chairs or beds for you to lie down. Just remember to inform us or ask us.",
+      "question3": "Will I have to wait long?",
+      "answer3": "All our teams do their best to minimize waiting. However, a minimum time is necessary to ensure maximum safety, for you as for us (identity information checks, care, blood sampling without haste, tube labeling...). Moreover, the number of samplers is in accordance with the expected attendance at the laboratory.",
+      "question4": "Can I come at any time?",
+      "answer4": "We welcome you 7/7 & 24/24. The detail must be checked with each laboratory in the <a href=\"/contact\">Find a laboratory</a> section. Blood tests can generally be performed without time constraints, respecting any fasting conditions. However, for certain analyses, sampling must respect time constraints: some parameters vary during the day. Contact your laboratory or on the <a href=\"#\">Prepare your analyses</a> section.",
+      "question5": "Blood sampling and my medications",
+      "answer5": "Before your blood test, you can take the medications prescribed to you. However, there is one exception: blood sampling must be performed BEFORE the usual intake of the treatment if your prescription specifies that it is a dosage of the medication itself. It will be important to inform your laboratory of any ongoing treatment, particularly those containing BIOTIN or vitamin B8 (QIZENDAY®, food supplements, etc.). If you have any doubt, ask your doctor and/or biologist for advice.",
+      "question6": "I am a minor",
+      "answer6": "A sampling on a minor cannot be performed without the presence of a responsible parent, or in the context of family planning, but always accompanied by an adult. The results will be transmitted to the prescribing physician or legal guardian.",
+      "question7": "I would like to have an analysis, but I don't have a prescription",
+      "answer7": "For a \"routine\" analysis (beta-HCG, glycemia, cholesterol, HIV…): there is no problem, we will perform the analysis you request. It will be billed according to its rating in the Medical Biology Nomenclature. For a more specific request, as long as the analysis is feasible in Morocco in an approved laboratory, we will offer you a quote. The analysis will be billed according to its rating in the Medical Biology Nomenclature or according to the Executing Laboratory's rating, increased by any transmission costs. In all cases, nothing will be performed without your agreement or validation of the announced price. For an analysis performed in a foreign laboratory or outside the care pathway, contact your Biologist.",
+      "question8": "Do I need to make an appointment at the laboratory?",
+      "answer8": "Zeroual laboratories welcome you all day without appointment. Some laboratories may offer appointments to facilitate your passage. For blood tests in children under 5 years old and bacteriological samplings, whatever the age, an appointment may sometimes be necessary. To see schedules or make an appointment, select your laboratory from the <a href=\"/rdv\">Find a laboratory</a> list.",
+      "question9": "Which examinations require fasting?",
+      "answer9": "The fasting state is necessary to obtain a blood specimen suitable for performing certain analyses. <strong>It is defined by an absence of food intake for 8 to 12 hours.</strong> <ul><li>CALCITONINE (Thyrocalcitonine): Stop PPI anti-ulcer treatment, Proton Pump Inhibitors for 15 days (omeprazole, esomeprazole, lanzoprazole, pentoprazole, rabeprazole).</li><li>CROSSLAPS – CTX</li><li>CRYOGLOBULINE</li><li>FASTING GLYCEMIA</li><li>HELIKIT: No tobacco from the evening before, stop PPI anti-ulcer treatment (Proton Pump Inhibitors for 15 days: omeprazole, esomeprazole, lanzoprazole, pentoprazole, rabeprazole).</li><li>HOMOCYSTEINE</li><li>PARATHORMONE – PTH</li><li>PHOSPHORUS</li><li>TESTOSTERONE</li><li>TRIGLYCERIDES – LIPID PROFILE</li></ul>",
+      "question10": "I am a disabled person, how can I be welcomed?",
+      "answer10": "All our laboratories offer a solution for our disabled patients. The laboratory's public accessibility register can be provided upon request. Do not hesitate to contact the laboratory to organize your sampling in the best conditions."
+    },
+    "after": {
+      "question1": "I had a bruise after a sampling",
+      "answer1": "If the vein does not close quickly enough or if the sampling was difficult, a bruise may appear. Our samplers do everything to avoid such inconveniences. The bruise comes from the accumulation of blood between the vein wall and the skin. It may look impressive but is never serious and disappears spontaneously. To minimize the appearance of these hematomas, it is recommended to apply pressure for several minutes after the blood test.",
+      "question2": "When and how will I receive my results?",
+      "answer2": "Classically, you will receive your results the same day, electronically, faster and more ecological, in the form of encrypted mail or by accessing the laboratory's secure result server. Some more specialized examinations may require additional time. You also have the possibility to come and collect your results at the laboratory. In this case, you must indicate it to the reception secretary, who will give you a coupon guaranteeing your confidentiality. The laboratory can also send you the results by postal mail with an extended delay of 2 to 3 days after file validation. Postal shipping costs of 2€ per result may be charged to you. In the event of worrying results or if they deem it necessary, the laboratory biologists may be led to contact your prescribing physician or an on-call physician or you directly by telephone.",
+      "question3": "Can someone at the laboratory interpret my results for me?",
+      "answer3": "Of course, Zeroual laboratories' biologists are available to answer all your questions and interpret your results in complete confidentiality. Ask at reception!",
+      "question4": "What happens in case of major abnormality on a result?",
+      "answer4": "Your prescribing physician is systematically informed in case of major abnormality on your result. If they cannot be reached, the laboratory will contact you to inform you and give you the directives to follow: make another appointment with your doctor, contact emergency services, go directly to emergencies…",
+      "question5": "How to make a request for access to my medical file?",
+      "answer5": "To access your medical file, you can fill in the following forms and transmit them by email or mail to your laboratory: <ul><li>Patient's medical file access form</li><li>Access form for a deceased patient's medical file by next of kin</li><li>Patient's opposition form to the communication of their medical file after their death</li></ul>",
+      "question6": "How to report a non-conformity or make a complaint?",
+      "answer6": "For any complaint or non-conformity report, we invite you to fill in the form on our dedicated space: <a href=\"#\">Submit a complaint &gt;…</a>",
+      "question7": "I received my encrypted report, why?",
+      "answer7": "The laboratory has sent you your examination report in the form of an encrypted PDF file attached to the notification email. To protect you, this encryption allows this medical document not to be directly readable or indexed on the Internet. Only the email recipient is able to associate the file received and the key (improperly called password) necessary for its opening. The Adobe technical solution does not allow the deletion or modification of the encryption key. The file therefore remains protected during its storage on your computer. In counterpart, it is not reusable or distributable to a third party, except by transmitting your personal encryption key to them at the same time. If you wish to keep unencrypted documents in your medical file, you must use the laboratory's result server. It allows you access to your entire medical file and gives you the possibility to download unprotected documents.",
+      "question8": "What to do if I have lost the encryption key for my reports?",
+      "answer8": "The laboratory has sent you your examination report in the form of an encrypted PDF file attached to the notification email. The PDF is not readable, except by knowing the decryption key. We invite you to contact the laboratory secretariat who can indicate the procedure to follow to find the key used at the time of sending your documents."
+    }
+  },
+  "common": {
+    "home": "Home",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu",
+    "language": "Language",
+    "contact_us": "Contact us"
+  },
+  "pages": {
+    "home": {
+      "title": "Zeroual Laboratories - Home",
+      "loading_hero": "Loading Hero section...",
+      "loading_announce": "Loading announcement...",
+      "loading_slider": "Loading slider cards...",
+      "loading_values": "Loading values...",
+      "loading_specialties": "Loading specialties...",
+      "loading_gallery": "Loading gallery...",
+      "loading_blog": "Loading blog..."
+    },
+    "pro": {
+      "title": "Professional Area - Zeroual Laboratories",
+      "loading_resources": "Loading professional resources...",
+      "description": "Doctors, nurses, midwives — access your dedicated tools and resources.",
+      "og_description": "Doctors, nurses, midwives — Find all the resources to facilitate your professional procedures.",
+      "features": {
+        "recommendations": {
+          "title": "Pre-analytical recommendations",
+          "description": "Prepare your exams optimally."
+        },
+        "sampling": {
+          "title": "Sampling",
+          "description": "Simplified access to care everywhere."
+        },
+        "central_purchase": {
+          "title": "Central purchasing",
+          "description": "Central purchasing for professionals."
+        },
+        "documents": {
+          "title": "Documentation",
+          "description": "Essential documents."
+        }
+      }
+    },
+    "patient": {
+      "title": "Patient Area - Zeroual Laboratories",
+      "welcome": "Welcome to Patient Area",
+      "description": "Organize your visit, access your test results, and find all the useful information for your patient journey.",
+      "og_description": "Everything you need to navigate serenely through your medical procedures.",
+      "hero_text": "Everything you need to organize your visit, access your analyses and navigate more serenely through your medical procedures.",
+      "loading_results": "Loading results...",
+      "loading_faq": "Loading FAQ...",
+      "features": {
+        "prepare_visit": {
+          "title": "Prepare your visit",
+          "description": "Practical tips to prepare your exams and facilitate your procedures at the laboratory."
+        },
+        "find_lab": {
+          "title": "Find your laboratory",
+          "description": "Simplified access to care wherever you are, with a proximity service."
+        },
+        "access_results": {
+          "title": "Access your results",
+          "description": "View your analyses quickly and securely, from home."
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "description": "A clear answer to every question: explore our complete FAQ."
+        }
+      }
+    },
+    "politic": {
+      "title": "Institutional Policies - Zeroual Laboratories",
+      "heading": "Our Institutional Policies",
+      "loading_documents": "Loading policy documents..."
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password"
+    },
+    "notfound": {
+      "title": "404 - Page not found",
+      "message": "The page you are looking for does not exist."
+    },
+    "feedback": {
+      "title": "Feedback & Reviews - Zeroual Laboratories",
+      "description": "Give your opinion or send your complaints to Zeroual Laboratories.",
+      "og_title": "Feedback & Reviews - Zeroual Laboratories",
+      "og_description": "Share your experience with Zeroual Laboratories.",
+      "whatsapp_text": "📱 For any complaint, please contact us at:",
+      "loading": "Loading feedback form...",
+      "title_text": "Thank you for submitting your opinion, suggestion or complaint",
+      "tabs": {
+        "personnel": "Staff",
+        "patient": "Patients",
+        "utilisateur": "Users",
+        "satisfaction": "Satisfaction"
+      }
+    },
+    "contact": {
+      "title": "Contact - Zeroual Laboratories",
+      "description": "Contact Zeroual Laboratories...",
+      "og_title": "Contact - Zeroual Laboratories",
+      "og_description": "Contact form and information...",
+      "heading": "Contact form & Our medical laboratories",
+      "email_text": "Please contact us by email at contact@leslaboratoireszeroual.ma",
+      "loading": "Loading form..."
+    },
+    "about": {
+      "title": "About - Zeroual Laboratories"
+    }
+  },
+  "components": {
+    "rdv": {
+      "title": "Home Appointment Booking",
+      "submit": "Send request",
+      "success": "✅ Request sent successfully!",
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "date": "Sampling Date",
+      "time": "Preferred Time",
+      "notes": "Notes",
+      "choose_date": "Choose a date"
+    },
+    "valeur": {
+      "fallback": {
+        "quality_title": "Quality & Biomedical Research",
+        "quality_text": "Advanced technologies and continuous improvement.",
+        "services_title": "Services & Proximity",
+        "services_text": "Personalized welcome and efficient territorial network.",
+        "competence_title": "Competence & Networking",
+        "competence_text": "Strong team spirit and rigorous expertise.",
+        "impartiality_title": "Impartiality & Confidentiality",
+        "impartiality_text": "Ethics, trust and solid human relationships."
+      }
+    },
+    "historique": {
+      "title": "Greater population coverage at the local level.",
+      "paragraphs": {
+        "0": "This proximity network aims to establish independent medical biology,",
+        "1": "of quality and innovation for the health and well-being of patients."
+      },
+      "history": {
+        "0": { "year": "2023", "title": "Year of creation", "text": "LES LABORATOIRES ZEROUAL Network" },
+        "1": { "year": "2023", "title": "1st laboratory in the network", "text": "First laboratory in the network in Kawassim" },
+        "2": { "year": "2024", "title": "Second laboratory in the network", "text": "Second laboratory in the network in Souani." },
+        "3": { "year": "2025", "title": "Third laboratory in the network", "text": "Third laboratory in the network in Charf." }
+      }
+    },
+    "contact": {
+      "labs": {
+        "kawacim": "Kawacim",
+        "souani": "Souani",
+        "charf": "Charf"
+      }
+    },
+    "language_names": {
+      "es": "Español",
+      "fr": "Français",
+      "en": "English",
+      "ar": "العربية"
+    },
+    "chiffres": {
+      "title": "In numbers",
+      "stats": {
+        "examens": "Specialized exams/weeks",
+        "laboratoires": "Laboratories",
+        "interventions": "Interventions",
+        "plateau": "Technical platform"
+      }
+    },
+    "partenaires": {
+      "title": "Our partners"
+    },
+    "loading_form": "Loading form...",
+    "loading_presentation": "Loading presentation...",
+    "loading_history": "Loading history...",
+    "loading_numbers": "Loading numbers...",
+    "loading_partners": "Loading partners...",
+    "loading_specialties": "Loading specialties...",
+    "loading_feedback": "Loading feedback form..."
+  }
+}

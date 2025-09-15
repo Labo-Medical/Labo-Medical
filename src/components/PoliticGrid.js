@@ -90,12 +90,6 @@ const fallbackPolicies = [
         file: '/politics/qualite.pdf',
         icon: _jsx(FaShieldAlt, {}),
     },
-    {
-        title: 'Politique de Confidentialité',
-        description: 'Ce document précise les mesures que nous prenons pour garantir la confidentialité et la protection des données.',
-        file: '/politics/confidentialite.pdf',
-        icon: _jsx(FaFileContract, {}),
-    },
 ];
 export default function PolicyGrid() {
     const [policies, setPolicies] = useState([]);

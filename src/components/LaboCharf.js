@@ -5,7 +5,7 @@ import { fetchPayloadCharfPage } from "../services/payloadApi";
 const fallbackData = {
     doctor: {
         name: "Dr. EL MOUSSATI FATIMA ZOHRA",
-        photo: { url: "/fond/sar3.jpg" },
+        photo: { url: "/icons/Woman.png" },
         description: "Spécialiste en biologie médicale.",
     },
     contact: {

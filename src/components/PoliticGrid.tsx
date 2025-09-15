@@ -93,13 +93,6 @@ const fallbackPolicies: PolicyItem[] = [
     file: '/politics/qualite.pdf',
     icon: <FaShieldAlt />,
   },
-  {
-    title: 'Politique de Confidentialité',
-    description:
-      'Ce document précise les mesures que nous prenons pour garantir la confidentialité et la protection des données.',
-    file: '/politics/confidentialite.pdf',
-    icon: <FaFileContract />,
-  },
 ];
 
 export default function PolicyGrid() {

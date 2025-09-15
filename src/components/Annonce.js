@@ -6,7 +6,7 @@ const DEFAULT_ANNONCES = [
     {
         id: '1',
         titre: 'Bilan de santé complet',
-        description: 'Faites un bilan de santé complet pour mieux connaître votre corps.',
+        description: 'Faites un bilan médical pour mieux connaître votre santé.',
         image: { url: '/annonces/5.webp' },
         lien: '/annonce/1',
     },
@@ -43,6 +43,18 @@ export default function Annonce() {
     const [annonces, setAnnonces] = useState(DEFAULT_ANNONCES);
     const [index, setIndex] = useState(0);
     const [selectedAnnonce, setSelectedAnnonce] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
+    const [isSmallMobile, setIsSmallMobile] = useState(false);
+    useEffect(() => {
+        // détecter mobile et petit écran
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+            setIsSmallMobile(window.innerWidth < 480);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     useEffect(() => {
         fetchPayloadAnnonces()
             .then((data) => {
@@ -59,15 +71,54 @@ export default function Annonce() {
     }, []);
     const next = () => setIndex((i) => (i + 1) % annonces.length);
     const prev = () => setIndex((i) => (i - 1 + annonces.length) % annonces.length);
-    return (_jsxs("div", { style: styles.container, children: [_jsxs("div", { style: styles.header, children: [_jsx("h2", { style: styles.title, children: "\uD83D\uDCE2 Annonces" }), _jsxs("div", { children: [_jsx("button", { onClick: prev, style: styles.nav, children: "\u2039" }), _jsx("button", { onClick: next, style: styles.nav, children: "\u203A" })] })] }), _jsx("div", { style: styles.grid, children: _jsx(AnimatePresence, { mode: "sync", children: annonces.map((a, i) => {
+    return (_jsxs("div", { style: styles.container, children: [_jsxs("div", { style: styles.header, children: [_jsx("h2", { style: styles.title, children: "\uD83D\uDCE2 Annonces" }), _jsxs("div", { children: [_jsx("button", { onClick: prev, style: styles.nav, children: "\u2039" }), _jsx("button", { onClick: next, style: styles.nav, children: "\u203A" })] })] }), _jsx("div", { style: {
+                    ...styles.grid,
+                    gridTemplateColumns: isMobile ? '1fr' : '2fr 1fr 1fr',
+                    gridTemplateRows: isMobile ? 'auto' : 'repeat(2, 1fr)',
+                    height: isMobile ? 'auto' : '500px',
+                }, children: _jsx(AnimatePresence, { mode: "sync", children: annonces.map((a, i) => {
                         const isMain = i === index;
                         const isVisible = (i + 5 - index) % 5 < 5;
                         return isVisible ? (_jsxs(motion.div, { layout: true, initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0, y: -30 }, transition: { duration: 0.5 }, style: {
                                 ...styles.card,
-                                ...(isMain ? styles.cardMain : styles.cardSmall),
+                                ...(isMain
+                                    ? {
+                                        ...styles.cardMain,
+                                        gridColumn: isMobile ? '1 / -1' : '1 / 2',
+                                        gridRow: isMobile ? 'auto' : '1 / 3',
+                                        minHeight: isMobile ? '220px' : '100%',
+                                    }
+                                    : styles.cardSmall),
                                 backgroundImage: `url(${a.image.url})`,
-                            }, children: [_jsx("div", { style: styles.overlay }), _jsxs("div", { style: styles.cardContent, children: [_jsx("h3", { style: styles.cardTitle, children: a.titre }), _jsx("p", { style: styles.cardDesc, children: a.description }), _jsx("button", { style: styles.cardButton, onClick: () => setSelectedAnnonce(a), children: "Voir l\u2019annonce" })] })] }, a.id)) : null;
-                    }) }) }), selectedAnnonce && (_jsx("div", { style: styles.modalOverlay, onClick: () => setSelectedAnnonce(null), children: _jsxs(motion.div, { onClick: (e) => e.stopPropagation(), initial: { opacity: 0, scale: 0.9 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.4 }, style: styles.modalContent, children: [_jsx("button", { onClick: () => setSelectedAnnonce(null), style: styles.closeButton, children: "\u2716" }), _jsx("img", { src: selectedAnnonce.image.url, alt: selectedAnnonce.titre, style: styles.modalImage }), _jsx("h3", { style: styles.modalTitle, children: selectedAnnonce.titre }), _jsx("p", { style: styles.modalDesc, children: selectedAnnonce.description })] }) }))] }));
+                            }, children: [_jsx("div", { style: styles.overlay }), _jsxs("div", { style: styles.cardContent, children: [_jsx("h3", { style: {
+                                                ...styles.cardTitle,
+                                                fontSize: isSmallMobile ? '0.9rem' : isMobile ? '1rem' : '1.2rem',
+                                            }, children: a.titre }), _jsx("p", { style: {
+                                                ...styles.cardDesc,
+                                                fontSize: isSmallMobile ? '0.75rem' : isMobile ? '0.85rem' : '0.95rem',
+                                            }, children: a.description }), _jsx("button", { style: {
+                                                ...styles.cardButton,
+                                                fontSize: isSmallMobile ? '0.7rem' : isMobile ? '0.8rem' : '0.9rem',
+                                                padding: isSmallMobile
+                                                    ? '0.25rem 0.5rem'
+                                                    : isMobile
+                                                        ? '0.3rem 0.6rem'
+                                                        : '0.4rem 0.8rem',
+                                            }, onClick: () => setSelectedAnnonce(a), children: "Voir l\u2019annonce" })] })] }, a.id)) : null;
+                    }) }) }), selectedAnnonce && (_jsx("div", { style: styles.modalOverlay, onClick: () => setSelectedAnnonce(null), children: _jsxs(motion.div, { onClick: (e) => e.stopPropagation(), initial: { opacity: 0, scale: 0.9 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.4 }, style: {
+                        ...styles.modalContent,
+                        padding: isSmallMobile ? '1rem' : '2rem',
+                    }, children: [_jsx("button", { onClick: () => setSelectedAnnonce(null), style: styles.closeButton, children: "\u2716" }), _jsx("img", { src: selectedAnnonce.image.url, alt: selectedAnnonce.titre, style: {
+                                ...styles.modalImage,
+                                maxHeight: isSmallMobile ? '50vh' : isMobile ? '60vh' : '400px',
+                                marginTop: isSmallMobile ? '0.5rem' : isMobile ? '1rem' : '120px',
+                            } }), _jsx("h3", { style: {
+                                ...styles.modalTitle,
+                                fontSize: isSmallMobile ? '1.1rem' : '1.5rem',
+                            }, children: selectedAnnonce.titre }), _jsx("p", { style: {
+                                ...styles.modalDesc,
+                                fontSize: isSmallMobile ? '0.85rem' : '1rem',
+                            }, children: selectedAnnonce.description })] }) }))] }));
 }
 const styles = {
     container: {
@@ -99,10 +150,7 @@ const styles = {
     },
     grid: {
         display: 'grid',
-        gridTemplateColumns: '2fr 1fr 1fr',
-        gridTemplateRows: 'repeat(2, 1fr)',
         gap: '1rem',
-        height: '500px',
     },
     card: {
         position: 'relative',
@@ -115,10 +163,7 @@ const styles = {
         padding: '1rem',
         color: '#fff',
     },
-    cardMain: {
-        gridColumn: '1 / 2',
-        gridRow: '1 / 3',
-    },
+    cardMain: {},
     cardSmall: {
         height: '100%',
     },
@@ -133,23 +178,19 @@ const styles = {
         zIndex: 2,
     },
     cardTitle: {
-        fontSize: '1.2rem',
         fontWeight: 700,
         marginBottom: '0.5rem',
     },
     cardDesc: {
-        fontSize: '0.95rem',
         marginBottom: '0.5rem',
     },
     cardButton: {
         display: 'inline-block',
         background: '#fff',
         color: '#6E0B14',
-        padding: '0.4rem 0.8rem',
         borderRadius: '4px',
         fontWeight: 600,
         textDecoration: 'none',
-        fontSize: '0.9rem',
         border: 'none',
         cursor: 'pointer',
     },
@@ -165,7 +206,6 @@ const styles = {
     modalContent: {
         position: 'relative',
         background: '#fff',
-        padding: '2rem',
         borderRadius: '12px',
         textAlign: 'center',
         maxWidth: '800px',
@@ -175,10 +215,8 @@ const styles = {
     },
     modalImage: {
         maxWidth: '100%',
-        maxHeight: '400px',
         borderRadius: '8px',
         marginBottom: '1rem',
-        marginTop: '120px',
     },
     closeButton: {
         position: 'absolute',
@@ -191,28 +229,10 @@ const styles = {
         color: '#444',
     },
     modalTitle: {
-        fontSize: '1.5rem',
         fontWeight: 'bold',
-        margin: '1  rem 0',
+        margin: '1rem 0',
     },
     modalDesc: {
-        fontSize: '1rem',
         color: '#555',
-    },
-    fallbackMessage: {
-        gridColumn: '1 / -1',
-        backgroundColor: '#f8f8f8',
-        border: '1px dashed #ccc',
-        padding: '2rem',
-        textAlign: 'center',
-        borderRadius: '12px',
-        fontStyle: 'italic',
-        color: '#999',
-    },
-    loading: {
-        fontSize: '1.2rem',
-        color: '#888',
-        textAlign: 'center',
-        padding: '2rem',
     },
 };

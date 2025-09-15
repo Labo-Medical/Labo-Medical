@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { fetchPayloadHeader } from '../services/payloadApi';
 import './Header.css';
 const fallback = {
-    logo: '/logo.jpg',
+    logo: '/logo.png',
     socialLinks: [
         { href: 'https://web.facebook.com/laboratoire.zeroual.kawassim/', icon: '/icons/facebook.svg', alt: 'Facebook' },
         { href: 'https://www.instagram.com/laboratoire_zeroual/', icon: '/icons/instagram.svg', alt: 'Instagram' },

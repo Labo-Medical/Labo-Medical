@@ -5,7 +5,7 @@ import { fetchPayloadLabKawassimPage } from "../services/payloadApi";
 const fallbackData = {
     doctor: {
         name: "Dr. LAHLOU TAOUFIK",
-        photo: { url: "/fond/sar1.svg" },
+        photo: { url: "/icons/Man.png" },
         description: "Spécialiste en biologie médicale.",
     },
     contact: {

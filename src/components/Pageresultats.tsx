@@ -1,33 +1,17 @@
 import { useEffect, useState, CSSProperties } from "react";
 import { isAuthenticated, logout } from "../auth";
-import {
-  fetchLabs,
-  // fetchResultatsByLab, // Remove this line if not exported
-  type LabConfig,
-} from "../services/payloadApi";
-// Import the correct function if it has a different name, for example:
-// import { fetchResultsByLab as fetchResultatsByLab } from "../services/payloadApi";
-// import { fetchResultatsByLab } from "../services/payloadApi";
+import { fetchPageResultats, PageresultatPayload } from "../services/payloadApi";
 
 type User = {
   email: string;
   role: string;
 };
 
-type ResultatPayload = {
-  id: string;
-  patient: string;
-  date: string;
-  valeurs: string;
-};
 export default function PageResultats() {
   const [user, setUser] = useState<User | null>(null);
-  const [labs, setLabs] = useState<LabConfig[]>([]);
-  const [selectedLabId, setSelectedLabId] = useState<string | null>(null);
-  const [labResults, setLabResults] = useState<ResultatPayload[]>([]);
+  const [modules, setModules] = useState<PageresultatPayload[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  // Vérifie l'auth au montage
   useEffect(() => {
     if (isAuthenticated()) {
       const storedUser = localStorage.getItem("user");
@@ -35,31 +19,14 @@ export default function PageResultats() {
     }
   }, []);
 
-  // Charge les labos depuis PayloadCMS
   useEffect(() => {
-    fetchLabs()
-      .then(setLabs)
-      .catch(() => setError("Impossible de charger les labos depuis CMS"));
-  }, []);
-
-  const handleModuleClick = async (lab: LabConfig) => {
     const token = localStorage.getItem("authToken");
+    if (!token || !user) return;
 
-    if (!token || !user || user.role !== "admin") {
-      setError("Accès refusé : seuls les administrateurs peuvent consulter.");
-      return;
-    }
-
-    try {
-      const results = await fetchResultatsByLab(lab.apiUrl, token);
-      setLabResults(results);
-      setSelectedLabId(lab.labId);
-      setError(null);
-    } catch (e) {
-      setError("Erreur lors du chargement des résultats.");
-      setLabResults([]);
-    }
-  };
+    fetchPageResultats(token)
+      .then(setModules)
+      .catch(() => setError("Impossible de charger les modules depuis Payload CMS"));
+  }, [user]);
 
   const handleLogout = () => {
     logout();
@@ -69,7 +36,7 @@ export default function PageResultats() {
   return (
     <div style={styles.pageContainer}>
       <header style={styles.header}>
-        <h1 style={styles.title}>Résultats Patients</h1>
+        <h1 style={styles.title}>Modules de Résultats</h1>
         {user && (
           <div>
             <span style={{ color: "#800000", fontWeight: "bold" }}>
@@ -87,13 +54,11 @@ export default function PageResultats() {
 
       {error && <div style={styles.error}>{error}</div>}
 
-      {/* Liste des modules labo */}
       <section style={styles.modulesGrid}>
-        {labs.map((lab) => (
+        {modules.map((mod) => (
           <div
-            key={lab.labId}
+            key={mod.id}
             style={styles.labModule}
-            onClick={() => handleModuleClick(lab)}
             onMouseEnter={(e) =>
               (e.currentTarget.style.boxShadow =
                 styles.labModuleHover.boxShadow!)
@@ -102,37 +67,23 @@ export default function PageResultats() {
               (e.currentTarget.style.boxShadow = "none")
             }
           >
-            <h2>{lab.name}</h2>
-            <p>{lab.description}</p>
-            <button style={styles.accessButton}>Accéder au module</button>
+            <h2>{mod.titre}</h2>
+            <p>{mod.description}</p>
+            <a
+              href={mod.urlAcces}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.accessButton}
+            >
+              Accéder à l’application du labo
+            </a>
           </div>
         ))}
       </section>
-
-      {/* Résultats affichés */}
-      {selectedLabId && (
-        <section style={styles.resultsSection}>
-          <h2>Résultats – {selectedLabId}</h2>
-          {labResults.length > 0 ? (
-            <ul>
-              {labResults.map((r) => (
-                <li key={r.id}>
-                  {r.patient} – {r.date} – {r.valeurs}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Aucun résultat trouvé pour ce module.</p>
-          )}
-        </section>
-      )}
     </div>
   );
 }
 
-//
-// Styles
-//
 const styles: Record<string, CSSProperties> = {
   pageContainer: {
     fontFamily: "Arial, sans-serif",
@@ -166,38 +117,19 @@ const styles: Record<string, CSSProperties> = {
     background: "#fff",
     padding: "15px",
     borderRadius: "8px",
-    cursor: "pointer",
+    cursor: "default",
     transition: "box-shadow 0.3s ease",
   },
   labModuleHover: {
     boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
   },
   accessButton: {
+    display: "inline-block",
     marginTop: "10px",
     padding: "8px 12px",
     backgroundColor: "#800000",
     color: "#fff",
-    border: "none",
+    textDecoration: "none",
     borderRadius: "5px",
-    cursor: "pointer",
-  },
-  resultsSection: {
-    marginTop: "30px",
-    padding: "20px",
-    backgroundColor: "#fff",
-    borderRadius: "8px",
   },
 };
-async function fetchResultatsByLab(apiUrl: string, token: string): Promise<ResultatPayload[]> {
-  const response = await fetch(apiUrl, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-  });
-  if (!response.ok) {
-    throw new Error("Erreur lors de la récupération des résultats.");
-  }
-  return response.json();
-}
-

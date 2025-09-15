@@ -77,27 +77,32 @@ export async function fetchPayloadFooter(): Promise<FooterPayload | null> {
 }
 
 // Blog
-export type ArticlePayload = {
-  id: string;
-  title: string;
-  excerpt: string;
-  slug: string;
-  image: { url: string };
-};
-
-export async function fetchPayloadBlogs(): Promise<ArticlePayload[]> {
-  return await fetchCollection<ArticlePayload>('blog');
-}
 
 // BlogArticle
-export async function fetchPayloadBlogArticles(): Promise<{ id: string; title: string; content: string }[]> {
-  const data = await fetcher<{ docs: any[] }>('blogarticle?limit=10');
-  return data?.docs?.map((item) => ({
-    id: item.id,
-    title: item.title,
-    content: item.content,
-  })) || [];
+// src/services/payloadApi.ts
+import { ArticlePayload } from "../types/articles";
+
+export async function fetchPayloadBlogs(): Promise<ArticlePayload[]> {
+  try {
+    const res = await fetch(`${BASE_URL}/blogs?depth=1`);
+    if (!res.ok) throw new Error("Erreur API blogs");
+    const json = await res.json();
+
+    // Payload retourne { docs: [...], totalDocs, ... }
+    return (json.docs || []).map((doc: any) => ({
+      id: doc.id,
+      title: doc.title,
+      excerpt: doc.excerpt,
+      slug: doc.slug,
+      image: { url: doc.image?.url || "" },
+      content: doc.content || doc.body || "",
+    }));
+  } catch (e) {
+    console.error("fetchPayloadBlogs error:", e);
+    return [];
+  }
 }
+
 
 // Catalogue
 export type CataloguePayload = {
@@ -237,21 +242,29 @@ export async function fetchPayloadLabSouaniPage(): Promise<LabSouaniPageData | n
   return await fetchCollection<LabSouaniPageData>('labosouani', 1).then((docs) => docs[0] || null);
 }
 
-// src/services/payloadApi.ts
-export type LabConfig = {
+export type PageresultatPayload = {
   id: string;
-  name: string;
-  description: string;
+  titre: string;
+  description?: string;
   labId: string;
-  apiUrl: string;
+  urlAcces: string;
+  actif: boolean;
 };
 
-export async function fetchLabs(): Promise<LabConfig[]> {
-  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/labs`);
+export async function fetchPageResultats(token: string): Promise<PageresultatPayload[]> {
+  const endpoint = `pageresultats?where[actif][equals]=true`;
+  const res = await fetch(`${BASE_URL}/${endpoint}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
   if (!res.ok) {
-    throw new Error("Impossible de charger les labos depuis PayloadCMS");
+    throw new Error(`Erreur HTTP ${res.status}`);
   }
+
   const data = await res.json();
-  return data.docs;
+  return data.docs || [];
 }
 

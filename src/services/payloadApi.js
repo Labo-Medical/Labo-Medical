@@ -37,16 +37,25 @@ export async function fetchPayloadFooter() {
     return await fetchGlobal('footer');
 }
 export async function fetchPayloadBlogs() {
-    return await fetchCollection('blog');
-}
-// BlogArticle
-export async function fetchPayloadBlogArticles() {
-    const data = await fetcher('blogarticle?limit=10');
-    return data?.docs?.map((item) => ({
-        id: item.id,
-        title: item.title,
-        content: item.content,
-    })) || [];
+    try {
+        const res = await fetch(`${BASE_URL}/blogs?depth=1`);
+        if (!res.ok)
+            throw new Error("Erreur API blogs");
+        const json = await res.json();
+        // Payload retourne { docs: [...], totalDocs, ... }
+        return (json.docs || []).map((doc) => ({
+            id: doc.id,
+            title: doc.title,
+            excerpt: doc.excerpt,
+            slug: doc.slug,
+            image: { url: doc.image?.url || "" },
+            content: doc.content || doc.body || "",
+        }));
+    }
+    catch (e) {
+        console.error("fetchPayloadBlogs error:", e);
+        return [];
+    }
 }
 export async function fetchPayloadCatalogue() {
     const data = await fetcher('catalogue?limit=1');

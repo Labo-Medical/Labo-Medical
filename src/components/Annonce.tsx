@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { fetchPayloadAnnonces } from '../services/payloadApi';
+import { fetchPayloadAnnonces } from '../services/payloadApi'
 
 type Annonce = {
   id: string;
